@@ -1,1 +1,1 @@
-"redux-devtools-extension": "^2.13.9"
+questify-front
