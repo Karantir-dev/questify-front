@@ -1,0 +1,19 @@
+:root {
+  --challange-bg-color: #15395a;
+  --primary-color: #00d7ff;
+  --text-primary-color: #282828;
+  --text-scondary-color: #b9c3c8;
+  --user-name-color: #7b8aa4;
+  --body-bg-color: #f2f3f7;
+  --header-color: #242a37;
+  --btn-main-color: #ff851c;
+  --btn-active-color: #47aad5;
+
+  /* Цвета категорий задач */
+  --leisure-color: #f8d2ff;
+  --family-color: #ffe6d3;
+  --health-color: #cdf7ff;
+  --learning-color: #fff6c0;
+  --work-color: #d3f6ce;
+  /* --stuff-color: ?; */
+}
