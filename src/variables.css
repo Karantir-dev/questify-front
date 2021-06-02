@@ -16,4 +16,15 @@
   --learning-color: #fff6c0;
   --work-color: #d3f6ce;
   /* --stuff-color: ?; */
+
+  --white: #FFFFFF;
+  --shadow-color: rgba(21, 57, 90, 0.03);
+  --backdrop-color: rgba(21, 57, 90, 0.3);
+  --main-green: #24D40C;
+  --green-hover: #439945;
+  --green-active: #3C863D;
+  --main-red: #DB0938;
+  --red-hover: #C2273F;
+  --red-active: #A72536;
+
 }

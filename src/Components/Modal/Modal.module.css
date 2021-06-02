@@ -1,0 +1,102 @@
+@import url(../../variables.css);
+
+.card {
+    position: relative;
+    margin: 20px auto;
+    width: 205px;
+    height: 199px;
+    background-color: #F2F3F7;
+    border-radius: 10px;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--backdrop-color);
+    border-radius: 10px;
+}
+
+.content {
+    position: absolute;
+    top: 75px;
+    left: 21px;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+
+    padding: 25px 15px 10px;
+    width: 163px;
+    height: 77px;
+    background-color: var(--white);
+    color: var(--text-primary-color);
+    box-shadow: -3px -4px 4px var(--shadow-color), 3px 4px 4px var(--shadow-color);
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 550;
+    line-height: 1;
+    text-align: center;
+}
+
+.confirm {
+    margin-bottom: 10px;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    padding: 3px 10px;
+    /* min-width: 65px; */
+    background-color: var(--white);
+    color: var(--main-green);
+    border: none;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    border-right: 1px solid #B9C3C8;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    color: var(--green-hover);
+}
+
+.button:active {
+    color: var(--green-active);
+}
+
+.button:nth-of-type(2) {
+    border: none;
+    color: var(--main-red);
+}
+
+.button:nth-of-type(2):hover,
+.button:nth-of-type(2):focus {
+    color: var(--red-hover);
+}
+
+.button:nth-of-type(2):active {
+    color: var(--red-active);
+}
+
+@media screen and (max-width: 320px) {
+    .card {
+        width: 290px;
+        height: 260px;
+    }
+
+    .content {
+        width: 248px;
+        height: 138px;
+        font-size: 15px;
+    }
+}

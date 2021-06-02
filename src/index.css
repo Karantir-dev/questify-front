@@ -3,6 +3,9 @@
 
 body {
   margin: 0;
+
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
 }
 
 code {
