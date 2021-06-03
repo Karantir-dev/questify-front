@@ -16,4 +16,7 @@
   --learning-color: #fff6c0;
   --work-color: #d3f6ce;
   /* --stuff-color: ?; */
+
+  --min-tablet-width: 768px;
+  --min-desk-width: 1280px;
 }
