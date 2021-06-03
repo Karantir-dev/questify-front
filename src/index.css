@@ -1,8 +1,11 @@
 @import 'modern-normalize/modern-normalize.css';
 @import './fonts/fonts.css';
+@import './variables.css';
 
 body {
   margin: 0;
+  font-family: 'HelveticaNeueCyr';
+  font-style: normal;
 }
 
 code {
@@ -27,4 +30,9 @@ h5,
 h6,
 p {
   margin: 0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }

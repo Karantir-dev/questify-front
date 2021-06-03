@@ -6,7 +6,9 @@ export default function Landing() {
         <div className={styles.containerLanding}>
             <div className={styles.containerQuest}>
                 <div className={styles.containerForm}>
-                    <h1 className={styles.logo}>Questify</h1>
+                        <a className={styles.logo} href="#">
+                            Questify
+                        </a>
                         <p className={styles.description}>
                             Questify will turn your life into a thrilling
                             game full of amazing quests
