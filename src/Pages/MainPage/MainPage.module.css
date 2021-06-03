@@ -1,0 +1,42 @@
+.section {
+  margin-top: 30px;
+}
+.sectionDone {
+  margin-top: 60px;
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--text-primary-color);
+}
+
+.btnDone {
+  composes: sectionTitle;
+  margin: 0;
+  width: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lineWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.lineWrapper::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent 40%,
+    var(--text-scondary-color) 40%
+  );
+  background-size: 20px 100%;
+}

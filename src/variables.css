@@ -17,7 +17,7 @@
   --work-color: #d3f6ce;
   /* --stuff-color: ?; */
 
-  --white: #FFFFFF;
+  --white: #fff;
   --shadow-color: rgba(21, 57, 90, 0.03);
   --backdrop-color: rgba(21, 57, 90, 0.3);
   --main-green: #24D40C;
@@ -27,4 +27,4 @@
   --red-hover: #C2273F;
   --red-active: #A72536;
 
-}
+
