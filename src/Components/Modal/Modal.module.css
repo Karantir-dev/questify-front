@@ -54,7 +54,6 @@
 
 .button {
     padding: 3px 10px;
-    /* min-width: 65px; */
     background-color: var(--white);
     color: var(--main-green);
     border: none;
@@ -95,8 +94,22 @@
     }
 
     .content {
+        padding: 50px 20px 40px;
         width: 248px;
         height: 138px;
-        font-size: 15px;
+        font-size: 18px;
+    }
+
+    .confirm {
+        margin-bottom: 15px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .button:nth-of-type(2) {
+        border-left: 1px solid #B9C3C8;
     }
 }
