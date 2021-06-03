@@ -1,0 +1,260 @@
+@import url(../../variables.css);    
+    
+    /*-- containerQuest --*/
+
+@media screen and (max-width: 767px) {
+    .containerQuest {
+        padding-bottom: 250px;
+        background: url('../../images/landing\(mobile\)4x.webp') no-repeat;
+        background-size: 320px, auto; /* 100% */
+        background-position: bottom 0 left 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .containerQuest {
+        padding-bottom: 260px;
+        background: url('../../images/landing-down(tablet)4x.webp') no-repeat;
+        background-size: 590px, auto; /* 77% */
+        background-position: bottom 0 right 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .containerQuest {
+        padding-bottom: 250px;
+        background: url('../../images/landing-down(desk)4x.webp') no-repeat;
+        background-size: 980px, auto; /*75%*/
+        background-position: bottom 0 right 0;
+    }
+}
+
+    /*-- containerLanding --*/
+
+@media screen and (min-width: 768px) {
+    .containerLanding {
+        background: url('../../images/landing-up(tablet)4x.webp') no-repeat;
+        background-size: 345px, auto;  /* 45% */
+        background-position: top 0 right -13%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .containerLanding {
+        background: url('../../images/landing-up(desk)4x.webp') no-repeat;
+        background-size: 430px, 50%; /* 32.5% */
+        background-position: top 0 right 0;
+    }
+}
+
+    /*-- containerForm --*/
+
+@media screen and (max-width: 767px) {
+    .containerForm  {
+        padding-top: 60px;
+        padding-left: 15px;
+        max-width: 297px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .containerForm  {
+        padding-left: 50px;
+        padding-top: 312px;
+        max-width: 425px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .containerForm  {
+        padding-left: 229px;
+        padding-top: 193px;
+        max-width: 800px;
+    }
+}
+
+    /*-- Logo --*/
+
+.logo {
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .logo  {
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .logo  {
+        margin-bottom: 70px;
+    }
+}
+
+    /*-- description --*/
+
+.description {
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    color: var(--challange-bg-color);
+}
+
+@media screen and (max-width: 767px) {
+    .description {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .description {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .description {
+        font-size: 36px;
+        line-height: 1.3;
+    }
+}
+
+    /*-- descriptionRegister --*/
+
+.descriptionRegister {
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary-color);
+}
+
+@media screen and (max-width: 767px) {
+    .descriptionRegister {
+        font-size: 14px;
+        line-height: 3.2;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .descriptionRegister {
+        font-size: 18px;
+        line-height: 2.5;
+        margin: 25px 0 30px 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .descriptionRegister {
+        font-size: 24px;
+        line-height: 1.9;
+        margin: 35px 0 23px 0;
+    }
+}
+
+    /*-- form --*/
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+     /*-- inputForm --*/
+
+.inputForm {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    width: 196px;
+}
+
+@media screen and (max-width: 767px) {
+    .inputForm {
+        width: 100%;
+    }
+}
+
+.inputForm + .inputForm {
+    margin-top: 20px;
+}
+
+input::placeholder {
+    color: var(--primary-color);
+}
+
+    /*-- labelForm --*/
+
+.labelForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 18px;
+    color: var(--primary-color);
+}
+
+    /*-- btnForm --*/
+
+.btnForm {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--btn-main-color);
+    outline: none;
+    border: none;
+    padding: 14px 7px;
+
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .btnForm {
+        bottom: -75px;
+        right: 40%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .btnForm {
+        bottom: -90px;
+        right: 180px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .btnForm {
+        bottom: -90px;
+        right: 375px;
+    }
+}
