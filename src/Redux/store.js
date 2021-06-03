@@ -11,6 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import cardsRedusers from './cards/cardsRedusers';
 import authReducer from './auth/auth-redusers';
 
 const middleware = [
@@ -29,7 +30,8 @@ const authPersistConfig = {
 
 const store = configureStore({
   reducer: {
-    // cards: cardsReduser,
+    activeCards: cardsRedusers.activeCards,
+    doneCards: cardsRedusers.doneCards,
     auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware: middleware,
