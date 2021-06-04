@@ -1,13 +1,13 @@
-import { createReducer } from '@reduxjs/toolkit';
-import cardsActions from './cardsActions';
+import { createReducer } from '@reduxjs/toolkit'
+import cardsActions from './cardsActions'
 
 const activeCards = createReducer([], {
   [cardsActions.fetchActiveCardsSuccess]: (_, { payload }) => payload,
-});
+})
 
 const doneCards = createReducer([], {
   [cardsActions.fetchDoneCardsSuccess]: (_, { payload }) => payload,
-});
+})
 
 const isLoading = createReducer(false, {
   [cardsActions.fetchActiveCardsRequest]: () => true,
@@ -16,8 +16,7 @@ const isLoading = createReducer(false, {
   [cardsActions.fetchDoneCardsRequest]: () => true,
   [cardsActions.fetchDoneCardsSuccess]: () => false,
   [cardsActions.fetchDoneCardsError]: () => false,
-});
+})
 
-const cardsReducers = { activeCards, doneCards, isLoading };
-export default cardsReducers;
-
+const cardsReducers = { activeCards, doneCards, isLoading }
+export default cardsReducers
