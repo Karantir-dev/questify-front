@@ -1,64 +1,65 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import CardList from '../../Components/CardList/CardList';
-import Header from '../../Components/Header/Header';
-import Icon from '../../Components/Icon';
+import CardList from '../../Components/CardList/CardList'
+import Header from '../../Components/Header/Header'
+import Icon from '../../Components/Icon'
+import TestCard from '../../Components/Modal/TestCard'
 
-import cardsOperations from '../../Redux/cards/cardsOperations';
-import cardsSelectors from '../../Redux/cards/cardsSelectors';
+import cardsOperations from '../../Redux/cards/cardsOperations'
+import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
-import s from './MainPage.module.css';
+import s from './MainPage.module.css'
 
 export default function Main() {
-  const [doneIsShown, setDoneIsShown] = useState(false);
+  const [doneIsShown, setDoneIsShown] = useState(false)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(cardsOperations.fetchActiveCards());
-  }, [dispatch]);
+    dispatch(cardsOperations.fetchActiveCards())
+  }, [dispatch])
 
-  const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards);
-  const activeTomorrowCards = useSelector(
-    cardsSelectors.getActiveTomorrowCards,
-  );
-  const doneCards = useSelector(cardsSelectors.getDoneCards);
+  const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards)
+  const activeTomorrowCards = useSelector(cardsSelectors.getActiveTomorrowCards)
+  const doneCards = useSelector(cardsSelectors.getDoneCards)
 
   function onShowDone() {
-    setDoneIsShown(!doneIsShown);
+    setDoneIsShown(!doneIsShown)
 
-    if (doneCards.length >= 1) {
-      dispatch(cardsOperations.fetchDoneCards());
+    if (!(doneCards.length >= 1)) {
+      dispatch(cardsOperations.fetchDoneCards())
     }
   }
 
   return (
-    <div>
-      {/* <Header /> */}
-      <section className={s.section}>
-        <h2 className={s.sectionTitle}>TODAY</h2>
-        {/* <CardList cards={activeTodayCards}/> */}
-      </section>
+    <>
+      <Header />
+      <div className={s.container}>
+        <section className={s.section}>
+          <h2 className={s.sectionTitle}>TODAY</h2>
+          {/* <CardList cards={activeTodayCards} /> */}
+        </section>
+        <TestCard />
+        <section className={s.section}>
+          <h2 className={s.sectionTitle}>TOMORROW</h2>
+          {/* <CardList cards={activeTomorrowCards} /> */}
+        </section>
 
-      <section className={s.section}>
-        <h2 className={s.sectionTitle}>TOMORROW</h2>
-        {/* <CardList cards={activeTomorrowCards}/> */}
-      </section>
+        <section className={s.sectionDone}>
+          <div className={s.lineWrapper}>
+            <button className={s.btnDone} onClick={onShowDone}>
+              DONE
+              <Icon
+                name={doneIsShown ? 'triangle-up' : 'triangle-down'}
+                size={12}
+              />
+            </button>
+          </div>
 
-      <section className={s.sectionDone}>
-        <div className={s.lineWrapper}>
-          <button className={s.btnDone} onClick={onShowDone}>
-            DONE
-            <Icon
-              name={doneIsShown ? 'triangle-up' : 'triangle-down'}
-              size={12}
-            />
-          </button>
-        </div>
-
-        {/*doneIsShown &&  <CardList cards={doneCards}/> */}
-      </section>
-    </div>
-  );
+          {/* {doneIsShown && <CardList cards={doneCards} />} */}
+        </section>
+      </div>
+    </>
+  )
 }

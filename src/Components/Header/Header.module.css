@@ -1,0 +1,60 @@
+@import '../../variables.css';
+
+.Header {
+  background-color: var(--header-color);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.Logo {
+  color: var(--primary-color);
+  font-family: 'HelveticaNeueCyr';
+  font-weight: 700;
+  font-size: 21px;
+}
+
+.MenuImgNameLogout {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.MenuImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 150px;
+  margin-right: 10px;
+}
+
+.MenuName {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    padding: 20px 50px;
+  }
+
+  .MenuImgNameLogout {
+    display: flex;
+    align-items: center;
+  }
+
+  .MenuName {
+    display: inline;
+    font-size: 17px;
+    font-family: 'HelveticaNeueCyr';
+    color: var(--user-name-color);
+  }
+
+  .IconButton {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .Header {
+    padding: 20px 70px;
+  }
+}
