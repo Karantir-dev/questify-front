@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import authActions from './auth-actions'
 
-// axios.defaults.baseURL = '';
+//axios.defaults.baseURL = ''
 
 const token = {
   set(token) {
@@ -13,19 +13,19 @@ const token = {
   },
 }
 
-// const register = credentials => dispatch => {
-//   dispatch(authActions.registerRequest());
+const register = credentials => dispatch => {
+  dispatch(authActions.registerRequest());
 
-//   axios
-//     .post('users/signup', credentials)
-//     .then(response => {
-//       token.set(response.data.token);
-//       dispatch(authActions.registerSuccess(response.data));
-//     })
-//     .catch(err => {
-//       dispatch(authActions.registerError(err.message));
-//     });
-// };
+  axios
+    .post('/signUp', credentials)
+    .then(response => {
+      token.set(response.data.token);
+      dispatch(authActions.registerSuccess(response.data));
+    })
+    .catch(err => {
+      dispatch(authActions.registerError(err.message));
+    });
+};
 
 // const login = credentials => dispatch => {
 //   dispatch(authActions.logInRequest());
@@ -74,5 +74,5 @@ const token = {
 //     .catch(err => dispatch(authActions.getCurrentUserError(err.message)));
 // };
 
-// const authOperations = { register, login, logout, getCurrentUser };
-// export default authOperations;
+  const authOperations = { register /* , login, logout, getCurrentUser */ };
+export default authOperations;

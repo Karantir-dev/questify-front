@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react'
 import { Switch, Route } from 'react-router-dom'
+import { ToastContainer } from "react-toastify"
 
 import s from './App.module.css'
 
@@ -20,6 +21,7 @@ export default function App() {
           <Route exact path="/" component={MainPage} />
         </Switch>
       </Suspense>
+      <ToastContainer autoClose={3000} position="top-right" type="default"/>
     </div>
   )
 }

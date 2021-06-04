@@ -1,0 +1,75 @@
+  /*-- form --*/
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+  /*-- inputForm --*/
+
+.inputForm {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  width: 196px;
+}
+
+.inputForm + .inputForm {
+  margin-top: 20px;
+}
+
+input::placeholder {
+  color: var(--primary-color);
+}
+
+  /*-- btnForm --*/
+
+.btnForm {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--btn-main-color);
+  outline: none;
+  border: none;
+  padding: 14px 7px;
+
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.btnForm:disabled {
+    border-color: rgb(189, 169, 81);
+}
+
+@media screen and (max-width: 767px) {
+  .inputForm {
+    width: 100%;
+  }
+
+  .btnForm {
+    bottom: -75px;
+    right: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .btnForm {
+    bottom: -90px;
+    right: 180px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .btnForm {
+    right: 375px;
+  }  
+}
