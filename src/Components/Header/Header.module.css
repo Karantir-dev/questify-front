@@ -2,13 +2,18 @@
 
 .Header {
   background-color: var(--header-color);
-  padding: 20px 50px;
+  padding: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 @media screen and (min-width: 768px) {
+  .Header {
+    padding: 20px 50px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .Header {
     padding: 20px 71px;
   }
@@ -21,20 +26,41 @@
   font-size: 21px;
 }
 
-.MenuImgName {
+.MenuImgNameLogout {
   display: inline-flex;
   align-items: center;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .MenuImgNameLogout {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .MenuImg {
   width: 30px;
   height: 30px;
   border-radius: 150px;
+  margin-right: 10px;
 }
 
 .MenuName {
-  font-size: 17px;
-  font-family: 'HelveticaNeueCyr';
-  color: var(--user-name-color);
-  padding-left: 10px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .MenuName {
+    display: inline;
+    font-size: 17px;
+    font-family: 'HelveticaNeueCyr';
+    color: var(--user-name-color);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .IconButton {
+    margin-left: auto;
+  }
 }
