@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CardList from '../../Components/CardList/CardList';
+// import CardList from '../../Components/CardList/CardList';
 import Header from '../../Components/Header/Header';
 import Icon from '../../Components/Icon';
 
@@ -19,10 +19,10 @@ export default function Main() {
     dispatch(cardsOperations.fetchActiveCards());
   }, [dispatch]);
 
-  const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards);
-  const activeTomorrowCards = useSelector(
-    cardsSelectors.getActiveTomorrowCards,
-  );
+  // const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards);
+  // const activeTomorrowCards = useSelector(
+  //   cardsSelectors.getActiveTomorrowCards,
+  // );
   const doneCards = useSelector(cardsSelectors.getDoneCards);
 
   function onShowDone() {
@@ -35,7 +35,7 @@ export default function Main() {
 
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <section className={s.section}>
         <h2 className={s.sectionTitle}>TODAY</h2>
         {/* <CardList cards={activeTodayCards}/> */}

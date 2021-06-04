@@ -1,0 +1,40 @@
+@import '../../variables.css';
+
+.Header {
+  background-color: var(--header-color);
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    padding: 20px 71px;
+  }
+}
+
+.Logo {
+  color: var(--primary-color);
+  font-family: 'HelveticaNeueCyr';
+  font-weight: 700;
+  font-size: 21px;
+}
+
+.MenuImgName {
+  display: inline-flex;
+  align-items: center;
+}
+
+.MenuImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 150px;
+}
+
+.MenuName {
+  font-size: 17px;
+  font-family: 'HelveticaNeueCyr';
+  color: var(--user-name-color);
+  padding-left: 10px;
+}
