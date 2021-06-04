@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CardList from '../../Components/CardList/CardList';
+// import CardList from '../../Components/CardList/CardList';
 import Header from '../../Components/Header/Header';
 import Icon from '../../Components/Icon';
 
@@ -35,12 +35,13 @@ export default function Main() {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header /> 
       <div className={s.container}>
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TODAY</h2>
           {/* <CardList cards={activeTodayCards}/> */}
         </section>
+
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
