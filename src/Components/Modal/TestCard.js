@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
-import { deleteCard } from '../../Redux/cards/cardsOperations';
+import cardsOperations from '../../Redux/cards/cardsOperations';
 import s from './Modal.module.css';
 import './ModalAnimation.css'
 
@@ -17,7 +17,7 @@ export default function TestCard(cards) {
 
     const dispatch = useDispatch();
     const onDeleteCard = useCallback(id => {
-        dispatch(deleteCard(id));
+        dispatch(cardsOperations.deleteCard(id));
     }, [dispatch]);
     
     return (
