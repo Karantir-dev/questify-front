@@ -1,10 +1,10 @@
-import axios from 'axios';
-import cardsActions from './cardsActions';
+import axios from 'axios'
+import cardsActions from './cardsActions'
 
-axios.defaults.baseURL = 'https://goit23-project.herokuapp.com/';
+axios.defaults.baseURL = 'https://goit23-project.herokuapp.com/'
 
 const fetchActiveCards = () => dispatch => {
-  dispatch(cardsActions.fetchActiveCardsRequest());
+  dispatch(cardsActions.fetchActiveCardsRequest())
 
   // axios
   //   .get('cards/?isComplited=false')
@@ -18,15 +18,15 @@ const fetchActiveCards = () => dispatch => {
   //       ),
   //     ),
   //   );
-};
+}
 
 const fetchDoneCards = () => dispatch => {
-  dispatch(cardsActions.fetchDoneCardsRequest());
+  dispatch(cardsActions.fetchDoneCardsRequest())
 
   axios
     .get('cards/?isComplited=true')
     .then(({ data }) => {
-      dispatch(cardsActions.fetchDoneCardsSuccess(data));
+      dispatch(cardsActions.fetchDoneCardsSuccess(data))
     })
     .catch(err =>
       dispatch(
@@ -34,17 +34,17 @@ const fetchDoneCards = () => dispatch => {
           err.response?.data?.message || err.message,
         ),
       ),
-    );
-};
+    )
+}
 
 const deleteCard = cardId => dispatch => {
-    dispatch(cardsActions.deleteCardRequest());
+  dispatch(cardsActions.deleteCardRequest())
 
-    axios
-        .delete(`/cards/${cardId}`)
-        .then(() => dispatch(cardsActions.deleteCardSuccess(cardId)))
-        .catch(error => dispatch(cardsActions.deleteCardError(error.message)));
-};
+  axios
+    .delete(`/cards/${cardId}`)
+    .then(() => dispatch(cardsActions.deleteCardSuccess(cardId)))
+    .catch(error => dispatch(cardsActions.deleteCardError(error.message)))
+}
 
-const cardsOperations = { fetchActiveCards, fetchDoneCards, deleteCard };
-export default cardsOperations;
+const cardsOperations = { fetchActiveCards, fetchDoneCards, deleteCard }
+export default cardsOperations
