@@ -1,33 +1,51 @@
 import React, { useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
+import { deleteCard } from '../../Redux/cards/cardsOperations';
 import s from './Modal.module.css';
 import './ModalAnimation.css'
 
 import Modal from './Modal';
 
-export default function TestCard() {
+// cards поставила пока так, чтоб ошибка не светилась
+export default function TestCard(cards) {
     // Это нужно добавить в компонент Карточка
     const [showModal, setShowModal] = useState(false);
     const toggleModal = useCallback(() => {
         setShowModal(prevShowModal => !prevShowModal);
     }, []);
+
+    const dispatch = useDispatch();
+    const onDeleteCard = useCallback(id => {
+        dispatch(deleteCard(id));
+    }, [dispatch]);
     
     return (
         <div className={s.card}>
+            {/* Это для понимания от куда приходят id и isChallenge */}
+            {cards.map(({ id, isChallenge }) => (
+                // Тут будет разметка карточки
+                <div>
+                    {/* Это тестовая кнопка для открытия модалки  */}
+                    <button
+                        type="button"
+                        onClick={toggleModal}
+                    >show modal</button>
 
-            {/* Это нужно добавить в компонент Карточка */}
-            <CSSTransition
-                in={showModal}
-                unmountOnExit
-                classNames="modal"
-                timeout={250}
-            >
-                <Modal isChallenge={false} onClose={toggleModal} />
-                {/* Вместо false/true должен приходить проп isChallenge */}
-            </CSSTransition>
-            
-            {/* Это тестовая кнопка для открытия модалки */}
-            <button type="button" onClick={toggleModal}>show modal</button>
+                    <CSSTransition
+                        in={showModal}
+                        unmountOnExit
+                        classNames="modal"
+                        timeout={250}
+                    >
+                        <Modal
+                            isChallenge={isChallenge}
+                            onClose={toggleModal}
+                            onDelete={() => onDeleteCard(id)}
+                        />
+                    </CSSTransition>
+                </div>
+            ))}
         </div>
      )
 }

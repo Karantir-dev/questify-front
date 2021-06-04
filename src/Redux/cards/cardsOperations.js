@@ -37,5 +37,14 @@ const fetchDoneCards = () => dispatch => {
     );
 };
 
-const cardsOperations = { fetchActiveCards, fetchDoneCards };
+const deleteCard = cardId => dispatch => {
+    dispatch(cardsActions.deleteCardRequest());
+
+    axios
+        .delete(`/cards/${cardId}`)
+        .then(() => dispatch(cardsActions.deleteCardSuccess(cardId)))
+        .catch(error => dispatch(cardsActions.deleteCardError(error.message)));
+};
+
+const cardsOperations = { fetchActiveCards, fetchDoneCards, deleteCard };
 export default cardsOperations;

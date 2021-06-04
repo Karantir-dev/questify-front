@@ -1,11 +1,12 @@
   
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 import s from './Modal.module.css';
 import './ModalAnimation.css'
 
 
-export default function Modal({ isChallenge, onClose }) {
+export default function Modal({ isChallenge, onClose, onDelete }) {
     const cardType = isChallenge ? 'Challenge' : 'Quest';
 
     useEffect(() => {
@@ -32,7 +33,7 @@ export default function Modal({ isChallenge, onClose }) {
     };
 
     const handleDeleteBtnClick = () => {
-        // Тут будет логика для удаления контакта
+        onDelete();
         onClose();
     }
     
@@ -50,3 +51,9 @@ export default function Modal({ isChallenge, onClose }) {
         </div>
      )
 }
+
+Modal.propTypes = {
+  isChallenge: PropTypes.bool,
+  onDelete: PropTypes.func,
+  onClose: PropTypes.func,
+};
