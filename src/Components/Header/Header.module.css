@@ -7,18 +7,6 @@
   align-items: center;
 }
 
-@media screen and (min-width: 768px) {
-  .Header {
-    padding: 20px 50px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .Header {
-    padding: 20px 71px;
-  }
-}
-
 .Logo {
   color: var(--primary-color);
   font-family: 'HelveticaNeueCyr';
@@ -30,13 +18,6 @@
   display: inline-flex;
   align-items: center;
   margin-left: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .MenuImgNameLogout {
-    display: flex;
-    align-items: center;
-  }
 }
 
 .MenuImg {
@@ -51,16 +32,29 @@
 }
 
 @media screen and (min-width: 768px) {
+  .Header {
+    padding: 20px 50px;
+  }
+
+  .MenuImgNameLogout {
+    display: flex;
+    align-items: center;
+  }
+
   .MenuName {
     display: inline;
     font-size: 17px;
     font-family: 'HelveticaNeueCyr';
     color: var(--user-name-color);
   }
-}
 
-@media screen and (min-width: 768px) {
   .IconButton {
     margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .Header {
+    padding: 20px 70px;
   }
 }

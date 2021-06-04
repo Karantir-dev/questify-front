@@ -1,6 +1,6 @@
 .container {
   padding: 0 15px 15px;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-color: var(--body-bg-color);
 }
 @media screen and (min-width: 768px) {
@@ -15,7 +15,7 @@
 }
 
 .section {
-  margin-top: 30px;
+  padding-top: 30px;
 }
 .sectionDone {
   margin-top: 60px;
@@ -52,7 +52,7 @@
   background-image: linear-gradient(
     to right,
     transparent 40%,
-    var(--text-scondary-color) 40%
+    var(--text-secondary-color) 40%
   );
   background-size: 20px 100%;
 }
