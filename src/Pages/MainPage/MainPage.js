@@ -19,46 +19,49 @@ export default function Main() {
     dispatch(cardsOperations.fetchActiveCards());
   }, [dispatch]);
 
-  // const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards);
-  // const activeTomorrowCards = useSelector(
-  //   cardsSelectors.getActiveTomorrowCards,
-  // );
+  const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards);
+  const activeTomorrowCards = useSelector(
+    cardsSelectors.getActiveTomorrowCards,
+  );
   const doneCards = useSelector(cardsSelectors.getDoneCards);
 
   function onShowDone() {
     setDoneIsShown(!doneIsShown);
 
-    if (doneCards.length >= 1) {
+    if (!(doneCards.length >= 1)) {
       dispatch(cardsOperations.fetchDoneCards());
     }
   }
 
   return (
-    <div>
-      <Header />
-      <section className={s.section}>
-        <h2 className={s.sectionTitle}>TODAY</h2>
-        {/* <CardList cards={activeTodayCards}/> */}
-      </section>
+    <>
+      <Header /> 
+      <div className={s.container}>
+        <section className={s.section}>
+          <h2 className={s.sectionTitle}>TODAY</h2>
+          {/* <CardList cards={activeTodayCards}/> */}
+        </section>
 
-      <section className={s.section}>
-        <h2 className={s.sectionTitle}>TOMORROW</h2>
-        {/* <CardList cards={activeTomorrowCards}/> */}
-      </section>
 
-      <section className={s.sectionDone}>
-        <div className={s.lineWrapper}>
-          <button className={s.btnDone} onClick={onShowDone}>
-            DONE
-            <Icon
-              name={doneIsShown ? 'triangle-up' : 'triangle-down'}
-              size={12}
-            />
-          </button>
-        </div>
+        <section className={s.section}>
+          <h2 className={s.sectionTitle}>TOMORROW</h2>
+          {/* <CardList cards={activeTomorrowCards}/> */}
+        </section>
 
-        {/*doneIsShown &&  <CardList cards={doneCards}/> */}
-      </section>
-    </div>
+        <section className={s.sectionDone}>
+          <div className={s.lineWrapper}>
+            <button className={s.btnDone} onClick={onShowDone}>
+              DONE
+              <Icon
+                name={doneIsShown ? 'triangle-up' : 'triangle-down'}
+                size={12}
+              />
+            </button>
+          </div>
+
+          {/*doneIsShown &&  <CardList cards={doneCards}/> */}
+        </section>
+      </div>
+    </>
   );
 }

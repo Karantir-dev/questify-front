@@ -18,5 +18,6 @@ const isLoading = createReducer(false, {
   [cardsActions.fetchDoneCardsError]: () => false,
 });
 
-const cardsRedusers = { activeCards, doneCards, isLoading };
-export default cardsRedusers;
+const cardsReducers = { activeCards, doneCards, isLoading };
+export default cardsReducers;
+
