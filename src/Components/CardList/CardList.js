@@ -6,8 +6,9 @@ import './CardList.module.css';
 function CardList({cards}) {
     return (
       <ul>
-        {cards.map(({ type, difficulty, categorie, date, text }) => (
+        {cards.map(({ id, type, difficulty, categorie, date, text }) => (
             <Card
+            key={id}
             type={type}
             difficulty={difficulty}
             categorie={categorie}
@@ -20,8 +21,9 @@ function CardList({cards}) {
   };
 
 CardList.propTypes = {
-    contacts: PropTypes.arrayOf(
+    cards: PropTypes.arrayOf(
       PropTypes.shape({
+        id: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         difficulty: PropTypes.string.isRequired,
         categorie: PropTypes.string.isRequired,
