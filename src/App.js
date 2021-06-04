@@ -12,7 +12,7 @@ const AuthPage = lazy(() =>
 
 export default function App() {
   return (
-    <div className={s.container}>
+    <div>
       <Suspense fallback={<h1>Загружаем...</h1>}>
         <Switch>
           <Route path="/auth" component={AuthPage} />
