@@ -1,8 +1,11 @@
-import React, { useState, useCallback } from 'react'
-import { useDispatch } from 'react-redux'
-import { CSSTransition } from 'react-transition-group'
-import deleteCard from '../../Redux/cards/cardsOperations'
-import s from './Modal.module.css'
+
+import React, { useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { CSSTransition } from 'react-transition-group';
+
+import cardsOperations from '../../Redux/cards/cardsOperations';
+
+import s from './Modal.module.css';
 import './ModalAnimation.css'
 
 import Modal from './Modal'
@@ -14,13 +17,11 @@ export default function TestCard(cards) {
     setShowModal(prevShowModal => !prevShowModal)
   }, [])
 
-  const dispatch = useDispatch()
-  const onDeleteCard = useCallback(
-    id => {
-      dispatch(deleteCard(id))
-    },
-    [dispatch],
-  )
+
+  const dispatch = useDispatch();
+  const onDeleteCard = useCallback(id => {
+      dispatch(cardsOperations.deleteCard(id));
+  }, [dispatch]);
 
   return (
     <div className={s.card}>
