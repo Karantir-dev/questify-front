@@ -1,9 +1,9 @@
 const getActiveTodayCards = state =>
-  state.activeCards.filter(
+  state.cards.allCards.filter(
     card => new Date().toLocaleDateString() === card.date,
   )
 const getActiveTomorrowCards = state =>
-  state.activeCards.filter(
+  state.cards.allCards.filter(
     card => new Date().toLocaleDateString() !== card.date,
   )
 const getDoneCards = state => state.doneCards
