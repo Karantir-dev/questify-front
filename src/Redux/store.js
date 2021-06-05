@@ -31,7 +31,7 @@ const authPersistConfig = {
 
 const store = configureStore({
   reducer: {
-    allCards: cardsReducers.allCards,
+    cards: cardsReducers,
     auth: persistReducer(authPersistConfig, authReducer),
     notification: notifReducer,
   },
