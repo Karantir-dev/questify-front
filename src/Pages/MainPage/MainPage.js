@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import CardList from '../../Components/CardList/CardList'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
-import TestCard from '../../Components/Modal/TestCard'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
@@ -40,7 +39,7 @@ export default function Main() {
           <h2 className={s.sectionTitle}>TODAY</h2>
           {/* <CardList cards={activeTodayCards} /> */}
         </section>
-        <TestCard />
+
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
           {/* <CardList cards={activeTomorrowCards} /> */}

@@ -35,21 +35,14 @@ const isLoading = createReducer(false, {
   [authActions.logOutRequest]: () => true,
   [authActions.logOutSuccess]: () => false,
   [authActions.logOutError]: () => false,
-})
-
-const setError = (_, { payload }) => payload
-
-const error = createReducer(null, {
-  [authActions.registerError]: setError,
-  [authActions.logInError]: setError,
-  [authActions.logOutError]: setError,
-  [authActions.getCurrentUserError]: setError,
+  [authActions.registerRequest]: () => true,
+  [authActions.registerSuccess]: () => false,
+  [authActions.registerError]: () => false,
 })
 
 export default combineReducers({
   user,
   token,
   isAuthenticated,
-  error,
   isLoading,
 })

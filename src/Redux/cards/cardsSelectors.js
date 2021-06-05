@@ -1,25 +1,22 @@
 const getActiveTodayCards = state =>
-  state.cards.allCards
-    .filter(({ isCompleted }) => !isCompleted)
-    .filter(card => new Date().toLocaleDateString() === card.date)
+  state.cards.allCards.filter(({ isCompleted, deadline }) => {
+    return !isCompleted && new Date().toLocaleDateString() === deadline
+  })
 
 const getActiveTomorrowCards = state =>
-  state.cards.allCards
-    .filter(({ isCompleted }) => !isCompleted)
-    .filter(card => new Date().toLocaleDateString() !== card.date)
+  state.cards.allCards.filter(({ isCompleted, deadline }) => {
+    return !isCompleted && new Date().toLocaleDateString() === deadline
+  })
 
 const getDoneCards = state =>
   state.cards.allCards.filter(({ isCompleted }) => isCompleted)
 
-const getIsLoading = state => state.cards.loading
-
-const getError = state => state.cards.error
+const getIsLoading = state => state.cards.isLoading
 
 const cardsSelectors = {
   getActiveTodayCards,
   getActiveTomorrowCards,
   getDoneCards,
   getIsLoading,
-  getError,
 }
 export default cardsSelectors

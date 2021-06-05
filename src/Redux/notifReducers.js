@@ -13,6 +13,8 @@ const notifReducer = createReducer(null, {
   [cardsActions.fetchActiveCardsError]: setNotification,
   [cardsActions.fetchDoneCardsError]: setNotification,
   [cardsActions.deleteCardError]: setNotification,
+  [cardsActions.addCardError]: setNotification,
+  [cardsActions.editCardError]: setNotification,
 
   [resetNotification]: setNotification,
 })
