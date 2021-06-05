@@ -28,10 +28,19 @@ const authPersistConfig = {
   whitelist: ['token'],
 }
 
+// const store = configureStore({
+//   reducer: {
+//     activeCards: cardsReducers.activeCards,
+//     doneCards: cardsReducers.doneCards,
+//     auth: persistReducer(authPersistConfig, authReducer),
+//   },
+//   middleware: middleware,
+//   devTools: process.env.NODE_ENV === 'development',
+// })
+
 const store = configureStore({
   reducer: {
-    activeCards: cardsReducers.activeCards,
-    doneCards: cardsReducers.doneCards,
+    cards: cardsReducers,
     auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware: middleware,

@@ -36,7 +36,7 @@ export default function TestCard({
     <div className={s.card}>
       {/* Это для понимания от куда приходят id и isChallenge */}
       {/* {cards.map(({ id, isChallenge }) => ( */}
-      // Тут будет разметка карточки
+      {/* // Тут будет разметка карточки */}
       <div>
         {/* Это тестовая кнопка для открытия модалки  */}
         <button type="button" onClick={toggleModal}>
