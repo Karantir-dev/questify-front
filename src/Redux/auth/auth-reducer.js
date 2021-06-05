@@ -29,12 +29,19 @@ const isAuthenticated = createReducer(false, {
 });
 
 const isLoading = createReducer(false, {
+  [authActions.registerSuccess]: () => false,
+  [authActions.registerRequest]: () => true,
+  [authActions.registerError]: () => false,
   [authActions.logInRequest]: () => true,
   [authActions.logInSuccess]: () => false,
   [authActions.logInError]: () => false,
   [authActions.logOutRequest]: () => true,
   [authActions.logOutSuccess]: () => false,
   [authActions.logOutError]: () => false,
+  [authActions.getCurrentUserRequest]: () => true,
+  [authActions.getCurrentUserSuccess]: () => false,
+  [authActions.getCurrentUserError]: () => false,
+  [authActions.clearError]: () => false,
 });
 
 const setError = (_, { payload }) => payload;
@@ -44,6 +51,7 @@ const error = createReducer(null, {
   [authActions.logInError]: setError,
   [authActions.logOutError]: setError,
   [authActions.getCurrentUserError]: setError,
+  [authActions.clearError]: () => null,
 });
 
 export default combineReducers({

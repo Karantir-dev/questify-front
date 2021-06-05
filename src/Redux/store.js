@@ -12,7 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import cardsReducers from './cards/cardsReducers';
-import authReducer from './auth/auth-reducers';
+import authReducer from './auth/auth-reducer';
 
 const middleware = [
   ...getDefaultMiddleware({
