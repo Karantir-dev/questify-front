@@ -31,7 +31,10 @@ export default function Header() {
                 // onClick={onLogOut}
                      className={s.IconButton}
                      aria-label="Logout">
-                <Icon name={'logout'} size={22}/>
+                <Icon
+                    className={s.Icon}
+                    name={'logout'}
+                    size={22} />
                 </button>
         </header>
     )

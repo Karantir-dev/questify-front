@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // import CardList from '../../Components/CardList/CardList';
 import Header from '../../Components/Header/Header';
 import Icon from '../../Components/Icon';
+import IconButton from '../../Components/IconButton/IconButton'
+// import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
 import cardsOperations from '../../Redux/cards/cardsOperations';
 import cardsSelectors from '../../Redux/cards/cardsSelectors';
@@ -11,6 +13,8 @@ import cardsSelectors from '../../Redux/cards/cardsSelectors';
 import s from './MainPage.module.css';
 
 export default function Main() {
+  const [buttonClicked, setButtonClicked] = useState(false);
+  
   const [doneIsShown, setDoneIsShown] = useState(false);
 
   const dispatch = useDispatch();
@@ -32,6 +36,10 @@ export default function Main() {
       dispatch(cardsOperations.fetchDoneCards());
     }
   }
+  
+  function handleAddNewCard() {
+    setButtonClicked(!buttonClicked)
+  }
 
   return (
     <>
@@ -39,6 +47,7 @@ export default function Main() {
       <div className={s.container}>
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TODAY</h2>
+          {/* {buttonClicked && <CreateEditCard/>} */}
           {/* <CardList cards={activeTodayCards}/> */}
         </section>
 
@@ -61,6 +70,15 @@ export default function Main() {
 
           {/*doneIsShown &&  <CardList cards={doneCards}/> */}
         </section>
+
+        <div className={s.buttonAddContainer}>
+        <IconButton
+            onClick={handleAddNewCard}
+            aria-label="Add">
+          <Icon name={'plus'} size={15}/>
+        </IconButton>
+        </div>
+
       </div>
     </>
   );
