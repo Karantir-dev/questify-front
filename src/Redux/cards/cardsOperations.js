@@ -7,34 +7,22 @@ const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest())
 
   axios
-    .get('/cards?isComplited=false')
-    .then(({ data }) => {
-      dispatch(cardsActions.fetchActiveCardsSuccess(data));
-    })
-    .catch(err =>
-      dispatch(
-        cardsActions.fetchActiveCardsError(
-          err.response?.data?.message || err.message,
-        ),
-      ),
-    );
+    .get('cards?isComplited=false')
+    .then(({ data }) => dispatch(cardsActions.fetchActiveCardsSuccess(data)))
+    .catch(err =>dispatch(
+      cardsActions.fetchActiveCardsError(err.response?.data?.message || err.message),
+    ))
 }
 
 const fetchDoneCards = () => dispatch => {
   dispatch(cardsActions.fetchDoneCardsRequest())
 
   axios
-    .get('/cards?isComplited=true')
-    .then(({ data }) => {
-      dispatch(cardsActions.fetchDoneCardsSuccess(data))
-    })
-    .catch(err =>
-      dispatch(
-        cardsActions.fetchDoneCardsError(
-          err.response?.data?.message || err.message,
-        ),
-      ),
-    )
+    .get('cards?isComplited=true')
+    .then(({ data }) => dispatch(cardsActions.fetchDoneCardsSuccess(data)))
+    .catch(err => dispatch(
+      cardsActions.fetchDoneCardsError(err.response?.data?.message || err.message),
+    ))
 }
 
 const addCard = (text, deadline, difficulty, category, isChallenge) => dispatch => {
@@ -44,76 +32,65 @@ const addCard = (text, deadline, difficulty, category, isChallenge) => dispatch 
     difficulty,
     category,
     isChallenge,
-    isCompleted: false,
   }
 
   dispatch(cardsActions.addCardRequest())
 
   axios
-    .post('/cards', card)
+    .post('cards', card)
     .then(({ data }) => dispatch(cardsActions.addCardSuccess(data)))
     .catch(err => dispatch(
       cardsActions.addCardError(err.response?.data?.message || err.message)
-    ));
-};
+    ))
+}
 
-const editCard = (cardId, text, deadline, difficulty, category, isChallenge, isCompleted) => dispatch => {
-  const card = {
-    text,
-    deadline,
-    difficulty,
-    category,
-    isChallenge,
-    isCompleted,
-  }
-
+const editCard = (cardId, card) => dispatch => {
   dispatch(cardsActions.editCardRequest())
 
   axios
-    .put(`/cards/${cardId}`, card)
+    .put(`cards/${cardId}`, card)
     .then(({data}) => dispatch(cardsActions.editCardSuccess(data)))
     .catch(err => dispatch(
       cardsActions.editCardError(err.response?.data?.message || err.message)
-    ));
+    ))
 };
 
 const deleteCard = cardId => dispatch => {
   dispatch(cardsActions.deleteCardRequest())
 
   axios
-    .delete(`/cards/${cardId}`)
+    .delete(`cards/${cardId}`)
     .then(() => dispatch(cardsActions.deleteCardSuccess(cardId)))
     .catch(err => dispatch(
       cardsActions.deleteCardError(err.response?.data?.message || err.message)
     ))
 }
 
-const toggleCompleted = ({ id, isCompleted }) => dispatch => {
-  const update = { isCompleted };
+const toggleCompleted = ({ cardId, isCompleted }) => dispatch => {
+  const update = { isCompleted }
 
-  dispatch(cardsActions.toggleCompletedRequest());
+  dispatch(cardsActions.toggleCompletedRequest())
 
   axios
-    .patch(`/cards/${id}/complete`, update)
+    .patch(`cards/${cardId}/complete`, update)
     .then(({ data }) => dispatch(cardsActions.toggleCompletedSuccess(data)))
     .catch(err => dispatch(
       cardsActions.toggleCompletedError(err.response?.data?.message || err.message)
-    ));
+    ))
 };
 
-const toggleChallenge = ({ id, isChallenge }) => dispatch => {
-  const update = { isChallenge };
+const toggleChallenge = ({ cardId, isChallenge }) => dispatch => {
+  const update = { isChallenge }
 
-  dispatch(cardsActions.toggleChallengeRequest());
+  dispatch(cardsActions.toggleChallengeRequest())
 
   axios
-    .patch(`/cards/${id}/challenge`, update)
+    .patch(`cards/${cardId}/challenge`, update)
     .then(({ data }) => dispatch(cardsActions.toggleChallengeSuccess(data)))
     .catch(err => dispatch(
       cardsActions.toggleChallengeError(err.response?.data?.message || err.message)
-    ));
-};
-
+    ))
+}
 
 const cardsOperations = {
   fetchActiveCards,
@@ -124,4 +101,5 @@ const cardsOperations = {
   toggleCompleted,
   toggleChallenge
 }
+
 export default cardsOperations

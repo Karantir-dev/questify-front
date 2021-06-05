@@ -2,26 +2,8 @@ import { createReducer } from '@reduxjs/toolkit'
 import { combineReducers } from "redux";
 import cardsActions from './cardsActions'
 
-// const allCards = createReducer([], {
-//   [cardsActions.fetchActiveCardsSuccess]: (_, { payload }) => payload,
-//   [cardsActions.fetchDoneCardsSuccess]: (_, { payload }) => payload,
-//   [cardsActions.addCardSuccess]: (state, { payload }) => [...state, payload],
-//   [cardsActions.editCardSuccess]: (state, { payload }) => [...state, payload],
-//   [cardsActions.deleteCardSuccess]: (state, { payload }) => state.filter(({ id }) => id !== payload),
-//   [cardsActions.toggleCompletedSuccess]: (state, { payload }) => state.map(card => (card.id === payload.id ? payload : card)),
-//   [cardsActions.toggleChallengeSuccess]: (state, { payload }) => state.map(card => (card.id === payload.id ? payload : card)),
-// })
-
-const activeCards = createReducer([], {
+const allCards = createReducer([], {
   [cardsActions.fetchActiveCardsSuccess]: (_, { payload }) => payload,
-  [cardsActions.addCardSuccess]: (state, { payload }) => [...state, payload],
-  [cardsActions.editCardSuccess]: (state, { payload }) => [...state, payload],
-  [cardsActions.deleteCardSuccess]: (state, { payload }) => state.filter(({ id }) => id !== payload),
-  [cardsActions.toggleCompletedSuccess]: (state, { payload }) => state.map(card => (card.id === payload.id ? payload : card)),
-  [cardsActions.toggleChallengeSuccess]: (state, { payload }) => state.map(card => (card.id === payload.id ? payload : card)),
-})
-
-const doneCards = createReducer([], {
   [cardsActions.fetchDoneCardsSuccess]: (_, { payload }) => payload,
   [cardsActions.addCardSuccess]: (state, { payload }) => [...state, payload],
   [cardsActions.editCardSuccess]: (state, { payload }) => [...state, payload],
@@ -65,9 +47,7 @@ const error = createReducer(null, {
 });
 
 const cardsReducers = {
-  // allCards,
-  activeCards,
-  doneCards,
+  allCards,
   isLoading,
   error
 }

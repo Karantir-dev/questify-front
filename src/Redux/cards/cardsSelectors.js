@@ -1,14 +1,14 @@
 const getActiveTodayCards = state =>
-  state.cards.activeCards.filter(
-    card => new Date().toLocaleDateString() === card.date,
-  )
+  state.cards.allCards
+    .filter(({ isCompleted }) => !isCompleted)
+    .filter(card => new Date().toLocaleDateString() === card.date)
 
 const getActiveTomorrowCards = state =>
-  state.cards.activeCards.filter(
-    card => new Date().toLocaleDateString() !== card.date,
-  )
+  state.cards.allCards
+    .filter(({ isCompleted }) => !isCompleted)
+    .filter(card => new Date().toLocaleDateString() !== card.date)
 
-const getDoneCards = state => state.cards.doneCards
+const getDoneCards = state => state.cards.allCards.filter(({isCompleted}) => isCompleted)
 
 const getIsLoading = state => state.cards.loading
 
