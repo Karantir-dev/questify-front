@@ -1,4 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit'
+import { combineReducers } from "redux";
 import cardsActions from './cardsActions'
 
 // const allCards = createReducer([], {
@@ -71,4 +72,4 @@ const cardsReducers = {
   error
 }
 
-export default cardsReducers
+export default combineReducers(cardsReducers)
