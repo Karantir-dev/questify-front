@@ -4,6 +4,7 @@ import authOperations from '../../Redux/auth/auth-operations'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import styles from './AuthForm.module.css'
+import IconButton from '../IconButton/IconButton'
 
 export default function AuthForm() {
 
@@ -96,12 +97,15 @@ export default function AuthForm() {
                onChange={handleChange}
         />
 
-        <button
-          disabled={!name && !email && password < 1}
+         <IconButton className={styles.btnReg}>
+           go!
+         </IconButton>
+        {/* <button
+          disabled={!name && !email || password < 1}
           className={styles.btnForm} 
           type="submit"
         >go!
-        </button>
+        </button> */}
       </form>
     </div>
 )}

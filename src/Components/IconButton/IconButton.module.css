@@ -1,7 +1,48 @@
-.IconButton {
-  /* padding: 6px;
+.IconButtonReg {
+  position: absolute;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center; */
+  background: var(--btn-active-color);
+  outline: none;
+  border: none;
+  padding: 14px 7px;
+
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.IconButtonReg:disabled {
+  background-color: var(--btn-main-color);
+}
+
+.IconButtonReg:hover {
+  background-color: var(--btn-hover);
+}
+
+@media screen and (max-width: 767px) {
+  .IconButtonReg {
+    bottom: -75px;
+    right: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .IconButtonReg {
+    bottom: -90px;
+    right: 180px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .IconButtonReg {
+    right: 375px;
+  }  
 }

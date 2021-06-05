@@ -1,5 +1,4 @@
 :root {
-  --white-color: #FFFFFF;
   --challange-bg-color: #15395a;
   --primary-color: #00d7ff;
   --text-primary-color: #282828;
@@ -7,6 +6,7 @@
   --user-name-color: #7b8aa4;
   --body-bg-color: #f2f3f7;
   --header-color: #242a37;
+  --btn-hover: #00D7FF;
   --btn-main-color: #ff851c;
   --btn-active-color: #47aad5;
 

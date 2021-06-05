@@ -1,5 +1,3 @@
-@import url(../../variables.css);  
-
   /*-- Logo --*/
 
 .logo {
@@ -61,6 +59,12 @@
   }
 }
 
+/* @media screen and (max-width: 767px) and (min-resolution: 192dpi) {
+  .containerQuest {
+    background: url('../../images/landing\(mobile\)4x.webp') no-repeat;
+  }
+} */
+
   /*-- @media (min-width: 768px) --*/
 
 @media screen and (min-width: 768px) {
@@ -100,6 +104,15 @@
   }
 }
 
+/* @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .containerQuest {
+    background: url('../../images/landing-down(tablet)4x.webp') no-repeat;
+  }
+  .containerLanding {
+    background: url('../../images/landing-up(tablet)4x.webp') no-repeat;
+  }
+} */
+
   /*-- @media (min-width: 1280px) --*/
 
 @media screen and (min-width: 1280px) {
@@ -138,3 +151,13 @@
     margin: 35px 0 23px 0;
   }
 }
+
+/* @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .containerQuest {
+    background: url('../../images/landing-down(desk)4x.webp') no-repeat;
+  }
+
+  .containerLanding {
+    background: url('../../images/landing-up(desk)4x.webp') no-repeat;
+  }
+} */

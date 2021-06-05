@@ -9,6 +9,8 @@ import TestCard from '../../Components/Modal/TestCard'
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
+import IconButton from '../../Components/IconButton/IconButton'
+
 import s from './MainPage.module.css'
 
 export default function Main() {
@@ -55,6 +57,9 @@ export default function Main() {
                 size={12}
               />
             </button>
+            <IconButton className={s.IconButtonRegDone}>
+              +
+            </IconButton>
           </div>
 
           {/* {doneIsShown && <CardList cards={doneCards} />} */}
