@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import {
   persistStore,
   persistReducer,
@@ -8,11 +8,12 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
-import cardsRedusers from './cards/cardsRedusers';
-import authReducer from './auth/auth-redusers';
+import cardsReducers from './cards/cardsReducers'
+import authReducer from './auth/auth-reducers'
+import notifReducer from './notifReducers'
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -20,25 +21,25 @@ const middleware = [
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
   }),
-];
+]
 
 const authPersistConfig = {
   key: 'auth',
   storage,
   whitelist: ['token'],
-};
+}
 
 const store = configureStore({
   reducer: {
-    activeCards: cardsRedusers.activeCards,
-    doneCards: cardsRedusers.doneCards,
+    cards: cardsReducers,
     auth: persistReducer(authPersistConfig, authReducer),
+    notification: notifReducer,
   },
   middleware: middleware,
   devTools: process.env.NODE_ENV === 'development',
-});
+})
 
-const persistor = persistStore(store);
+const persistor = persistStore(store)
 
-const entireStore = { store, persistor };
-export default entireStore;
+const entireStore = { store, persistor }
+export default entireStore
