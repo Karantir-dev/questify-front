@@ -47,6 +47,7 @@ CompletedCard.propTypes = {
   text: PropTypes.string,
   isChallenge: PropTypes.bool,
   onClick: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 export default CompletedCard;
