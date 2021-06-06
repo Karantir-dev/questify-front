@@ -10,8 +10,8 @@ export default function Header() {
   const dispatch = useDispatch()
   const email = useSelector(authSelectors.getUserEmail)
   const name = useSelector(authSelectors.getUserName)
-  const emailParts = email.split('@')
-  const nameFromEmail = emailParts[0]
+  // const emailParts = email.split('@')
+  // const nameFromEmail = emailParts[0]
 
   const onLogOut = useCallback(() => {
     dispatch(authOperations.logOut())
@@ -28,7 +28,7 @@ export default function Header() {
           width="30"
         />
         <span className={s.MenuName}>
-          {name === 'Guest' ? nameFromEmail : name}'s Quest Log
+          {/* {name === 'Guest' ? nameFromEmail : name}'s Quest Log */}
         </span>
       </div>
       <button
