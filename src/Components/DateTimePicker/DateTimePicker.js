@@ -4,12 +4,13 @@ import './DateTimePicker.module.css';
 
 function DateTimePicker() {
   const [value, onChange] = useState(new Date());
-
+  const minDate = new Date(2021, 5, 1);
   return (
     <div>
       <DateTimePicker
         onChange={onChange}
         value={value}
+        minDate={minDate}
       />
     </div>
   );
