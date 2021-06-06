@@ -36,7 +36,7 @@ const CreateEditCard = ({
 
   return (
     <>
-      {text && (
+      {!text && (
         <div className="creation-card">
           {isDeleting && (
             <Modal
@@ -61,7 +61,7 @@ const CreateEditCard = ({
         </div>
       )}
 
-      {!text && (
+      {text && (
         <div className={styles.card}>
           {isDeleting && (
             <Modal
