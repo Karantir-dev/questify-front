@@ -3,7 +3,7 @@ import axios from 'axios'
 import authActions from './auth-actions'
 
 
-axios.defaults.baseURL = 'https://goit23-project.herokuapp.com';
+axios.defaults.baseURL = 'https://goit23-project.herokuapp.com/';
 
 const token = {
   set(token) {

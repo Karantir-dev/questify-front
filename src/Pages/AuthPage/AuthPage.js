@@ -1,5 +1,6 @@
 import styles from '../AuthPage/AuthPage.module.css'
 import AuthForm from '../../Components/AuthForm'
+import LoginForm from '../../Components/LoginForm'
 
 export default function Landing() {
 
@@ -16,8 +17,11 @@ export default function Landing() {
             and exciting challenges.
           </p>
           <p className={styles.descriptionRegister}>Write your email to sign up or log in</p>
-                    
-          <AuthForm />              
+
+          
+             <AuthForm />
+             <LoginForm />
+          
         </div>
       </div>
     </div>

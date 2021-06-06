@@ -3,12 +3,10 @@ import { useDispatch } from "react-redux"
 import authOperations from '../../Redux/auth/auth-operations'
 import authActions from '../../Redux/auth/auth-actions'
 import 'react-toastify/dist/ReactToastify.css'
-import styles from './AuthForm.module.css'
 import IconButton from '../IconButton/IconButton'
+import styles from '../AuthForm/AuthForm.module.css'
 
-export default function AuthForm() {
-
-  const [name, setName] = useState('');
+export default function LoginRouter () {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,9 +16,6 @@ export default function AuthForm() {
     const { name, value } = event.target;
 
       switch (name) {
-        case 'name':
-          setName(value);
-          break;
 
         case 'email':
           setEmail(value);
@@ -38,42 +33,29 @@ export default function AuthForm() {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (name.length < 2) {
-      dispatch(authActions.registerError('Enter a name at least 2 characters!'))
-    } else if (email === '') {
-        dispatch(authActions.registerError('Enter email!'))
+      if (email === '') {
+          dispatch(authActions.logInError('Enter email!'))
       } else if (password.length < 8) {
-          dispatch(
-            authActions.registerError('Enter a password at least 8 characters!'),
-          )
+            dispatch(authActions.logInError('Enter a password at least 8 characters!'))
         } else {
-            dispatch(authOperations.register({ name, email, password }))
+            dispatch(authOperations.login({ email, password }))
           }
-         
+
       clear();
   }
-    
+
   const clear = () => {
-    setName('');
     setEmail('');
     setPassword('');
-  }
+  };
 
   return (
-    <div className={styles.registerPage}>
+    <div className={styles.loginPage}>
       <form className={styles.form}
             onSubmit={handleSubmit}
             autoComplete="off"  
       >
-        <input className={styles.inputForm}
-               autoComplete="off"
-               type="text"
-               name="name"
-               placeholder="Name"
-               value={name}
-               onChange={handleChange}
-        />
-
+        
         <input className={styles.inputForm}
                autoComplete="off"
                type="email"
@@ -81,8 +63,8 @@ export default function AuthForm() {
                placeholder="Email"
                value={email}
                onChange={handleChange}
-        />
-        
+        /> 
+
         <input className={styles.inputForm}
                type="password"
                name="password"
@@ -90,11 +72,11 @@ export default function AuthForm() {
                value={password}
                onChange={handleChange}
         />
-
-        <IconButton disabled={!name || !email || password < 1}
-          className={styles.buttonReg} type="submit">
-           go!
-         </IconButton>
+        
+        <IconButton disabled={!email || password < 1}
+                    className={styles.buttonReg} type="submit"
+        >go!
+        </IconButton>
       </form>
     </div>
 )}
