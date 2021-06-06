@@ -1,12 +1,22 @@
 import { createReducer } from '@reduxjs/toolkit'
+import { combineReducers } from 'redux'
 import cardsActions from './cardsActions'
 
-const activeCards = createReducer([], {
+const allCards = createReducer([], {
   [cardsActions.fetchActiveCardsSuccess]: (_, { payload }) => payload,
-})
-
-const doneCards = createReducer([], {
   [cardsActions.fetchDoneCardsSuccess]: (_, { payload }) => payload,
+  [cardsActions.addCardSuccess]: (state, { payload }) => [...state, payload],
+  [cardsActions.editCardSuccess]: (state, { payload }) => {
+    return state.map(card => {
+      if (card.id === payload.id) {
+        const updatedCard = Object.assign({}, card, payload)
+        return updatedCard
+      }
+      return card
+    })
+  },
+  [cardsActions.deleteCardSuccess]: (state, { payload }) =>
+    state.filter(({ id }) => id !== payload),
 })
 
 const isLoading = createReducer(false, {
@@ -16,7 +26,20 @@ const isLoading = createReducer(false, {
   [cardsActions.fetchDoneCardsRequest]: () => true,
   [cardsActions.fetchDoneCardsSuccess]: () => false,
   [cardsActions.fetchDoneCardsError]: () => false,
+  [cardsActions.addCardRequest]: () => true,
+  [cardsActions.addCardSuccess]: () => false,
+  [cardsActions.addCardError]: () => false,
+  [cardsActions.deleteCardRequest]: () => true,
+  [cardsActions.deleteCardSuccess]: () => false,
+  [cardsActions.deleteCardError]: () => false,
+  [cardsActions.editCardRequest]: () => true,
+  [cardsActions.editCardSuccess]: () => false,
+  [cardsActions.editCardError]: () => false,
 })
 
-const cardsReducers = { activeCards, doneCards, isLoading }
-export default cardsReducers
+const cardsReducers = {
+  allCards,
+  isLoading,
+}
+
+export default combineReducers(cardsReducers)
