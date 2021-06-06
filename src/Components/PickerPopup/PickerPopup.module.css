@@ -21,7 +21,7 @@
   font-size: 14px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: var(--text-scondary-color);
+  color: var(--text-secondary-color);
 
   background-color: var(--white);
   box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.05),
@@ -121,7 +121,7 @@
 }
 
 .category_radio:checked + .category_text {
-  color: var(--text-scondary-color);
+  color: var(--text-secondary-color);
 }
 
 @media screen and (max-width: 320px) {
