@@ -1,0 +1,152 @@
+/*Difficulty styles*/
+
+.difficulty_text::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: none;
+  border-radius: 50%;
+  margin-right: 7px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.easy::before {
+  background-color: var(--primary-color);
+}
+.normal::before {
+  background-color: #24d40c;
+}
+.hard::before {
+  background-color: #db0837;
+}
+
+.difficulty_button {
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+  justify-content: center;
+  max-width: 110px;
+  height: 25px;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 8px 8px 8px 19px;
+  cursor: pointer;
+}
+.difficulty_buttonLabel {
+  margin-right: 7px;
+}
+
+/*Category styles*/
+
+.category_button {
+  composes: difficulty_button;
+  font-size: 11px;
+  line-height: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  width: 88px;
+
+  padding: 8px 0 8px 19px;
+  border-radius: 0px 15px 15px 0px;
+}
+.category_buttonLabel {
+  margin-right: 3px;
+}
+
+.stuff {
+  background-color: var(--text-scondary-color);
+}
+.family {
+  background-color: var(--family-color);
+}
+.health {
+  background-color: var(--health-color);
+}
+.learning {
+  background-color: var(--learning-color);
+}
+.leisure {
+  background-color: var(--leisure-color);
+}
+.work {
+  background-color: var(--work-color);
+}
+
+/*Common styles*/
+.category_radio,
+.difficulty_radio {
+  display: none;
+  /* position: absolute;
+  z-index: -1;
+  opacity: 0; */
+}
+
+/* .category_label:not(:last-child),
+.difficulty_label:not(:last-child) {
+  margin-bottom: 5px;
+} */
+
+/* .difficulty_container {
+  position: absolute;
+  top: -13%;
+  left: -2%;
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+  width: 90px;
+  height: 80px;
+  padding: 14px 12px;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: var(--text-scondary-color);
+
+  background: var(--white);
+  box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.05),
+    3px 4px 4px rgba(21, 57, 90, 0.05);
+  border-radius: 10px;
+} */
+/* .difficulty_radio {
+  display: none;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+} */
+
+/* .difficulty_buttonLabel {
+  margin-right: 7px;
+} */
+
+@media screen and (max-width: 320px) {
+  .category_buttonLabel {
+    margin-right: 7px;
+  }
+  .category_button {
+    font-size: 14px;
+    line-height: 14px;
+    width: 120px;
+    height: 35px;
+  }
+  .difficulty_button {
+    font-size: 16px;
+    line-height: 16px;
+    height: 35px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .category_button {
+    font-size: 11px;
+    line-height: 11px;
+    width: 88px;
+    height: 25px;
+  }
+  .difficulty_button {
+    font-size: 14px;
+    line-height: 14px;
+    height: 25px;
+  }
+}

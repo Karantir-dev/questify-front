@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import DifficultyPicker from '../../Components/DifficultyPicker/DifficultyPicker';
 import CardList from '../../Components/CardList/CardList';
 import Header from '../../Components/Header/Header';
 import Icon from '../../Components/Icon';
@@ -39,7 +38,6 @@ export default function Main() {
       {/* <Header /> */}
       <section className={s.section}>
         <h2 className={s.sectionTitle}>TODAY</h2>
-        <DifficultyPicker />
         {/* <CardList cards={activeTodayCards}/> */}
       </section>
 
