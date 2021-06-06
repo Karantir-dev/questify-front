@@ -28,3 +28,31 @@ input::placeholder {
     width: 100%;
   }
 }
+
+  /*-- buttonReg --*/
+
+.buttonReg {
+  position: absolute;
+  top: 140px;
+  left: 145px;
+}
+
+@media screen and (max-width: 767px) {
+  .buttonReg {
+    bottom: -75px;
+    right: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .buttonReg {
+    bottom: -90px;
+    right: 180px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .buttonReg {
+    right: 375px;
+  }  
+}

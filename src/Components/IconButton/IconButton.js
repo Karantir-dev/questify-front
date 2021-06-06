@@ -2,25 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import s from './IconButton.module.css'
 
-const IconButton = ({ children, onClick, name, email, password, className, ...allProps }) => {
+const IconButton = ({ children, name, email, password, className, ...allProps }) => {
+  const classList = [className, s.IconButton].join(' ');
   return (
     <button disabled={!name && !email || password < 1}
-            type="submit"
-            onClick={onClick}
-            className={s.IconButtonReg}
-            >
+            
+            /*onClick={onClick} */
+            className={classList}
+            {...allProps}>
       {children}
     </button>
   )
 }
 
 IconButton.defaultProps = {
-  onClick: () => null,
+  /* onClick: () => null, */
   children: null,
 }
 
 IconButton.propTypes = {
-  onClick: PropTypes.func,
+  /* onClick: PropTypes.func, */
   children: PropTypes.node,
   'aria-label': PropTypes.string,
 }

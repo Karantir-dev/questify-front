@@ -57,7 +57,7 @@ export default function Main() {
                 size={12}
               />
             </button>
-            <IconButton className={s.IconButtonRegDone}>
+            <IconButton className={s.buttonAddCard}>
               +
             </IconButton>
           </div>

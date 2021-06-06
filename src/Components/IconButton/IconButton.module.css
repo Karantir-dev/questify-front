@@ -1,5 +1,4 @@
-.IconButtonReg {
-  position: absolute;
+.IconButton {
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -19,30 +18,10 @@
   cursor: pointer;
 }
 
-.IconButtonReg:disabled {
+.IconButton:disabled {
   background-color: var(--btn-main-color);
 }
 
-.IconButtonReg:hover {
+.IconButton:hover {
   background-color: var(--btn-hover);
-}
-
-@media screen and (max-width: 767px) {
-  .IconButtonReg {
-    bottom: -75px;
-    right: 40%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .IconButtonReg {
-    bottom: -90px;
-    right: 180px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .IconButtonReg {
-    right: 375px;
-  }  
 }

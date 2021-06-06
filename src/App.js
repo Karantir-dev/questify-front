@@ -18,11 +18,11 @@ export default function App() {
   
   return (
     <div>
-      {/* <ControlBar /> */}
+      <ControlBar />
       <Suspense fallback={<h1>Загружаем...</h1>}>
         <Switch>
-          <Route exact path="/" component={MainPage} />
-          <Route path="/auth" component={AuthPage} />
+          {/* <Route exact path="/" component={MainPage} />
+          <Route path="/auth" component={AuthPage} /> */}
         </Switch>
       </Suspense>
       <ToastContainer autoClose={5000} position="top-right" type="default"/>

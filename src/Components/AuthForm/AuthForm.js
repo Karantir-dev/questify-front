@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react"
 import { useDispatch } from "react-redux"
 import authOperations from '../../Redux/auth/auth-operations'
-import { toast } from 'react-toastify'
+import authActions from '../../Redux/auth/auth-actions'
 import 'react-toastify/dist/ReactToastify.css'
 import styles from './AuthForm.module.css'
 import IconButton from '../IconButton/IconButton'
@@ -44,15 +44,15 @@ export default function AuthForm() {
     event.preventDefault();
 
     if (name.length < 2) {
-      toast.error('Enter a name at least 2 characters!')
+      dispatch(authActions.registerError('Enter a name at least 2 characters!'))
     } 
     
     if (email === '') {
-      toast.error('Enter email!')
+      dispatch(authActions.registerError('Enter email!'))
     }
     
     if (password.length < 8) {
-      toast.error('Enter a password at least 8 characters!')
+      dispatch(authActions.registerError('Enter a password at least 8 characters!'))
     }
          
       onRegister(name, email, password);
@@ -97,7 +97,7 @@ export default function AuthForm() {
                onChange={handleChange}
         />
 
-         <IconButton className={styles.btnReg}>
+         <IconButton className={styles.buttonReg} type="submit">
            go!
          </IconButton>
         {/* <button
