@@ -73,3 +73,9 @@
   );
   background-size: 20px 100%;
 }
+
+.buttonAddCard {
+  position: absolute;
+  right: 40px;
+  bottom: 100%;
+}

@@ -16,6 +16,7 @@ const AuthPage = lazy(() =>
   import('./Pages/AuthPage/AuthPage' /* webpackChunkName: "AuthPage"*/),
 )
 
+
 export default function App() {
   const dispatch = useDispatch()
 
