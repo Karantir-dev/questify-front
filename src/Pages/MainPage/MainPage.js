@@ -14,10 +14,9 @@ import s from './MainPage.module.css'
 
 export default function Main() {
 
-  const [buttonClicked, setButtonClicked] = useState(false)
+  const [showEditForm, setShowEditForm] = useState(false)
   
   const [doneIsShown, setDoneIsShown] = useState(false)
-
 
   const dispatch = useDispatch()
 
@@ -36,10 +35,6 @@ export default function Main() {
       dispatch(cardsOperations.fetchDoneCards())
     }
   }
-  
-  function handleAddNewCard() {
-    setButtonClicked(!buttonClicked)
-  }
 
   return (
     <>
@@ -48,7 +43,7 @@ export default function Main() {
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TODAY</h2>
 
-          {/* {buttonClicked && <CreateEditCard/>} */}
+          {/* {showEditForm && <CreateEditCard/>} */}
           {/* <CardList cards={activeTodayCards}/> */}
 
         </section>
@@ -74,7 +69,7 @@ export default function Main() {
 
         <div className={s.buttonAddContainer}>
         <IconButton
-            onClick={handleAddNewCard}
+            onClick={() => setShowEditForm(true)}
             aria-label="Add">
           <Icon name={'plus'} size={15}/>
         </IconButton>
