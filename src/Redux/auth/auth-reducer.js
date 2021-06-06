@@ -29,15 +29,18 @@ const isAuthenticated = createReducer(false, {
 })
 
 const isLoading = createReducer(false, {
+  [authActions.registerSuccess]: () => false,
+  [authActions.registerRequest]: () => true,
+  [authActions.registerError]: () => false,
   [authActions.logInRequest]: () => true,
   [authActions.logInSuccess]: () => false,
   [authActions.logInError]: () => false,
   [authActions.logOutRequest]: () => true,
   [authActions.logOutSuccess]: () => false,
   [authActions.logOutError]: () => false,
-  [authActions.registerRequest]: () => true,
-  [authActions.registerSuccess]: () => false,
-  [authActions.registerError]: () => false,
+  [authActions.getCurrentUserRequest]: () => true,
+  [authActions.getCurrentUserSuccess]: () => false,
+  [authActions.getCurrentUserError]: () => false,
 })
 
 export default combineReducers({

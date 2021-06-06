@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import authActions from './auth-actions'
 
-// axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'https://goit23-project.herokuapp.com';
 
 const token = {
   set(token) {
@@ -13,66 +13,66 @@ const token = {
   },
 }
 
-// const register = credentials => dispatch => {
-//   dispatch(authActions.registerRequest());
+const register = credentials => dispatch => {
+  dispatch(authActions.registerRequest());
 
-//   axios
-//     .post('users/signup', credentials)
-//     .then(response => {
-//       token.set(response.data.token);
-//       dispatch(authActions.registerSuccess(response.data));
-//     })
-//     .catch(err => {
-//       dispatch(authActions.registerError(err.message));
-//     });
-// };
+  axios
+    .post('users/signup', credentials)
+    .then(response => {
+      token.set(response.data.token);
+      dispatch(authActions.registerSuccess(response.data));
+    })
+    .catch(err => {
+      dispatch(authActions.registerError(err.message));
+    });
+};
 
-// const login = credentials => dispatch => {
-//   dispatch(authActions.logInRequest());
+const login = credentials => dispatch => {
+  dispatch(authActions.logInRequest());
 
-//   axios
-//     .post('users/login', credentials)
-//     .then(response => {
-//       token.set(response.data.token);
-//       dispatch(authActions.logInSuccess(response.data));
-//     })
-//     .catch(err => {
-//       dispatch(authActions.logInError(err.message));
-//     });
-// };
+  axios
+    .post('users/login', credentials)
+    .then(response => {
+      token.set(response.data.token);
+      dispatch(authActions.logInSuccess(response.data));
+    })
+    .catch(err => {
+      dispatch(authActions.logInError(err.message));
+    });
+};
 
-// const logout = () => dispatch => {
-//   dispatch(authActions.logOutRequest());
+const logout = () => dispatch => {
+  dispatch(authActions.logOutRequest());
 
-//   axios
-//     .post('users/logout')
-//     .then(() => {
-//       token.unset();
+  axios
+    .post('users/logout')
+    .then(() => {
+      token.unset();
 
-//       dispatch(authActions.logOutSuccess());
-//     })
-//     .catch(err => {
-//       dispatch(authActions.logOutError(err.message));
-//     });
-// };
+      dispatch(authActions.logOutSuccess());
+    })
+    .catch(err => {
+      dispatch(authActions.logOutError(err.message));
+    });
+};
 
-// const getCurrentUser = () => (dispatch, getState) => {
-//   const {
-//     auth: { token: persistedToken },
-//   } = getState();
+const getCurrentUser = () => (dispatch, getState) => {
+  const {
+    auth: { token: persistedToken },
+  } = getState();
 
-//   if (!persistedToken) {
-//     return;
-//   }
+  if (!persistedToken) {
+    return;
+  }
 
-//   token.set(persistedToken);
-//   dispatch(authActions.getCurrentUserRequest());
+  token.set(persistedToken);
+  dispatch(authActions.getCurrentUserRequest());
 
-//   axios
-//     .get('/users/current')
-//     .then(({ data }) => dispatch(authActions.getCurrentUserSuccess(data)))
-//     .catch(err => dispatch(authActions.getCurrentUserError(err.message)));
-// };
+  axios
+    .get('/users/current')
+    .then(({ data }) => dispatch(authActions.getCurrentUserSuccess(data)))
+    .catch(err => dispatch(authActions.getCurrentUserError(err.message)));
+};
 
-// const authOperations = { register, login, logout, getCurrentUser };
-// export default authOperations;
+const authOperations = { register, login, logout, getCurrentUser };
+export default authOperations;
