@@ -16,6 +16,7 @@ function CardList({ cards }) {
           text,
           isCompleted,
         }) => (
+          <li>
           <Card
             key={id}
             isChallenge={isChallenge}
@@ -24,7 +25,8 @@ function CardList({ cards }) {
             date={date}
             text={text}
             isCompleted={isCompleted}
-          />
+            />
+          </li>
         ),
       )}
     </ul>
