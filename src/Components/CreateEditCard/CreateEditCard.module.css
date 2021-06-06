@@ -7,6 +7,46 @@
     border-radius: 10px;
 }
 
+.createButtonsWrapper{
+
+}
+
+.editButtonsWrapper{
+
+}
+
+.cardInputWrapper{
+
+}
+
+.cardInput{
+    
+}
+
+.starIcon{
+
+}
+
+.trophyIcon{
+
+}
+
+.saveIcon{
+
+}
+
+.clearIcon{
+
+}
+
+.doneIcon{
+
+}
+
+.createBtn{
+
+}
+
 @media screen and (max-width: 320px) {
     .card {
         width: 290px;
