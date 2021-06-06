@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage'
 
 import cardsReducers from './cards/cardsReducers'
 import authReducer from './auth/auth-reducers'
+import notifReducer from './notifReducers'
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -28,20 +29,11 @@ const authPersistConfig = {
   whitelist: ['token'],
 }
 
-// const store = configureStore({
-//   reducer: {
-//     activeCards: cardsReducers.activeCards,
-//     doneCards: cardsReducers.doneCards,
-//     auth: persistReducer(authPersistConfig, authReducer),
-//   },
-//   middleware: middleware,
-//   devTools: process.env.NODE_ENV === 'development',
-// })
-
 const store = configureStore({
   reducer: {
     cards: cardsReducers,
     auth: persistReducer(authPersistConfig, authReducer),
+    notification: notifReducer,
   },
   middleware: middleware,
   devTools: process.env.NODE_ENV === 'development',

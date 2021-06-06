@@ -20,21 +20,21 @@ const deleteCardRequest = createAction('DELETE_CARD_REQUEST')
 const deleteCardSuccess = createAction('DELETE_CARD_SUCCESS')
 const deleteCardError = createAction('DELETE_CARD_ERROR')
 
-const toggleCompletedRequest = createAction('TOGGLE_COMPLETED_REQUEST')
-const toggleCompletedSuccess = createAction('TOGGLE_COMPLETED_SUCCESS')
-const toggleCompletedError = createAction('TOGGLE_COMPLETED_ERROR')
-
-const toggleChallengeRequest = createAction('TOGGLE_CHALLENGE_REQUEST')
-const toggleChallengeSuccess = createAction('TOGGLE_CHALLENGE_SUCCESS')
-const toggleChallengeError = createAction('TOGGLE_CHALLENGE_ERROR')
-
 const cardsActions = {
-  fetchActiveCardsRequest, fetchActiveCardsSuccess, fetchActiveCardsError,
-  fetchDoneCardsRequest, fetchDoneCardsSuccess, fetchDoneCardsError,
-  addCardRequest, addCardSuccess, addCardError,
-  deleteCardRequest, deleteCardSuccess, deleteCardError,
-  editCardRequest, editCardSuccess, editCardError,
-  toggleCompletedRequest, toggleCompletedSuccess, toggleCompletedError,
-  toggleChallengeRequest, toggleChallengeSuccess, toggleChallengeError
+  fetchActiveCardsRequest,
+  fetchActiveCardsSuccess,
+  fetchActiveCardsError,
+  fetchDoneCardsRequest,
+  fetchDoneCardsSuccess,
+  fetchDoneCardsError,
+  addCardRequest,
+  addCardSuccess,
+  addCardError,
+  deleteCardRequest,
+  deleteCardSuccess,
+  deleteCardError,
+  editCardRequest,
+  editCardSuccess,
+  editCardError,
 }
 export default cardsActions

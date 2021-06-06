@@ -1,15 +1,22 @@
 import { createReducer } from '@reduxjs/toolkit'
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux'
 import cardsActions from './cardsActions'
 
 const allCards = createReducer([], {
   [cardsActions.fetchActiveCardsSuccess]: (_, { payload }) => payload,
   [cardsActions.fetchDoneCardsSuccess]: (_, { payload }) => payload,
   [cardsActions.addCardSuccess]: (state, { payload }) => [...state, payload],
-  [cardsActions.editCardSuccess]: (state, { payload }) => [...state, payload],
-  [cardsActions.deleteCardSuccess]: (state, { payload }) => state.filter(({ id }) => id !== payload),
-  [cardsActions.toggleCompletedSuccess]: (state, { payload }) => state.map(card => (card.id === payload.id ? payload : card)),
-  [cardsActions.toggleChallengeSuccess]: (state, { payload }) => state.map(card => (card.id === payload.id ? payload : card)),
+  [cardsActions.editCardSuccess]: (state, { payload }) => {
+    return state.map(card => {
+      if (card.id === payload.id) {
+        const updatedCard = Object.assign({}, card, payload)
+        return updatedCard
+      }
+      return card
+    })
+  },
+  [cardsActions.deleteCardSuccess]: (state, { payload }) =>
+    state.filter(({ id }) => id !== payload),
 })
 
 const isLoading = createReducer(false, {
@@ -28,28 +35,11 @@ const isLoading = createReducer(false, {
   [cardsActions.editCardRequest]: () => true,
   [cardsActions.editCardSuccess]: () => false,
   [cardsActions.editCardError]: () => false,
-  [cardsActions.toggleCompletedRequest]: () => true,
-  [cardsActions.toggleCompletedSuccess]: () => false,
-  [cardsActions.toggleCompletedError]: () => false,
-  [cardsActions.toggleChallengeRequest]: () => true,
-  [cardsActions.toggleChallengeSuccess]: () => false,
-  [cardsActions.toggleChallengeError]: () => false,
 })
-
-const error = createReducer(null, {
-  [cardsActions.fetchActiveCardsError]: (_, { payload }) => payload,
-  [cardsActions.fetchDoneCardsError]: (_, { payload }) => payload,
-  [cardsActions.addCardError]: (_, { payload }) => payload,
-  [cardsActions.deleteCardError]: (_, { payload }) => payload,
-  [cardsActions.editCardError]: (_, { payload }) => payload,
-  [cardsActions.toggleCompletedError]: (_, { payload }) => payload,
-  [cardsActions.toggleChallengeError]: (_, { payload }) => payload,
-});
 
 const cardsReducers = {
   allCards,
   isLoading,
-  error
 }
 
 export default combineReducers(cardsReducers)

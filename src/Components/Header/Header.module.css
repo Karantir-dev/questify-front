@@ -1,4 +1,4 @@
-@import '../../variables.css';
+/* @import '../../variables.css'; */
 
 .Header {
   background-color: var(--header-color);
@@ -29,6 +29,19 @@
 
 .MenuName {
   display: none;
+}
+
+.Icon {
+  fill: var(--btn-logout);
+}
+
+.Icon:active {
+  fill: var(--btn-logout-click);
+}
+
+.Icon:hover,
+.Icon:focus {
+  fill: var(--user-name-color);
 }
 
 @media screen and (min-width: 768px) {

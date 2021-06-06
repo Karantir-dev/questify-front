@@ -1,8 +1,10 @@
 .IconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--btn-active-color);
   outline: none;
   border: none;
   padding: 14px 7px;
@@ -18,10 +20,7 @@
   cursor: pointer;
 }
 
-.IconButton:disabled {
-  background-color: var(--btn-main-color);
-}
-
-.IconButton:hover {
-  background-color: var(--btn-hover);
+.IconButton:hover,
+.IconButton:focus {
+  background-color: var(--primary-color);
 }
