@@ -16,29 +16,29 @@ export default function Header() {
   // dispatch(authOperations.logOut());
   //   }, [dispatch]);
 
-  return (
-    <header className={s.Header}>
-      <div className={s.Logo}>Questify</div>
-      <div className={s.MenuImgNameLogout}>
-        <img
-          className={s.MenuImg}
-          src={defaultAvatar}
-          alt="avatar"
-          width="30"
-        />
-        <span className={s.MenuName}>name's Quest Log</span>
-        {/* change name to {name==='Guest' ? nameFromEmail : name} */}
-      </div>
-      <button
-        type="button"
-        // onClick={onLogOut}
-        className={s.IconButton}
-        aria-label="Logout"
-      >
-        <Icon name={'logout'} size={22} />
-      </button>
-    </header>
-  )
+
+    return (
+        <header className={s.Header}>
+            <div className={s.Logo}>
+                Questify
+            </div>
+            <div className={s.MenuImgNameLogout}>
+                <img className={s.MenuImg} src={defaultAvatar} alt="avatar" width="30" />
+                <span className={s.MenuName}>name's Quest Log</span>
+                {/* change name to {name==='Guest' ? nameFromEmail : name} */}
+            </div>
+             <button type="button"
+                // onClick={onLogOut}
+                     className={s.IconButton}
+                     aria-label="Logout">
+                <Icon
+                    className={s.Icon}
+                    name={'logout'}
+                    size={22} />
+                </button>
+        </header>
+    )
+
 }
 
 // Header.propTypes = {

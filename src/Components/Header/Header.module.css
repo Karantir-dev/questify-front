@@ -31,6 +31,19 @@
   display: none;
 }
 
+.Icon {
+  fill: var(--btn-logout);
+}
+
+.Icon:active {
+  fill: var(--btn-logout-click);
+}
+
+.Icon:hover,
+.Icon:focus {
+  fill: var(--user-name-color);
+}
+
 @media screen and (min-width: 768px) {
   .Header {
     padding: 20px 50px;
