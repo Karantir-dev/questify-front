@@ -35,6 +35,11 @@ input::placeholder {
   position: absolute;
   top: 140px;
   left: 145px;
+  background: var(--btn-active-color);
+}
+
+.buttonReg:disabled {
+  background-color: var(--btn-main-color);
 }
 
 @media screen and (max-width: 767px) {

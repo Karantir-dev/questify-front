@@ -97,7 +97,8 @@ export default function AuthForm() {
                onChange={handleChange}
         />
 
-         <IconButton className={styles.buttonReg} type="submit">
+        <IconButton disabled={!name && !email || password < 1}
+          className={styles.buttonReg} type="submit">
            go!
          </IconButton>
         {/* <button
