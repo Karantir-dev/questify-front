@@ -8,10 +8,7 @@ import authOperations from '../../Redux/auth/auth-operations'
 
 export default function Header() {
   const dispatch = useDispatch()
-  const email = useSelector(authSelectors.getUserEmail)
   const name = useSelector(authSelectors.getUserName)
-  const emailParts = email.split('@')
-  const nameFromEmail = emailParts[0]
 
   const onLogOut = useCallback(() => {
     dispatch(authOperations.logOut())
@@ -27,9 +24,7 @@ export default function Header() {
           alt="avatar"
           width="30"
         />
-        <span className={s.MenuName}>
-          {name === 'Guest' ? nameFromEmail : name}'s Quest Log
-        </span>
+        <span className={s.MenuName}>{name}'s Quest Log</span>
       </div>
       <button
         type="button"
