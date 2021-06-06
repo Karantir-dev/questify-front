@@ -58,7 +58,7 @@
 }
 
 .stuff {
-  background-color: var(--text-scondary-color);
+  background-color: var(--text-secondary-color);
 }
 .family {
   background-color: var(--family-color);
