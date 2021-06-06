@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 // import PropTypes from 'prop-types';
 import s from './Header.module.css'
 import defaultAvatar from './codecode.jpg'
@@ -7,15 +7,15 @@ import Icon from '../../Components/Icon'
 // import authOperations from '../../Redux/auth/auth-operations'
 
 export default function Header() {
-    // const email = useSelector(authSelectors.getUserEmail);
-    // const name = useSelector(authSelectors.getUserName);
-    // const emailParts = email.split('@')
-    // const nameFromEmail = emailParts[0]
+  // const email = useSelector(authSelectors.getUserEmail);
+  // const name = useSelector(authSelectors.getUserName);
+  // const emailParts = email.split('@')
+  // const nameFromEmail = emailParts[0]
 
-    //   const onLogOut = useCallback(() => {
-    // dispatch(authOperations.logOut());
-    //   }, [dispatch]);
-    
+  //   const onLogOut = useCallback(() => {
+  // dispatch(authOperations.logOut());
+  //   }, [dispatch]);
+
 
     return (
         <header className={s.Header}>
@@ -38,8 +38,8 @@ export default function Header() {
                 </button>
         </header>
     )
-}
 
+}
 
 // Header.propTypes = {
 //     onClick: PropTypes.func,
