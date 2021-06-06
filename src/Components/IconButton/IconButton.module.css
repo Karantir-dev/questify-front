@@ -1,0 +1,26 @@
+.IconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  padding: 14px 7px;
+
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.IconButton:hover,
+.IconButton:focus {
+  background-color: var(--primary-color);
+}
