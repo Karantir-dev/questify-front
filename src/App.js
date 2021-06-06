@@ -34,7 +34,7 @@ export default function App() {
     <div>
       <Suspense fallback={<h1>Загружаем...</h1>}>
         <Switch>
-          <PublicRoute exact path="/" restricted redirectTo="/auth">
+          <PublicRoute exact path="/auth" restricted redirectTo="/">
             <AuthPage />
           </PublicRoute>
 
