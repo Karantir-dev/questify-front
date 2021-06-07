@@ -18,7 +18,7 @@ export default function TestCard({
   categorie,
   date,
   text,
-  isCompleted,
+  // isCompleted,
 }) {
   // Это нужно добавить в компонент Карточка
   const [showModal, setShowModal] = useState(false)
@@ -39,51 +39,67 @@ export default function TestCard({
     [dispatch],
   )
 
-  const onCompletedCard = () => {}
+  const [isCompleted, setIsCompleted] = useState(false)
+  const onCompletedCard = useCallback(() => {
+    setIsCompleted(prevIsCompleted => !prevIsCompleted)
+  }, [])
+  
+  const classList = isCompleted ? s.animCard : s.card
 
   return (
-    <div className={s.card}>
-      {/* Это для понимания от куда приходят id и isChallenge */}
-      {/* {cards.map(({ id, isChallenge }) => ( */}
-      {/* Тут будет разметка карточки */}
-      <div>
-        {/* Это тестовая кнопка для открытия модалки  */}
-        <button type="button" onClick={toggleModal}>
-          show modal
-        </button>
-        {/* Это тестовая кнопка для открытия completed card  */}
-        <button type="button" onClick={toggleCompleted}>
-          show completed
-        </button>
+    <div className={s.mainBox}>
+      <div className={classList}>
+        {/* Это для понимания от куда приходят id и isChallenge */}
+        {/* {cards.map(({ id, isChallenge }) => ( */}
+        {/* Тут будет разметка карточки */}
+        <div>
+          {/* Это тестовая кнопка для открытия модалки  */}
+          <button type="button" onClick={toggleModal}>
+            show modal
+          </button>
+          {/* Это тестовая кнопка для открытия completed card  */}
+          <button type="button" onClick={toggleCompleted}>
+            show completed
+          </button>
 
-        <CSSTransition
-          in={showModal}
-          unmountOnExit
-          classNames="modal"
-          timeout={250}
-        >
-          <Modal
-            isChallenge={isChallenge}
-            onClose={toggleModal}
-            onDelete={() => onDeleteCard(id)}
-          />
-        </CSSTransition>
+          <CSSTransition
+            in={showModal}
+            unmountOnExit
+            classNames="modal"
+            timeout={250}
+          >
+            <Modal
+              isChallenge={isChallenge}
+              onClose={toggleModal}
+              onDelete={() => onDeleteCard(id)}
+            />
+          </CSSTransition>
 
-        <CSSTransition
-          in={showCompleted}
-          unmountOnExit
-          classNames="modal"
-          timeout={250}
-        >
-          <CompletedCard
-            text={text}
-            isChallenge={isChallenge}
-            onCompleted={() => onCompletedCard(id)}
-            onClose={toggleCompleted}
-          />
-        </CSSTransition>
-      </div>
-      {/* ))} */}
+          <CSSTransition
+            in={showCompleted}
+            unmountOnExit
+            classNames="modal"
+            timeout={250}
+          >
+            <CompletedCard
+              text={text}
+              isChallenge={isChallenge}
+              onCompleted={() => onCompletedCard(id)}
+              onClose={toggleCompleted}
+            />
+          </CSSTransition>
+        </div>
+        {/* ))} */}
+        
+        </div>
+      <CSSTransition
+        in={isCompleted}
+        unmountOnExit
+        classNames="anim"
+        timeout={1000}
+      >
+        <div className={s.anim}></div>
+      </CSSTransition>
     </div>
   )
 }
