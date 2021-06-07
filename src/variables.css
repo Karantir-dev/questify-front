@@ -20,7 +20,9 @@
   /* --stuff-color: ?; */
 
   --white: #fff;
+  --black: #000;
   --shadow-color: rgba(21, 57, 90, 0.03);
+  --shadow-hover-color: rgba(21, 57, 90, 0.08);
   --backdrop-color: rgba(21, 57, 90, 0.3);
   --main-green: #24d40c;
   --green-hover: #439945;
@@ -28,4 +30,5 @@
   --main-red: #db0938;
   --red-hover: #c2273f;
   --red-active: #a72536;
+  --link-active: #3f93b7;
 }
