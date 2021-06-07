@@ -99,6 +99,57 @@
   color: var(--link-active);
 }
 
+.awardBox {
+  position: relative;
+  margin: 0 auto 5px;
+  width: 144px;
+  height: 124px;
+}
+
+.iconBase,
+.iconTarget,
+.iconArrow {
+  position: absolute;
+}
+
+.leftClouds,
+.rightClouds {
+  position: absolute;
+  width: 144px;
+  height: 124px;
+  z-index: 10;
+}
+
+.leftClouds {
+  left: 0;
+}
+
+.rightClouds {
+  right: 0;
+}
+
+.iconBase {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86px;
+  height: 43px;
+}
+
+.iconTarget {
+  bottom: 35px;
+  left: 35px;
+  width: 80px;
+  height: 80px;
+}
+
+.iconArrow {
+  top: 22px;
+  left: calc(50% - 3px);
+  width: 50px;
+  height: 30px;
+}
+
 @media screen and (max-width: 768px) {
   .questBox,
   .challengeBox {
@@ -128,101 +179,30 @@
     width: 12px;
     height: 12px;
   }
-}
 
-.awardBox {
-  position: relative;
-  margin: 0 auto 5px;
-  width: 144px;
-  height: 124px;
-}
+  .awardBox,
+  .leftClouds,
+  .rightClouds {
+    width: 230px;
+    height: 185px;
+  }
 
-.iconBase,
-.iconTarget,
-.iconArrow {
-  position: absolute;
-}
+  .iconBase {
+    width: 130px;
+    height: 65px;
+  }
 
-.iconCloud1,
-.iconCloud2,
-.iconCloud3,
-.iconCloud4,
-.iconCloud5,
-.iconCloud6,
-.iconCloud7,
-.iconCloud8,
-.iconCloud9 {
-  position: absolute;
-  width: 25px;
-  height: 10px;
-}
+  .iconTarget {
+    bottom: 50px;
+    left: 60px;
+    width: 120px;
+    height: 120px;
+  }
 
-.iconCloud1 {
-  top: 0;
-  left: 30px;
-}
-
-.iconCloud2 {
-  top: 30px;
-  left: 0px;
-}
-
-.iconCloud3 {
-  top: 65px;
-  left: 10px;
-}
-
-.iconCloud4 {
-  top: 100px;
-  left: 0;
-}
-
-.iconCloud5 {
-  top: 90px;
-  right: -10px;
-}
-
-.iconCloud6 {
-  top: 50px;
-  right: 0;
-}
-
-.iconCloud7 {
-  top: 5px;
-  right: 10px;
-}
-
-.iconCloud8 {
-  top: 90px;
-  left: 40px;
-  z-index: 10;
-}
-
-.iconCloud9 {
-  top: 103px;
-  right: 40px;
-  z-index: 10;
-}
-
-.iconBase {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 86px;
-  height: 43px;
-}
-
-.iconTarget {
-  bottom: 35px;
-  left: calc(50% + 3px);
-  transform: translateX(-50%);
-  width: 80px;
-  height: 80px;
-}
-
-.iconArrow {
-  top: 22px;
-  left: calc(50% - 3px);
-  width: 50px;
-  height: 30px;
+  .iconArrow {
+    top: 34px;
+    left: calc(50% - 3px);
+    width: 75px;
+    height: 45px;
+  }
 }
