@@ -5,7 +5,7 @@ const getActiveTodayCards = state =>
 
 const getActiveTomorrowCards = state =>
   state.cards.allCards.filter(({ isCompleted, deadline }) => {
-    return !isCompleted && new Date().toLocaleDateString() === deadline
+    return !isCompleted && new Date().toLocaleDateString() !== deadline
   })
 
 const getDoneCards = state =>

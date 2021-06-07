@@ -1,0 +1,8 @@
+.award-appear {
+  transform: scale(0.5);
+}
+
+.award-appear-active {
+  transform: scale(1);
+  transition: transform 250ms linear;
+}
