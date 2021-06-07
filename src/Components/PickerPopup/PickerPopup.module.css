@@ -14,12 +14,12 @@
   flex-direction: column;
   position: absolute;
   top: -13%;
-  left: -2%;
+  left: 0;
   width: 90px;
   height: 80px;
-  padding: 14px 12px;
-  font-size: 14px;
-  line-height: 14px;
+  padding: 12px;
+  font-size: 15px;
+  line-height: 15px;
   letter-spacing: 0.02em;
   color: var(--text-secondary-color);
 
@@ -80,7 +80,7 @@
   background-color: var(--primary-color);
 }
 .normal::before {
-  background-color: #24d40c;
+  background-color: var(--main-green);
 }
 .hard::before {
   background-color: #db0837;
@@ -88,17 +88,20 @@
 
 /*Category styles*/
 .category_container {
-  composes: difficulty_container;
+  position: absolute;
+  top: 55%;
+  left: 0;
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
   color: var(--text-main-color);
-  font-size: 11px;
-  line-height: 11px;
+  font-size: 15px;
+  line-height: 15px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  top: 50%;
-  left: -2%;
-  width: 90px;
-  height: 110px;
-  padding: 10px 12px;
+  width: 100px;
+  height: 130px;
+  padding: 9px 11px;
 }
 
 .category_radio {
@@ -124,31 +127,17 @@
   color: var(--text-secondary-color);
 }
 
-@media screen and (max-width: 320px) {
-  .category_container {
-    font-size: 15px;
-    line-height: 15px;
-    top: 55%;
-    left: 0;
-    width: 100px;
-    height: 130px;
-    padding: 6px 12px;
-  }
-
-  .difficulty_container {
-    padding: 12px;
-    font-size: 15px;
-    line-height: 15px;
-    left: 0;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .category_container {
-    left: 0;
-    top: 55%;
+    font-size: 11px;
+    line-height: 11px;
+    width: 90px;
+    height: 110px;
   }
   .difficulty_container {
-    left: 0;
+    left: -2%;
+    padding: 14px 12px;
+    font-size: 14px;
+    line-height: 14px;
   }
 }
