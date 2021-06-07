@@ -8,7 +8,7 @@ import cardsOperations from '../../Redux/cards/cardsOperations'
 
 const TITLES = {
   EDIT_CHALLENGE: 'EDIT CHALLENGE',
-  CREATE_CHALLENGE: 'CHALLENGE',
+  CREATE_CHALLENGE: 'CREATE NEW CHALLENGE',
   EDIT_QUEST: 'EDIT QUEST',
   CREATE_QUEST: 'CREATE NEW QUEST',
 }
@@ -87,7 +87,7 @@ const CreateEditCard = ({
 
   return (
     <>
-      <div className={styles.card}>
+      <div className={isChallenge ? styles.cardChallenge : styles.card}>
         {isCompleted && 'congratulations'}
         {isDeleting && (
           <Modal
@@ -99,21 +99,21 @@ const CreateEditCard = ({
         <button type="button" onClick={handleCardTypeToggle}>
           {isChallenge ? (
             <Icon
-              className={styles.starIcon}
-              name="Star"
-              color="var(--primary-color)"
-              size={15}
-            />
-          ) : (
-            <Icon
               className={styles.trophyIcon}
               name="trophy"
               color="var(--primary-color)"
               size={14}
             />
+          ) : (
+            <Icon
+              className={styles.starIcon}
+              name="Star"
+              color="var(--primary-color)"
+              size={15}
+            />
           )}
         </button>
-        <h3>
+        <h3 className={styles.cardTitle}>
           {isChallenge
             ? textProp
               ? TITLES.EDIT_CHALLENGE
@@ -132,51 +132,60 @@ const CreateEditCard = ({
           />
         </div>
         {textProp ? (
-          <div className={styles.editButtonsWrapper}>
-            <button type="button" onClick={handleEditCard}>
-              <Icon
-                className={styles.saveIcon}
-                name="save"
-                color="var(--primary-color)"
-                size={10}
-              />
-            </button>
-
-            <button type="button" onClick={onDeleteBtnClick}>
-              <Icon
-                className={styles.clearIcon}
-                name="clear"
-                color="#DB0837"
-                size={10}
-              />
-            </button>
-            <button type="button" onClick={handleCardCompletedStatus}>
-              <Icon
-                className={styles.doneIcon}
-                name="done"
-                color="var(--main-green)"
-                size={14}
-              />
-            </button>
-          </div>
+          <ul className={styles.buttonsList}>
+            <li>
+              <button type="button" onClick={handleEditCard}>
+                <Icon
+                  className={styles.saveIcon}
+                  name="save"
+                  color="var(--primary-color)"
+                  size={10}
+                />
+              </button>
+            </li>
+            <li>
+              <button type="button" onClick={onDeleteBtnClick}>
+                <Icon
+                  className={styles.clearIcon}
+                  name="clear"
+                  color="#DB0837"
+                  size={10}
+                />
+              </button>
+            </li>
+            <li>
+              <button type="button" onClick={handleCardCompletedStatus}>
+                <Icon
+                  className={styles.doneIcon}
+                  name="done"
+                  color="var(--main-green)"
+                  size={14}
+                />
+              </button>
+            </li>
+          </ul>
         ) : (
-          <div className={styles.createButtonsWrapper}>
-            <button type="button" onClick={onDeleteBtnClick}>
-              <Icon
-                className={styles.clearIcon}
-                name="clear"
-                color="#DB0837"
-                size={10}
-              />
-            </button>
-            <button
-              className={styles.createBtn}
-              type="button"
-              onClick={handleCreateCard}
-            >
-              <span>CREATE</span>
-            </button>
-          </div>
+          <ul className={styles.buttonsList}>
+            <li>
+              <button type="button" onClick={onDeleteBtnClick}>
+                <Icon
+                  className={styles.clearIcon}
+                  name="clear"
+                  color="#DB0837"
+                  size={10}
+                />
+              </button>
+            </li>
+            <li>
+              <button
+                className={styles.createBtn}
+                type="button"
+                onClick={handleCreateCard}
+              >
+                <span>CREATE</span>
+              </button>
+            </li>
+          </ul>
         )}
       </div>
     </>
