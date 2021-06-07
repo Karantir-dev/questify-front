@@ -25,6 +25,15 @@
   height: 30px;
   border-radius: 150px;
   margin-right: 10px;
+  background-color: var(--btn-logout);
+  line-height: 30px;
+  text-align: center;
+}
+
+.avatarLeter {
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 900;
 }
 
 .MenuName {
