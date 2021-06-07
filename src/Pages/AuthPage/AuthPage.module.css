@@ -28,12 +28,30 @@
     letter-spacing: 0.02em;
     color: var(--text-secondary-color);
 }
+
+  /*-- switchButton --*/
+
+.switchButton {
+  position: absolute;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 15px;
+  outline: none;
+  color: var(--white);
+  background-color: var(--btn-main-color);
+}
+
+.switchButton:hover,
+.switchButton:focus {
+  background-color: var(--primary-color);
+}
     
   /*-- @media (max-width: 767px) --*/
 
 @media screen and (max-width: 767px) {
-  .containerQuest {
-    padding-bottom: 250px;
+  .containerLanding {
     background: url('../../images/landing\(mobile\)1x.webp') no-repeat;
     background-size: 320px, auto;
     background-position: bottom 0 left 0;
@@ -55,7 +73,15 @@
     font-size: 14px;
     line-height: 3.2;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+  }
+
+  .switchButton {
+    top: 300px; 
+    left: 85px;
+    font-size: 12px;
+    line-height: 0.5;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -70,13 +96,13 @@
 @media screen and (min-width: 768px) {
   .containerLanding {
     background: url('../../images/landing-up(tablet)1x.webp') no-repeat;
-    background-size: 345px, auto;
+    background-size: 335px, auto;
     background-position: top 0 right 0;
   }
 
   .containerQuest {
     background: url('../../images/landing-down(tablet)1x.webp') no-repeat;
-    background-size: 820px, auto;
+    background-size: 790px, auto;
     background-position: bottom 0 right 0;
   }
   
@@ -100,7 +126,15 @@
   .descriptionRegister {
     font-size: 18px;
     line-height: 2.5;
-    margin: 25px 0 30px 0;
+    margin: 25px 0 50px 0;
+  }
+
+  .switchButton {
+    top: 550px; 
+    left: 70px;
+    font-size: 14px;
+    line-height: 0.6;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -118,13 +152,13 @@
 @media screen and (min-width: 1280px) {
   .containerLanding {
     background: url('../../images/landing-up(desk)1x.webp') no-repeat;
-    background-size: 460px, auto;
+    background-size: 439px, auto;
     background-position: top 0 right 0;
   }
 
   .containerQuest {
     background: url('../../images/landing-down(desk)1x.webp') no-repeat;
-    background-size: 1075px, auto;
+    background-size: 1000px, auto;
     background-position: bottom 0 right 0;
   }
 
@@ -149,6 +183,15 @@
     font-size: 24px;
     line-height: 1.9;
     margin: 35px 0 23px 0;
+  }
+
+  .switchButton {
+    position: absolute;
+    top: 466px; 
+    left: 630px;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.1em;
   }
 }
 

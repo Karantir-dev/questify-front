@@ -42,8 +42,9 @@ input::placeholder {
 
 @media screen and (max-width: 767px) {
   .buttonReg {
-    bottom: -75px;
-    right: 40%;
+    margin-left: 120px;
+    margin-top: 20px;
+    margin-bottom: 200px;
   }
 }
 

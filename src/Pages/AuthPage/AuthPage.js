@@ -1,9 +1,25 @@
 import styles from '../AuthPage/AuthPage.module.css'
-import AuthNav from '../../Components/AuthNav/AuthNav'
 import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
+import { useState } from "react"
 
 export default function Landing() {
+
+  const [showSignup, setShowSignup] = useState(true)
+
+  const loginHandler = event => {
+    event.preventDefault()
+    console.log("login handler")
+  };
+
+  const signupHandler = event => {
+    event.preventDefault();
+    console.log("signup handler")
+  };
+
+  const switchButtonHandler = () => {
+    setShowSignup(!showSignup)
+  };
 
   return (
     <div className={styles.containerLanding}>
@@ -19,9 +35,12 @@ export default function Landing() {
           <p className={styles.descriptionRegister}>
             Write your email to sign up or log in
           </p>
-          <AuthNav />
-          <AuthForm />
-          {/* <LoginForm /> */}
+           
+          {showSignup ? (<AuthForm onSubmit={signupHandler}/>) : (<LoginForm onSubmit={loginHandler}/>)}
+      
+          <button className={styles.switchButton} onClick={switchButtonHandler}>
+            {showSignup ? "SWITCH TO LOGIN" : "SWITCH TO SIGNUP"}
+          </button>
         </div>
       </div>
     </div>
