@@ -23,7 +23,7 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
         <p onClick={onClose} className={s.link}><span className={s.linkText}>{text}</span></p>
       </div>
 
-      <CSSTransition
+      {/* <CSSTransition
         in={true}
         appear={true}
         timeout={250}
@@ -33,8 +33,83 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
         <svg className={s.image}>
           <use xlinkHref={`${Icons}#icon-${name}`} />
         </svg>
-      </CSSTransition>
-            
+      </CSSTransition> */}
+      <div className={s.awardBox}>
+        <CSSTransition
+          in={true}
+          appear={true}
+          timeout={1250}
+          classNames="leftClouds"
+          unmountOnExit
+        >
+          <div>
+            <svg className={s.iconCloud1}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+            <svg className={s.iconCloud2}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+            <svg className={s.iconCloud3}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+            <svg className={s.iconCloud4}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+            <svg className={s.iconCloud8}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+          </div>
+        </CSSTransition>
+        <CSSTransition
+          in={true}
+          appear={true}
+          timeout={1250}
+          classNames="rightClouds"
+          unmountOnExit
+        >
+          <div>
+            <svg className={s.iconCloud5}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+            <svg className={s.iconCloud6}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+            <svg className={s.iconCloud7}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+            <svg className={s.iconCloud9}>
+              <use xlinkHref={`${Icons}#icon-cloud`} />
+            </svg>
+          </div>
+        </CSSTransition>
+        <svg className={s.iconBase}>
+          <use xlinkHref={`${Icons}#icon-base`} />
+        </svg>
+        <CSSTransition
+          in={true}
+          appear={true}
+          timeout={750}
+          classNames="target"
+          unmountOnExit
+        >
+          <svg className={s.iconTarget}>
+            <use xlinkHref={`${Icons}#icon-target`} />
+          </svg>
+        </CSSTransition>
+        
+        <CSSTransition
+          in={true}
+          appear={true}
+          timeout={2000}
+          classNames="arrow"
+          unmountOnExit
+        >
+          <svg className={s.iconArrow}>
+            <use xlinkHref={`${Icons}#icon-arrow`} />
+          </svg>
+        </CSSTransition>
+        
+      </div>    
       <button onClick={handleClick} className={s.button}>
         <span>Continue</span>
         <Icon className={s.arrow} name={'arrow-right'} size={7} />
