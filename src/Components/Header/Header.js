@@ -17,13 +17,12 @@ export default function Header() {
     <header className={s.Header}>
       <div className={s.Logo}>Questify</div>
       <div className={s.MenuImgNameLogout}>
-        {/* <img
-          className={s.MenuImg}
-          src={defaultAvatar}
-          alt="avatar"
-          width="30"
-        /> */}
-        <span className={s.MenuName}>{name}'s Quest Log</span>
+        <div className={s.MenuImg}>
+          <span className={s.avatarLeter}>
+            {name ? name.substr(0, 1).toUpperCase() : 'N'}
+          </span>
+        </div>
+        <span className={s.MenuName}>{name ? name : 'Name'}'s Quest Log</span>
 
       </div>
       <button
