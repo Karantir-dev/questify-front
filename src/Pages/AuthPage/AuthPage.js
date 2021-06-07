@@ -4,7 +4,6 @@ import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
 
 export default function Landing() {
-
   return (
     <div className={styles.containerLanding}>
       <div className={styles.containerQuest}>
