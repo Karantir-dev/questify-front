@@ -16,15 +16,16 @@ function CardList({ cards }) {
           text,
           isCompleted,
         }) => (
+          <li key={id}>
           <Card
-            key={id}
             isChallenge={isChallenge}
             difficulty={difficulty}
             categorie={categorie}
             date={date}
             text={text}
             isCompleted={isCompleted}
-          />
+            />
+          </li>
         ),
       )}
     </ul>

@@ -1,0 +1,56 @@
+.card {
+    position: relative;
+    margin: 25px 28px;
+    width: 205px;
+    height: 199px;
+    background-color: #F2F3F7;
+    border-radius: 10px;
+}
+
+.createButtonsWrapper{
+
+}
+
+.editButtonsWrapper{
+
+}
+
+.cardInputWrapper{
+
+}
+
+.cardInput{
+    
+}
+
+.starIcon{
+
+}
+
+.trophyIcon{
+
+}
+
+.saveIcon{
+
+}
+
+.clearIcon{
+
+}
+
+.doneIcon{
+
+}
+
+.createBtn{
+
+}
+
+@media screen and (max-width: 320px) {
+    .card {
+        width: 290px;
+        height: 260px;
+        margin: 20px auto;
+    }
+}

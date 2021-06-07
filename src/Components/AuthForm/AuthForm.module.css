@@ -1,0 +1,61 @@
+  /*-- form --*/
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+  /*-- inputForm --*/
+
+.inputForm {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  width: 196px;
+}
+
+.inputForm + .inputForm {
+  margin-top: 20px;
+}
+
+input::placeholder {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 767px) {
+  .inputForm {
+    width: 100%;
+  }
+}
+
+  /*-- buttonReg --*/
+
+.buttonReg {
+  background: var(--btn-active-color);
+  margin-left: 145px;
+  margin-top: 20px;
+}
+
+.buttonReg:disabled {
+  background-color: var(--btn-main-color);
+}
+
+@media screen and (max-width: 767px) {
+  .buttonReg {
+    bottom: -75px;
+    right: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .buttonReg {
+    bottom: -90px;
+    right: 180px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .buttonReg {
+    right: 375px;
+  }  
+}
