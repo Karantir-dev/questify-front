@@ -1,7 +1,6 @@
   /*-- form --*/
 
 .form {
-  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -32,10 +31,9 @@ input::placeholder {
   /*-- buttonReg --*/
 
 .buttonReg {
-  position: absolute;
-  top: 140px;
-  left: 145px;
   background: var(--btn-active-color);
+  margin-left: 145px;
+  margin-top: 20px;
 }
 
 .buttonReg:disabled {

@@ -23,6 +23,7 @@ export default function Header() {
           </span>
         </div>
         <span className={s.MenuName}>{name ? name : 'Name'}'s Quest Log</span>
+
       </div>
       <button
         type="button"
