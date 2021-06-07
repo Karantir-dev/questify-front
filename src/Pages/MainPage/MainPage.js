@@ -70,7 +70,7 @@ export default function Main() {
         </section>
 
         <div className={s.buttonAddContainer}>
-        <IconButton
+        <IconButton className={s.buttonAddCard}
             onClick={() => setShowEditForm(true)}
             aria-label="Add">
           <Icon name={'plus'} size={15}/>
