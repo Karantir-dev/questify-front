@@ -6,6 +6,13 @@ import Modal from '../Modal/Modal'
 import Icon from '../Icon'
 import cardsOperations from '../../Redux/cards/cardsOperations'
 
+const TITLES = {
+  EDIT_CHALLENGE: 'EDIT CHALLENGE',
+  CREATE_CHALLENGE: 'CHALLENGE',
+  EDIT_QUEST: 'EDIT QUEST',
+  CREATE_QUEST: 'CREATE NEW QUEST',
+}
+
 const CreateEditCard = ({
   isChallengeProp = false,
   isCompletedProp = false,
@@ -75,7 +82,7 @@ const CreateEditCard = ({
           deadline,
         }),
       ),
-    [dispatch, cardId, { text, isChallenge, category, difficulty, deadline }],
+    [dispatch, cardId, text, isChallenge, category, difficulty, deadline],
   )
 
   return (
@@ -93,20 +100,28 @@ const CreateEditCard = ({
           {isChallenge ? (
             <Icon
               className={styles.starIcon}
-              name="star"
+              name="Star"
               color="var(--primary-color)"
-              size="15px"
+              size={15}
             />
           ) : (
             <Icon
               className={styles.trophyIcon}
               name="trophy"
               color="var(--primary-color)"
-              size="14px"
+              size={14}
             />
           )}
         </button>
-        <h3>{text ? 'EDIT QUEST' : 'CREATE NEW QUEST'}</h3>
+        <h3>
+          {isChallenge
+            ? textProp
+              ? TITLES.EDIT_CHALLENGE
+              : TITLES.CREATE_CHALLENGE
+            : textProp
+            ? TITLES.EDIT_QUEST
+            : TITLES.CREATE_QUEST}
+        </h3>
         <div className={styles.cardInputWrapper}>
           <input
             className={styles.cardInput}
@@ -123,7 +138,7 @@ const CreateEditCard = ({
                 className={styles.saveIcon}
                 name="save"
                 color="var(--primary-color)"
-                size="10px"
+                size={10}
               />
             </button>
 
@@ -132,7 +147,7 @@ const CreateEditCard = ({
                 className={styles.clearIcon}
                 name="clear"
                 color="#DB0837"
-                size="10px"
+                size={10}
               />
             </button>
             <button type="button" onClick={handleCardCompletedStatus}>
@@ -140,7 +155,7 @@ const CreateEditCard = ({
                 className={styles.doneIcon}
                 name="done"
                 color="var(--main-green)"
-                size="14px"
+                size={14}
               />
             </button>
           </div>
@@ -151,7 +166,7 @@ const CreateEditCard = ({
                 className={styles.clearIcon}
                 name="clear"
                 color="#DB0837"
-                size="10px"
+                size={10}
               />
             </button>
             <button

@@ -20,7 +20,13 @@
 }
 
 .cardInput{
-    
+width: 163px;
+outline: none;
+border-top:none;
+border-left:none;
+border-right:none;
+border-bottom-color: var(--primary-color);
+caret-color: var(--primary-color);
 }
 
 .starIcon{
@@ -44,7 +50,7 @@
 }
 
 .createBtn{
-
+color: var(--primary-color);
 }
 
 @media screen and (max-width: 320px) {
