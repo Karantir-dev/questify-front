@@ -8,8 +8,8 @@ import s from './CompletedCard.module.css'
 import './CompletedAnimation.css'
 
 const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
-  const classList = isChallenge ? s.questBox : s.challengeBox
-  const name = isChallenge ? 'award' : 'awardTrophy'
+  const classList = isChallenge ? s.challengeBox : s.questBox
+  const name = isChallenge ? 'awardTrophy' : 'award'
     
   const handleClick = () => {
     onClose()
@@ -96,7 +96,6 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
             <use xlinkHref={`${Icons}#icon-target`} />
           </svg>
         </CSSTransition>
-        
         <CSSTransition
           in={true}
           appear={true}
@@ -108,7 +107,6 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
             <use xlinkHref={`${Icons}#icon-arrow`} />
           </svg>
         </CSSTransition>
-        
       </div>    
       <button onClick={handleClick} className={s.button}>
         <span>Continue</span>

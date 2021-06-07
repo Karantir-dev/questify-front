@@ -83,7 +83,7 @@ export default function TestCard({
           >
             <CompletedCard
               text={text}
-              isChallenge={true}
+              isChallenge={isChallenge}
               onCompleted={() => onCompletedCard(id)}
               onClose={toggleCompleted}
             />
