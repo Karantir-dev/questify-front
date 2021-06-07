@@ -24,6 +24,7 @@ export default function Header() {
           width="30"
         /> */}
         <span className={s.MenuName}>{name}'s Quest Log</span>
+
       </div>
       <button
         type="button"
