@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import Icon from '../Icon'
 import PickerPopup from '../PickerPopup/PickerPopup'
 import s from './OptionsPicker.module.css'
@@ -16,15 +16,13 @@ export default function OptionsPicker({
   const [value, setValue] = useState(initialValue)
   const [showModal, setShowModal] = useState(false)
 
-  const toggleModal = useCallback(() => {
-    setShowModal(prevShowModal => !prevShowModal)
-  }, [])
+  const toggleModal = setShowModal(!showModal)
 
   const options = type === 'difficulty' ? difficulty : category
 
   function handleOptionsChange(e) {
     setValue(e.target.value)
-    getOptionValue(e)
+    getOptionValue(value)
     toggleModal()
   }
 
