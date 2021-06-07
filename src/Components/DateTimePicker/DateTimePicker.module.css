@@ -3,6 +3,7 @@
   position: relative;
   font-family: inherit;
 }
+
 .react-datetime-picker,
 .react-datetime-picker *,
 .react-datetime-picker *:before,
@@ -89,6 +90,7 @@
 .react-datetime-picker__calendar {
   width: 200px;
   max-width: 100vw;
+  border-radius: 5px;
 }
 .react-datetime-picker__calendar .react-calendar {
   border-width: thin;
@@ -99,6 +101,7 @@
   max-width: 100%;
   background: white;
   border: 1px solid #a0a096;
+  border-radius: 5px;
   font-family: inherit;
   line-height: 1.125em;
 }
@@ -125,6 +128,7 @@
   margin: 0;
   border: 0;
   outline: none;
+  font-size: 12px;
 }
 .react-calendar button:enabled:hover {
   cursor: pointer;
@@ -144,11 +148,16 @@
 .react-calendar__navigation button[disabled] {
   background-color: #f0f0f0;
 }
+
+abbr[title] {
+  text-decoration: underline #00d7ff;
+}
+
 .react-calendar__month-view__weekdays {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 9px;
 }
 .react-calendar__month-view__weekdays__weekday {
   padding: 0.5em;
@@ -160,7 +169,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 11px;
   padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
 }
 .react-calendar__month-view__days__day--weekend {
