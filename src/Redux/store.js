@@ -12,7 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage'
 
 import cardsReducers from './cards/cardsReducers'
-import authReducer from './auth/auth-reducer'
+import authReducer from './auth/auth-reducers'
 import notifReducer from './notifReducers'
 
 const middleware = [
