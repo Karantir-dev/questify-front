@@ -1,8 +1,10 @@
 import styles from '../AuthPage/AuthPage.module.css'
+import AuthNav from '../../Components/AuthNav/AuthNav'
 import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
 
 export default function Landing() {
+
   return (
     <div className={styles.containerLanding}>
       <div className={styles.containerQuest}>
@@ -17,9 +19,9 @@ export default function Landing() {
           <p className={styles.descriptionRegister}>
             Write your email to sign up or log in
           </p>
-
+          <AuthNav />
           <AuthForm />
-          <LoginForm />
+          {/* <LoginForm /> */}
         </div>
       </div>
     </div>

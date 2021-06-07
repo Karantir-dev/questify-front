@@ -17,8 +17,8 @@ export default function LoginRouter() {
 
     if (email === '') {
       dispatch(authActions.logInError('Enter email!'))
-    } else if (!password) {
-      dispatch(authActions.logInError('Enter password please.'))
+    } else if (password.length < 8) {
+      dispatch(authActions.logInError('Enter a password at least 8 characters'))
     } else {
       dispatch(authOperations.login({ email, password }))
       clear()
