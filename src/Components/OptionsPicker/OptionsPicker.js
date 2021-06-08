@@ -33,7 +33,7 @@ export default function OptionsPicker({
 
   function handleOptionsChange(e) {
     setValue(e.target.value)
-    getOptionValue(value)
+    getOptionValue(e.target.value)
     setShowModal(false)
   }
 

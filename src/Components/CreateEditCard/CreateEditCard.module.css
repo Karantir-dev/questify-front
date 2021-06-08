@@ -1,9 +1,10 @@
 .card {
     position: relative;
     margin: 25px 27px;
+    padding:19px 21px 26px 21px;
     width: 205px;
     height: 199px;
-    background-color: #F2F3F7;
+    background-color: var(--white);
     border-radius: 10px;
 }
 
@@ -22,6 +23,7 @@
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--text-secondary-color);
+    margin: 20px 0 0 0;
 }
 
 .buttonsList{
@@ -53,11 +55,38 @@ background-color: var(--text-secondary-color);
 
 }
 
+.cardTopButtons{
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+
+.cardBottomButtons{
+    composes: cardTopButtons;
+    margin-top: 42px;
+
+}
+
+.cardOperationsButtons {
+    margin-left: auto;
+
+}
+
+.optionsPicker{
+    position:absolute;
+    left: 0;
+    z-index: 1;
+}
+
 .cardInputWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 
 }
 
 .cardInput{
+font-size: 16px;
 width: 163px;
 outline: none;
 border-top:none;
@@ -66,6 +95,17 @@ border-right:none;
 border-bottom:1px solid var(--primary-color);
 caret-color: var(--primary-color);
 background-color: transparent;
+}
+
+.cardInputChallenge {
+    composes: cardInput;
+    color: var(--white);
+}
+
+.datePicker{
+    height: 14px;
+
+    margin-top: 12px;
 }
 
 .starIcon{
@@ -98,14 +138,25 @@ text-align: right;
 letter-spacing: 0.02em;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
     .card {
         width: 290px;
         height: 260px;
         margin: 20px auto;
+        padding:18px 21px 42px 21px;
     }
     .cardTitle{
         font-size: 14px;
+        margin: 39px 0 0 0;
+    }
+    .cardBottomButtons {
+        margin-top: 46px;
+    }
+    .cardInput {
+        margin-top: 19px;
+    }
+    .datePicker {
+        margin-top: 16px;
     }
 }
 
