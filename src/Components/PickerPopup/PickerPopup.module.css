@@ -94,7 +94,7 @@
   display: flex;
   flex-grow: 0;
   flex-direction: column;
-  color: var(--text-main-color);
+  color: var(--text-primary-color);
   font-size: 15px;
   line-height: 15px;
   letter-spacing: 0.02em;
@@ -102,6 +102,11 @@
   width: 100px;
   height: 130px;
   padding: 9px 11px;
+
+  background-color: var(--white);
+  box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.05),
+  3px 4px 4px rgba(21, 57, 90, 0.05);
+  border-radius: 10px;
 }
 
 .category_radio {
