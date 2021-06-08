@@ -10,7 +10,7 @@ export default function Header() {
   const name = useSelector(authSelectors.getUserName)
 
   const onLogOut = () => {
-    dispatch(authOperations.logOut())
+    dispatch(authOperations.logout())
   }
 
   return (
@@ -23,7 +23,6 @@ export default function Header() {
           </span>
         </div>
         <span className={s.MenuName}>{name ? name : 'Name'}'s Quest Log</span>
-
       </div>
       <button
         type="button"

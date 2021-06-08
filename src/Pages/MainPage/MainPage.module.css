@@ -75,8 +75,11 @@
 }
 
 .buttonAddCard {
-  position: absolute;
-  right: 40px;
-  bottom: 100%;
   background-color: var(--btn-main-color);
+  filter: drop-shadow(0px 0px 8px var(--btn-main-color));
+}
+
+.buttonAddCard:active {
+  background-color: var(--btn-active-color);
+  filter: drop-shadow(0px 0px 8px var(--btn-active-color));
 }
