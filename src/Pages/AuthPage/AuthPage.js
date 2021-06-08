@@ -20,7 +20,7 @@ export default function Landing() {
           </p>
           <AuthNav />
           <AuthForm />
-          {/* <LoginForm /> */}
+          <LoginForm />
         </div>
       </div>
     </div>

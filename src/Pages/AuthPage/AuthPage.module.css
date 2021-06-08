@@ -1,4 +1,4 @@
-  /*-- Logo --*/
+/*-- Logo --*/
 
 .logo {
   font-family: HelveticaNeueCyr;
@@ -9,27 +9,27 @@
   color: var(--primary-color);
 }
 
-  /*-- description --*/
+/*-- description --*/
 
 .description {
   font-family: HelveticaNeueCyr;
   font-style: normal;
   font-weight: bold;
   letter-spacing: 0.02em;
-  color: var(--challange-bg-color);
+  color: var(--challenge-bg-color);
 }
 
-  /*-- descriptionRegister --*/
+/*-- descriptionRegister --*/
 
 .descriptionRegister {
-    font-family: HelveticaNeueCyr;
-    font-style: normal;
-    font-weight: normal;
-    letter-spacing: 0.02em;
-    color: var(--text-secondary-color);
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary-color);
 }
-    
-  /*-- @media (max-width: 767px) --*/
+
+/*-- @media (max-width: 767px) --*/
 
 @media screen and (max-width: 767px) {
   .containerQuest {
@@ -39,7 +39,7 @@
     background-position: bottom 0 left 0;
   }
 
-  .containerForm  {
+  .containerForm {
     padding-top: 60px;
     padding-left: 15px;
     max-width: 297px;
@@ -65,7 +65,7 @@
   }
 } */
 
-  /*-- @media (min-width: 768px) --*/
+/*-- @media (min-width: 768px) --*/
 
 @media screen and (min-width: 768px) {
   .containerLanding {
@@ -79,15 +79,15 @@
     background-size: 820px, auto;
     background-position: bottom 0 right 0;
   }
-  
-  .containerForm  {
+
+  .containerForm {
     padding-left: 50px;
     padding-top: 312px;
     padding-bottom: 312px;
     max-width: 425px;
   }
 
-  .logo  {
+  .logo {
     font-size: 20px;
   }
 
@@ -113,7 +113,7 @@
   }
 } */
 
-  /*-- @media (min-width: 1280px) --*/
+/*-- @media (min-width: 1280px) --*/
 
 @media screen and (min-width: 1280px) {
   .containerLanding {
@@ -128,14 +128,14 @@
     background-position: bottom 0 right 0;
   }
 
-  .containerForm  {
+  .containerForm {
     padding-top: 193px;
     padding-bottom: 194px;
     padding-left: 229px;
     max-width: 800px;
   }
 
-  .logo  {
+  .logo {
     font-size: 24px;
   }
 
