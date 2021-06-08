@@ -51,11 +51,14 @@
 
 .first-appear {
   opacity: 0;
-  transform: scale(1.5);
+  color: var(--btn-main-color);
+  transform: scale(2);
 }
 
 .first-appear-active {
   opacity: 1;
-  transform: scale(0.9);
-  transition: opacity 500ms ease-in 1000ms, transform 500ms ease 1000ms;
+  color: var(--btn-main-color);
+  transform: scale(1);
+  transition: opacity 500ms ease-in 1000ms, transform 500ms ease 1000ms,
+    color 500ms ease-in 1000ms;
 }

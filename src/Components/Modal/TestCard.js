@@ -49,14 +49,13 @@ export default function TestCard({
   return (
     <div className={s.mainBox}>
       <div className={classList}>
-        {/* Это для понимания от куда приходят id и isChallenge */}
-        {/* {cards.map(({ id, isChallenge }) => ( */}
         {/* Тут будет разметка карточки */}
         <div>
           {/* Это тестовая кнопка для открытия модалки  */}
           <button type="button" onClick={toggleModal}>
             show modal
           </button>
+
           {/* Это тестовая кнопка для открытия completed card  */}
           <button type="button" onClick={toggleCompleted}>
             show completed
@@ -89,9 +88,8 @@ export default function TestCard({
             />
           </CSSTransition>
         </div>
-        {/* ))} */}
         
-        </div>
+      </div>
       <CSSTransition
         in={isCompleted}
         unmountOnExit
