@@ -1,8 +1,23 @@
+import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import s from './PickerPopup.module.css'
 
 import './../Modal/ModalAnimation.css'
+
+PickerPopup.defaultProps = {
+  type: 'category',
+  isChallenge: false,
+}
+
+PickerPopup.propTypes = {
+  isChallenge: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  options: PropTypes.array.isRequired,
+  value: PropTypes.string.isRequired,
+  handleOptionsChange: PropTypes.func.isRequired,
+}
 
 export default function PickerPopup({
   isChallenge,
@@ -30,13 +45,11 @@ export default function PickerPopup({
     }
   }
 
-  const containerStyle =
-    isChallenge === true
-      ? [s[`${type}_container`], s.dark_container].join(' ')
-      : s[`${type}_container`]
+  const containerStyle = isChallenge
+    ? [s[`${type}_container`], s.dark_container].join(' ')
+    : s[`${type}_container`]
 
-  const radioLabelStyle =
-    isChallenge === true ? s[`${type}_dark_radio`] : s[`${type}_radio`]
+  const radioStyle = isChallenge ? s[`${type}_dark_radio`] : s[`${type}_radio`]
 
   return (
     <>
@@ -57,7 +70,7 @@ export default function PickerPopup({
                 name={type}
                 value={option}
                 onChange={handleOptionsChange}
-                className={radioLabelStyle}
+                className={radioStyle}
               />
               <span
                 className={

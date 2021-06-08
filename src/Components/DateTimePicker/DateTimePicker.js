@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
-import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
-import './DateTimePicker.module.css';
+import React, { useState } from 'react'
+import DateTimePickerAPI from 'react-datetime-picker/dist/entry.nostyle'
+import './DateTimePicker.module.css'
 
-function DateTimePicker() {
-  const [value, onChange] = useState(new Date());
-  const minDate = new Date(2021, 5, 1);
+function DateTimePicker({ date, handleDateChange }) {
+  const [value, onChange] = useState(date || new Date())
+  const minDate = new Date(2021, 5, 1)
+  const onDateChange = date => {
+    onChange(date)
+    handleDateChange(date)
+  }
   return (
     <div>
-      <DateTimePicker
-        onChange={onChange}
+      <DateTimePickerAPI
+        onChange={onDateChange}
         value={value}
         minDate={minDate}
       />
     </div>
-  );
+  )
 }
 
-export default DateTimePicker;
+export default DateTimePicker
