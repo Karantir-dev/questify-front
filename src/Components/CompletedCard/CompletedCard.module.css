@@ -99,6 +99,88 @@
   color: var(--link-active);
 }
 
+.awardBox {
+  position: relative;
+  margin: 0 auto 5px;
+  width: 144px;
+  height: 124px;
+}
+
+.iconBase,
+.iconTarget,
+.iconArrow,
+.iconTrophy,
+.iconFirst {
+  position: absolute;
+}
+
+.leftClouds,
+.rightClouds {
+  position: absolute;
+  width: 144px;
+  height: 124px;
+  z-index: 10;
+}
+
+.leftClouds {
+  left: 0;
+}
+
+.rightClouds {
+  right: 0;
+}
+
+.iconBase {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86px;
+  height: 43px;
+}
+
+.iconTarget {
+  bottom: 35px;
+  left: 35px;
+  width: 80px;
+  height: 80px;
+}
+
+.iconArrow {
+  top: 22px;
+  left: calc(50% - 3px);
+  width: 50px;
+  height: 30px;
+}
+
+.iconTrophy {
+  top: 6px;
+  right: 33px;
+  width: 78px;
+  height: 76px;
+  z-index: 10;
+}
+
+.iconFirst {
+  top: 5px;
+  right: 50px;
+  width: 46px;
+  height: 50px;
+  z-index: 11;
+  fill: currentColor;
+  /* color: var(--white); */
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 @media screen and (max-width: 768px) {
   .questBox,
   .challengeBox {
@@ -127,5 +209,45 @@
   .arrow {
     width: 12px;
     height: 12px;
+  }
+
+  .awardBox,
+  .leftClouds,
+  .rightClouds {
+    width: 230px;
+    height: 185px;
+  }
+
+  .iconBase {
+    width: 130px;
+    height: 65px;
+  }
+
+  .iconTarget {
+    bottom: 50px;
+    left: 60px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .iconArrow {
+    top: 34px;
+    left: calc(50% - 3px);
+    width: 75px;
+    height: 45px;
+  }
+
+  .iconTrophy {
+    top: 6px;
+    right: 55px;
+    width: 117px;
+    height: 114px;
+  }
+
+  .iconFirst {
+    top: 5px;
+    right: 82px;
+    width: 65px;
+    height: 75px;
   }
 }
