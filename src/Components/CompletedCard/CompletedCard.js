@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group'
-import Icons from '../../images/completed-card-icons.svg'
+import Icons from '../../images/icons.svg'
 import Icon from '../Icon'
 
 import s from './CompletedCard.module.css'
@@ -58,7 +58,7 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
             unmountOnExit
           >
             <svg className={s.iconTrophy}>
-              <use xlinkHref={`${Icons}#icon-trophy`} />
+              <use xlinkHref={`${Icons}#icon-trophy-cup`} />
             </svg>
           </CSSTransition>
           <CSSTransition
