@@ -33,25 +33,33 @@ export default function LoginRouter() {
   return (
     <div className={styles.loginPage}>
       <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
-        <input
-          className={styles.inputForm}
-          autoComplete="off"
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-
-        <input
-          className={styles.inputForm}
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-
+        
+        <div className={styles.inputContainer}>
+          <input
+            className={styles.inputForm}
+            autoComplete="off"
+            type="email"
+            name="email"
+            placeholder=" "
+            id="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <label htmlFor="email" className={styles.labelForm}>Email</label>
+        </div>
+          
+        <div className={styles.inputContainer}>
+          <input
+            className={styles.inputForm}
+            type="password"
+            name="password"
+            placeholder=" "
+            id="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <label htmlFor="password" className={styles.labelForm}>Password</label>
+        </div>
         <IconButton
           disabled={!email || password < 1}
           className={styles.buttonReg}

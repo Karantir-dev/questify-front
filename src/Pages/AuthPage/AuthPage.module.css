@@ -35,17 +35,17 @@
   position: absolute;
   font-family: HelveticaNeueCyr;
   font-style: normal;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 15px;
+  font-weight: normal;
+  border-radius: 20px;
   outline: none;
-  color: var(--white);
-  background-color: var(--btn-main-color);
+  color: var(--btn-main-color);
+  border: 2px solid var(--btn-main-color);
 }
 
 .switchButton:hover,
 .switchButton:focus {
-  background-color: var(--primary-color);
+  color: var(--white);
+  background-color: var(--btn-main-color);
 }
     
   /*-- @media (max-width: 767px) --*/
@@ -73,14 +73,14 @@
     font-size: 14px;
     line-height: 3.2;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 23px;
   }
 
   .switchButton {
-    top: 300px; 
-    left: 85px;
-    font-size: 12px;
-    line-height: 0.5;
+    top: 259px; 
+    left: 250px;
+    padding: 4px;
+    font-size: 14px;
     letter-spacing: 0.1em;
   }
 }
@@ -126,14 +126,14 @@
   .descriptionRegister {
     font-size: 18px;
     line-height: 2.5;
-    margin: 25px 0 50px 0;
+    margin: 25px 0 30px 0;
   }
 
   .switchButton {
-    top: 550px; 
-    left: 70px;
-    font-size: 14px;
-    line-height: 0.6;
+    top: 510px; 
+    left: 355px;
+    font-size: 18px;
+    padding: 5px;
     letter-spacing: 0.1em;
   }
 }
@@ -186,11 +186,9 @@
   }
 
   .switchButton {
-    position: absolute;
-    top: 466px; 
-    left: 630px;
-    font-size: 16px;
-    line-height: 1;
+    top: 462px; 
+    left: 635px;
+    font-size: 24px;
     letter-spacing: 0.1em;
   }
 }

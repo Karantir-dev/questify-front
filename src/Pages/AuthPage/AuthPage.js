@@ -33,13 +33,16 @@ export default function Landing() {
             quests and exciting challenges.
           </p>
           <p className={styles.descriptionRegister}>
-            Write your email to sign up or log in
+            {showSignup
+              ? "Write your credentials to sign up, or"
+              : "Write your credentials to log in, or"
+            }
           </p>
            
           {showSignup ? (<AuthForm onSubmit={signupHandler}/>) : (<LoginForm onSubmit={loginHandler}/>)}
       
           <button className={styles.switchButton} onClick={switchButtonHandler}>
-            {showSignup ? "SWITCH TO LOGIN" : "SWITCH TO SIGNUP"}
+            {showSignup ? "log in" : "sign up"}
           </button>
         </div>
       </div>
