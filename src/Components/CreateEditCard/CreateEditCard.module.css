@@ -1,27 +1,29 @@
 .card {
-  position: relative;
-  margin: 25px 27px;
-  width: 205px;
-  height: 199px;
-  background-color: #f2f3f7;
-  border-radius: 10px;
+    position: relative;
+    margin: 25px 27px;
+    padding:19px 21px 26px 21px;
+    width: 205px;
+    height: 199px;
+    background-color: var(--white);
+    border-radius: 10px;
 }
 
-.cardChallenge {
-  composes: card;
-  background-color: var(--challenge-bg-color);
-  box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
+.cardChallenge{
+    composes: card;
+    background-color: var(--challange-bg-color);
+    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
     3px 4px 4px rgba(21, 57, 90, 0.03);
 }
 
-.cardTitle {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 1;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: var(--text-secondary-color);
+.cardTitle{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary-color);
+    margin: 20px 0 0 0;
 }
 
 .buttonsList {
@@ -52,21 +54,60 @@
   background-color: var(--text-secondary-color);
 }
 
-.cardInputWrapper {
+.cardTopButtons{
+display: flex;
+justify-content: flex-end;
+align-items: center;
 }
 
-.cardInput {
-  width: 163px;
-  outline: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid var(--primary-color);
-  caret-color: var(--primary-color);
-  background-color: transparent;
+.cardBottomButtons{
+    composes: cardTopButtons;
+    margin-top: 42px;
+
 }
 
-.starIcon {
+.cardOperationsButtons {
+    margin-left: auto;
+
+}
+
+.optionsPicker{
+    position:absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.cardInputWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.cardInput{
+font-size: 16px;
+width: 163px;
+outline: none;
+border-top:none;
+border-left:none;
+border-right:none;
+border-bottom:1px solid var(--primary-color);
+caret-color: var(--primary-color);
+background-color: transparent;
+}
+
+.cardInputChallenge {
+    composes: cardInput;
+    color: var(--white);
+}
+
+.datePicker{
+    height: 14px;
+
+    margin-top: 12px;
+}
+
+.starIcon{
 }
 
 .trophyIcon {
@@ -91,15 +132,26 @@
   letter-spacing: 0.02em;
 }
 
-@media screen and (max-width: 320px) {
-  .card {
-    width: 290px;
-    height: 260px;
-    margin: 20px auto;
-  }
-  .cardTitle {
-    font-size: 14px;
-  }
+@media screen and (max-width: 768px) {
+    .card {
+        width: 290px;
+        height: 260px;
+        margin: 20px auto;
+        padding:18px 21px 42px 21px;
+    }
+    .cardTitle{
+        font-size: 14px;
+        margin: 39px 0 0 0;
+    }
+    .cardBottomButtons {
+        margin-top: 46px;
+    }
+    .cardInput {
+        margin-top: 19px;
+    }
+    .datePicker {
+        margin-top: 16px;
+    }
 }
 
 @media screen and (min-width: 768px) {
