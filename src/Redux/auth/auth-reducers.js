@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 
 import authActions from './auth-actions'
 
-const initialState = { name: null, email: null }
+const initialState = null
 
 const user = createReducer(initialState, {
   [authActions.logInSuccess]: (_, { payload }) => payload.user,

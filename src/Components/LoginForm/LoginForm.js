@@ -35,7 +35,7 @@ export default function LoginRouter() {
       <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
         <input
           className={styles.inputForm}
-          autoComplete="off"
+          // autoComplete="off"
           type="email"
           name="email"
           placeholder="Email"
