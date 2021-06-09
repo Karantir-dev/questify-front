@@ -5,6 +5,16 @@
   flex-direction: column;
 }
 
+/*-- inputContainer --*/
+
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer + .inputContainer {
+  margin-top: 20px;
+}
+
 /*-- inputForm --*/
 
 .inputForm {
