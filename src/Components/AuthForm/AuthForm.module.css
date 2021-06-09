@@ -14,12 +14,25 @@
   width: 196px;
 }
 
-.inputForm + .inputForm {
-  margin-top: 20px;
+/*-- labelForm --*/
+
+.labelForm {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--primary-color);
+  transform: translateY(-50%) translateX(0);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-input::placeholder {
-  color: var(--primary-color);
+.inputForm:focus + .labelForm,
+.inputForm:not(:placeholder-shown) + .labelForm {
+  transform: translateY(-30px) translateX(0);
 }
 
 @media screen and (max-width: 767px) {
@@ -44,8 +57,9 @@ input::placeholder {
 
 @media screen and (max-width: 767px) {
   .buttonReg {
-    bottom: -75px;
-    right: 40%;
+    margin-left: 120px;
+    margin-top: 20px;
+    margin-bottom: 200px;
   }
 }
 

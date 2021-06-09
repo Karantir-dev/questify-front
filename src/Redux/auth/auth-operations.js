@@ -76,7 +76,9 @@ const getCurrentUser = () => (dispatch, getState) => {
 
   axios
     .get('/users/current')
-    .then(({ data }) => dispatch(authActions.getCurrentUserSuccess(data)))
+    .then(({ data }) =>
+      dispatch(authActions.getCurrentUserSuccess(data.result.name)),
+    )
     .catch(err =>
       dispatch(
         authActions.getCurrentUserError(

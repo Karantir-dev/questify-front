@@ -8,6 +8,7 @@ import authSelectors from '../Redux/auth/auth-selectors'
  */
 export default function PrivateRoute({ redirectTo, children, ...routeProps }) {
   const getIsAuthenticated = useSelector(authSelectors.getIsAuthenticated)
+
   return (
     <Route {...routeProps}>
       {getIsAuthenticated ? children : <Redirect to={redirectTo} />}
