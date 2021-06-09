@@ -1,9 +1,26 @@
 import styles from '../AuthPage/AuthPage.module.css'
-import AuthNav from '../../Components/AuthNav/AuthNav'
 import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
+import { useState } from "react"
 
 export default function Landing() {
+
+  const [showSignup, setShowSignup] = useState(true)
+
+  const loginHandler = event => {
+    event.preventDefault()
+    console.log("login handler")
+  };
+
+  const signupHandler = event => {
+    event.preventDefault();
+    console.log("signup handler")
+  };
+
+  const switchButtonHandler = () => {
+    setShowSignup(!showSignup)
+  };
+
   return (
     <div className={styles.containerLanding}>
       <div className={styles.containerQuest}>
@@ -16,11 +33,17 @@ export default function Landing() {
             quests and exciting challenges.
           </p>
           <p className={styles.descriptionRegister}>
-            Write your email to sign up or log in
+            {showSignup
+              ? "Write your credentials to sign up, or"
+              : "Write your credentials to log in, or"
+            }
           </p>
-          <AuthNav />
-          <AuthForm />
-          <LoginForm />
+           
+          {showSignup ? (<AuthForm onSubmit={signupHandler}/>) : (<LoginForm onSubmit={loginHandler}/>)}
+      
+          <button className={styles.switchButton} onClick={switchButtonHandler}>
+            {showSignup ? "log in" : "sign up"}
+          </button>
         </div>
       </div>
     </div>

@@ -60,34 +60,47 @@ export default function AuthForm() {
   return (
     <div className={styles.registerPage}>
       <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
-        <input
-          className={styles.inputForm}
-          autoComplete="off"
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={name}
-          onChange={handleChange}
-        />
+       
+        <div className={styles.inputContainer}>
+          <input
+            className={styles.inputForm}
+            autoComplete="off"
+            type="text"
+            name="name"
+            id="name"
+            placeholder=" "
+            value={name}
+            onChange={handleChange}
+          />
+          <label htmlFor="name" className={styles.labelForm}>Name</label>
+        </div>
 
-        <input
-          className={styles.inputForm}
-          autoComplete="off"
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={handleChange}
-        />
+        <div className={styles.inputContainer}>
+          <input
+            className={styles.inputForm}
+            autoComplete="off"
+            type="email"
+            name="email"
+            id="email"
+            placeholder=" "
+            value={email}
+            onChange={handleChange}
+          />
+          <label htmlFor="email" className={styles.labelForm}>Email</label>
+        </div>
 
-        <input
-          className={styles.inputForm}
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={handleChange}
-        />
+        <div className={styles.inputContainer}>
+          <input
+            className={styles.inputForm}
+            type="password"
+            name="password"
+            placeholder=" "
+            id="password"
+            value={password}
+            onChange={handleChange}
+          />
+          <label htmlFor="password" className={styles.labelForm}>Password</label>
+        </div>
 
         <IconButton
           disabled={!name || !email || password < 1}
