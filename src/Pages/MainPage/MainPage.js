@@ -5,18 +5,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import IconButton from '../../Components/IconButton/IconButton'
-// import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
+import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 import TestCard from '../../Components/Modal/TestCard'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
+
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
 import s from './MainPage.module.css'
 
 export default function Main() {
-
   const [showEditForm, setShowEditForm] = useState(false)
-  
+
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
@@ -44,10 +44,9 @@ export default function Main() {
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TODAY</h2>
 
-          {/* {showEditForm && <CreateEditCard/>} */}
+          {showEditForm && <CreateEditCard />}
           {/* <CardList cards={activeTodayCards}/> */}
           <TestCard />
-
         </section>
 
         <section className={s.section}>
@@ -70,13 +69,14 @@ export default function Main() {
         </section>
 
         <div className={s.buttonAddContainer}>
-        <IconButton className={s.buttonAddCard}
+          <IconButton
+            className={s.buttonAddCard}
             onClick={() => setShowEditForm(true)}
-            aria-label="Add">
-          <Icon name={'plus'} size={15}/>
-        </IconButton>
+            aria-label="Add"
+          >
+            <Icon name={'plus'} size={15} />
+          </IconButton>
         </div>
-
       </div>
     </>
   )

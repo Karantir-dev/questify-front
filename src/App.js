@@ -6,6 +6,9 @@ import { ToastContainer, toast } from 'react-toastify'
 import resetNotification from './Redux/notifAction'
 import PrivateRoute from './Components/PrivateRoutes'
 import PublicRoute from './Components/PublicRoute'
+import authOperations from './Redux/auth/auth-operations'
+import authSelectors from './Redux/auth/auth-selectors'
+
 import 'react-toastify/dist/ReactToastify.css'
 import s from './App.module.css'
 
@@ -18,6 +21,11 @@ const AuthPage = lazy(() =>
 
 export default function App() {
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(authOperations.getCurrentUser())
+  }, [dispatch])
+  const isLoading = useSelector(authSelectors.getIsLoadding)
 
   const notification = useSelector(state => state.notification)
   if (notification !== null) {
@@ -33,15 +41,19 @@ export default function App() {
   return (
     <div>
       <Suspense fallback={<h1>Загружаем...</h1>}>
-        <Switch>
-          <PublicRoute exact path="/auth" restricted redirectTo="/">
-            <AuthPage />
-          </PublicRoute>
+        {isLoading ? (
+          <h1>Загружаем...</h1>
+        ) : (
+          <Switch>
+            <PrivateRoute exact path="/" redirectTo="/auth">
+              <MainPage />
+            </PrivateRoute>
 
-          <PrivateRoute path="/" redirectTo="/auth">
-            <MainPage />
-          </PrivateRoute>
-        </Switch>
+            <PublicRoute path="/auth" restricted redirectTo="/">
+              <AuthPage />
+            </PublicRoute>
+          </Switch>
+        )}
       </Suspense>
 
       <ToastContainer className={s.notif} />
