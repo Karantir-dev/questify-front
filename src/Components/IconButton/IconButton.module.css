@@ -22,4 +22,5 @@
 .IconButton:hover,
 .IconButton:focus {
   background-color: var(--primary-color);
+  filter: drop-shadow(0px 0px 8px var(--primary-color));
 }
