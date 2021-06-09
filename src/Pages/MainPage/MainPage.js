@@ -9,14 +9,14 @@ import IconButton from '../../Components/IconButton/IconButton'
 import TestCard from '../../Components/Modal/TestCard'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
+
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
 import s from './MainPage.module.css'
 
 export default function Main() {
-
   const [showEditForm, setShowEditForm] = useState(false)
-  
+
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
@@ -47,7 +47,6 @@ export default function Main() {
           {/* {showEditForm && <CreateEditCard/>} */}
           {/* <CardList cards={activeTodayCards}/> */}
           <TestCard />
-
         </section>
 
         <section className={s.section}>
@@ -70,13 +69,14 @@ export default function Main() {
         </section>
 
         <div className={s.buttonAddContainer}>
-        <IconButton className={s.buttonAddCard}
+          <IconButton
+            className={s.buttonAddCard}
             onClick={() => setShowEditForm(true)}
-            aria-label="Add">
-          <Icon name={'plus'} size={15}/>
-        </IconButton>
+            aria-label="Add"
+          >
+            <Icon name={'plus'} size={15} />
+          </IconButton>
         </div>
-
       </div>
     </>
   )

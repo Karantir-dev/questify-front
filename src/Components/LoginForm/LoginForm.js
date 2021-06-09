@@ -60,6 +60,7 @@ export default function LoginRouter() {
           />
           <label htmlFor="password" className={styles.labelForm}>Password</label>
         </div>
+
         <IconButton
           disabled={!email || password < 1}
           className={styles.buttonReg}
