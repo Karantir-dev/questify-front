@@ -45,11 +45,16 @@ export default function PickerPopup({
     }
   }
 
-  const containerStyle = isChallenge
-    ? [s[`${type}_container`], s.dark_container].join(' ')
-    : s[`${type}_container`]
+  const isDifficultyType = type === 'difficulty'
+  const containerStyle =
+    isChallenge && isDifficultyType
+      ? [s[`${type}_container`], s.dark_container].join(' ')
+      : s[`${type}_container`]
 
-  const radioStyle = isChallenge ? s[`${type}_dark_radio`] : s[`${type}_radio`]
+  const radioStyle =
+    isChallenge && isDifficultyType
+      ? s[`${type}_dark_radio`]
+      : s[`${type}_radio`]
 
   return (
     <>
@@ -74,7 +79,7 @@ export default function PickerPopup({
               />
               <span
                 className={
-                  type === 'difficulty'
+                  isDifficultyType
                     ? [s[`${type}_text`], s[`${option}`]].join(' ')
                     : s[`${type}_text`]
                 }

@@ -4,8 +4,8 @@ import Icon from '../Icon'
 import PickerPopup from '../PickerPopup/PickerPopup'
 import s from './OptionsPicker.module.css'
 
-const difficulty = ['easy', 'normal', 'hard']
-const category = ['stuff', 'family', 'health', 'learning', 'leisure', 'work']
+const DIFFICULTY = ['easy', 'normal', 'hard']
+const CATEGORY = ['stuff', 'family', 'health', 'learning', 'leisure', 'work']
 
 OptionsPicker.defaultProps = {
   type: 'category',
@@ -28,7 +28,7 @@ export default function OptionsPicker({
   const [value, setValue] = useState(initialValue)
   const [showModal, setShowModal] = useState(false)
 
-  const options = type === 'difficulty' ? difficulty : category
+  const options = type === 'difficulty' ? DIFFICULTY : CATEGORY
   const isDifficultyType = type === 'difficulty'
 
   function handleOptionsChange(e) {
@@ -39,11 +39,14 @@ export default function OptionsPicker({
 
   const btnClasses = [s[`${type}_button`], s[value]].join(' ')
 
-  const btnLabelClasses = [
-    s[`${type}_buttonLabel`],
-    s[`${type}_text`],
-    s[value],
-  ].join(' ')
+  const btnLabelClasses = isChallenge
+    ? [
+        s[`${type}_buttonLabel`],
+        s[`${type}_text`],
+        s[`${type}_buttonLabel_dark`],
+        s[value],
+      ].join(' ')
+    : [s[`${type}_buttonLabel`], s[`${type}_text`], s[value]].join(' ')
 
   return (
     <>
