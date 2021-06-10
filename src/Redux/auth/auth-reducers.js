@@ -6,13 +6,13 @@ import authActions from './auth-actions'
 const initialState = null
 
 const user = createReducer(initialState, {
-  [authActions.logInSuccess]: (_, { payload }) => payload.user,
+  [authActions.logInSuccess]: (_, { payload }) => payload.user.name,
   [authActions.logOutSuccess]: () => initialState,
-  [authActions.getCurrentUserSuccess]: (_, { payload }) => payload,
+  [authActions.getCurrentUserSuccess]: (_, { payload }) => payload.name,
 })
 
 const token = createReducer(null, {
-  [authActions.logInSuccess]: (_, { payload }) => payload,
+  [authActions.logInSuccess]: (_, { payload }) => payload.token,
   [authActions.logOutSuccess]: () => null,
 })
 

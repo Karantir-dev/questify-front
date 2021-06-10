@@ -36,7 +36,7 @@ const login = credentials => dispatch => {
     .then(({ data }) => {
       token.set(data.result.token)
 
-      dispatch(authActions.logInSuccess(data.result.token))
+      dispatch(authActions.logInSuccess(data.result))
     })
     .catch(err => {
       dispatch(
@@ -66,7 +66,7 @@ const getCurrentUser = () => (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState()
-
+  
   if (!persistedToken) {
     return
   }
@@ -75,9 +75,9 @@ const getCurrentUser = () => (dispatch, getState) => {
   dispatch(authActions.getCurrentUserRequest())
 
   axios
-    .get('/users/current')
+    .get('users/current')
     .then(({ data }) =>
-      dispatch(authActions.getCurrentUserSuccess(data.result.name)),
+      dispatch(authActions.getCurrentUserSuccess(data.result)),
     )
     .catch(err =>
       dispatch(
