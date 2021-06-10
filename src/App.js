@@ -8,6 +8,7 @@ import PrivateRoute from './Components/PrivateRoutes'
 import PublicRoute from './Components/PublicRoute'
 import authOperations from './Redux/auth/auth-operations'
 import authSelectors from './Redux/auth/auth-selectors'
+import Loader from './Components/Loader/Loader'
 
 import 'react-toastify/dist/ReactToastify.css'
 import s from './App.module.css'
@@ -40,9 +41,9 @@ export default function App() {
 
   return (
     <div>
-      <Suspense fallback={<h1>Загружаем...</h1>}>
+      <Suspense fallback={<Loader/>}>
         {isLoading ? (
-          <h1>Загружаем...</h1>
+          {/* <h1>Загружаем...</h1> */}
         ) : (
           <Switch>
             <PrivateRoute exact path="/" redirectTo="/auth">

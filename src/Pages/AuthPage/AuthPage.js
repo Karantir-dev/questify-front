@@ -37,13 +37,13 @@ export default function Landing() {
               ? "Write your credentials to sign up, or"
               : "Write your credentials to log in, or"
             }
+            <button className={styles.switchButton} onClick={switchButtonHandler}>
+              {showSignup ? "log in" : "sign up"}
+            </button>
           </p>
            
           {showSignup ? (<AuthForm onSubmit={signupHandler}/>) : (<LoginForm onSubmit={loginHandler}/>)}
       
-          <button className={styles.switchButton} onClick={switchButtonHandler}>
-            {showSignup ? "log in" : "sign up"}
-          </button>
         </div>
       </div>
     </div>
