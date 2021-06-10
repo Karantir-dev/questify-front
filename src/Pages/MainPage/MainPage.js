@@ -6,7 +6,7 @@ import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import IconButton from '../../Components/IconButton/IconButton'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
-import TestCard from '../../Components/Modal/TestCard'
+import CardStatic from '../../Components/Card/CardStatic'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 
@@ -46,8 +46,14 @@ export default function Main() {
 
           {showEditForm && <CreateEditCard />}
           {/* <CardList cards={activeTodayCards}/> */}
-          <TestCard />
         </section>
+        <CardStatic
+          difficulty="hard"
+          isChallenge="sds"
+          text="Run the half-marathon Dubno"
+          date="Tuesday, 00:00"
+          category="leisure"
+        />
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
