@@ -19,7 +19,7 @@ const TITLES = {
 const CreateEditCard = ({
   isChallengeProp = false,
   isCompletedProp = false,
-  textProp = 'sdsd',
+  textProp = '',
   difficultyProp = 'normal',
   categoryProp = 'family',
   deadlineProp = new Date(),
@@ -69,14 +69,14 @@ const CreateEditCard = ({
       dispatch(
         cardsOperations.addCard(
           text,
+          deadline,
+          difficulty,
+          category,
           isChallenge,
           isCompleted,
-          category,
-          difficulty,
-          deadline,
         ),
       ),
-    [dispatch, text, isChallenge, isCompleted, category, difficulty, deadline],
+    [dispatch, text, deadline, difficulty, category, isChallenge, isCompleted],
   )
 
   const handleEditCard = useCallback(
