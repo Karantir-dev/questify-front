@@ -10,6 +10,9 @@
   padding: 10px 2px 10px 21px;
   cursor: pointer;
 }
+.difficulty_buttonLabel_dark {
+  color: var(--text-secondary-color);
+}
 .difficulty_buttonLabel {
   display: inline-flex;
   align-items: center;
