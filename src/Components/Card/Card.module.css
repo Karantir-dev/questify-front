@@ -1,0 +1,153 @@
+.questCard,
+.challengeCard {
+  position: relative;
+  padding: 20px;
+  width: 290px;
+  height: 260px;
+  background-color: var(--white);
+  color: var(--text-primary-color);
+  box-shadow: -3px -4px 4px var(--shadow-color), 3px 4px 4px var(--shadow-color);
+  border-radius: 10px;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.challengeCard {
+  background-color: var(--challenge-bg-color);
+  color: var(--white);
+}
+
+.questCard:hover,
+.challengeCard:hover,
+.questCard:focus,
+.challengeCard:focus {
+  box-shadow: -3px 0px 5px var(--shadow-hover-color),
+    3px 5px 5px var(--shadow-hover-color);
+}
+
+.cardHeader,
+.date,
+.categoryName,
+.challengeTitle {
+  letter-spacing: 0.02em;
+  color: var(--stuff-color);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.difficulty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle {
+  margin-right: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00d7ff;
+}
+
+.centerBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.38;
+}
+
+.challengeTitle {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.date {
+  font-size: 18px;
+}
+
+.categoryBox {
+  position: absolute;
+  bottom: 33px;
+  left: 0;
+
+  width: 120px;
+  height: 35px;
+  border-radius: 0px 25px 25px 0px;
+  text-align: left;
+}
+
+.categoryName {
+  display: inline-block;
+  margin: 10px 0 10px 20px;
+  font-size: 14px;
+  color: var(--text-primary-color);
+  text-transform: uppercase;
+}
+
+.normal {
+  background-color: var(--main-green);
+}
+
+.easy {
+  background-color: var(--primary-color);
+}
+
+.hard {
+  background-color: var(--accent-red);
+}
+
+@media screen and (min-width: 768px) {
+  .questCard,
+  .challengeCard {
+    width: 205px;
+    height: 199px;
+  }
+
+  .cardHeader,
+  .date {
+    font-size: 14px;
+  }
+
+  .title {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .categoryName {
+    font-size: 12px;
+  }
+
+  .categoryBox {
+    bottom: 20px;
+    width: 88px;
+    height: 25px;
+    border-radius: 0px 15px 15px 0px;
+  }
+
+  .categoryName {
+    margin: 8px 0 6px 20px;
+    font-size: 11px;
+  }
+
+  .Icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .circle {
+    width: 8px;
+    height: 8px;
+  }
+}

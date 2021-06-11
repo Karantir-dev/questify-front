@@ -11,19 +11,17 @@ function CardList({ cards }) {
           id,
           isChallenge,
           difficulty,
-          categorie,
-          date,
-          text,
-          isCompleted,
+          category,
+          deadline,
+          text
         }) => (
           <li key={id}>
           <Card
             isChallenge={isChallenge}
             difficulty={difficulty}
-            categorie={categorie}
-            date={date}
+            category={category}
+            deadline={deadline}
             text={text}
-            isCompleted={isCompleted}
             />
           </li>
         ),
@@ -37,9 +35,8 @@ CardList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       isChallenge: PropTypes.bool.isRequired,
-      isCompleted: PropTypes.bool.isRequired,
       difficulty: PropTypes.string.isRequired,
-      categorie: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
     }),

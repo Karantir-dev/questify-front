@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-// import CardList from '../../Components/CardList/CardList'
+import CardList from '../../Components/CardList/CardList'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import IconButton from '../../Components/IconButton/IconButton'
@@ -45,13 +45,13 @@ export default function Main() {
           <h2 className={s.sectionTitle}>TODAY</h2>
 
           {showEditForm && <CreateEditCard />}
-          {/* <CardList cards={activeTodayCards}/> */}
+          <CardList cards={activeTodayCards}/>
           <TestCard />
         </section>
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
-          {/* <CardList cards={activeTomorrowCards} /> */}
+          <CardList cards={activeTomorrowCards} />
         </section>
 
         <section className={s.sectionDone}>
@@ -65,7 +65,7 @@ export default function Main() {
             </button>
           </div>
 
-          {/* {doneIsShown && <CardList cards={doneCards} />} */}
+          {doneIsShown && <CardList cards={doneCards} />}
         </section>
 
         <div className={s.buttonAddContainer}>
