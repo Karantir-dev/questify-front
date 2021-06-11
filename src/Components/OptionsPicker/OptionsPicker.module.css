@@ -14,17 +14,19 @@
 }
 
 .difficulty_button:hover,
-.category_button:hover {
-  box-shadow: 0 -4px 4px rgba(21, 57, 90, 0.05),
-    3px 4px 4px rgba(21, 57, 90, 0.05);
+.difficulty_button:focus,
+.category_button:hover,
+.category_button:focus {
+  box-shadow: 1px -3px 4px 1px rgb(0 215 255 / 22%),
+    1px 3px 4px 1px rgb(0 215 255 / 22%);
 }
 
 .difficulty_buttonLabel_challenge {
   color: var(--text-secondary-color);
 }
+
 .difficulty_buttonLabel {
   margin-right: 7px;
-  transition: 250ms cubic-bezier(0.55, 0.06, 0.68, 0.19);
 }
 
 .d_level_easy {

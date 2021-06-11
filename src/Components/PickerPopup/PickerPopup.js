@@ -1,28 +1,15 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import CustomRadioList from '../CustomRadioList/CustomRadioList'
 import s from './PickerPopup.module.css'
 
 import './../Modal/ModalAnimation.css'
 
 PickerPopup.propTypes = {
-  isChallenge: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  options: PropTypes.array.isRequired,
-  value: PropTypes.string.isRequired,
-  handleOptionsChange: PropTypes.func.isRequired,
 }
 
-export default function PickerPopup({
-  isChallenge,
-  onClose,
-  type,
-  options,
-  value,
-  handleOptionsChange,
-}) {
+export default function PickerPopup({ children, onClose }) {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
@@ -51,13 +38,7 @@ export default function PickerPopup({
         classNames="content"
         unmountOnExit
       >
-        <CustomRadioList
-          isChallenge={isChallenge}
-          type={type}
-          options={options}
-          value={value}
-          handleOptionsChange={handleOptionsChange}
-        />
+        {children}
       </CSSTransition>
     </>
   )

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import CustomRadioList from '../CustomRadioList/CustomRadioList'
 import Icon from '../Icon'
 import PickerPopup from '../PickerPopup/PickerPopup'
 import s from './OptionsPicker.module.css'
@@ -60,14 +61,15 @@ export default function OptionsPicker({
       </button>
 
       {showModal && (
-        <PickerPopup
-          onClose={() => setShowModal(false)}
-          type={type}
-          options={options}
-          value={value}
-          handleOptionsChange={handleOptionsChange}
-          isChallenge={isChallenge}
-        />
+        <PickerPopup onClose={() => setShowModal(false)}>
+          <CustomRadioList
+            isChallenge={isChallenge}
+            type={type}
+            options={options}
+            value={value}
+            handleOptionsChange={handleOptionsChange}
+          />
+        </PickerPopup>
       )}
     </>
   )
