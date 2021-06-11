@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import s from './CustomRadioList.module.css'
 
 export default function CustomRadioList({
@@ -45,4 +46,12 @@ export default function CustomRadioList({
       ))}
     </ul>
   )
+}
+
+CustomRadioList.propTypes = {
+  isChallenge: PropTypes.bool,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+  handleOptionsChange: PropTypes.func.isRequired,
 }
