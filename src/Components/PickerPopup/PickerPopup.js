@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import CustomRadioList from '../CustomRadioList/CustomRadioList'
 import s from './PickerPopup.module.css'
 
 import './../Modal/ModalAnimation.css'
-
-PickerPopup.defaultProps = {
-  type: 'category',
-  isChallenge: false,
-}
 
 PickerPopup.propTypes = {
   isChallenge: PropTypes.bool,
@@ -45,17 +41,6 @@ export default function PickerPopup({
     }
   }
 
-  const isDifficultyType = type === 'difficulty'
-  const containerStyle =
-    isChallenge && isDifficultyType
-      ? [s[`${type}_container`], s.dark_container].join(' ')
-      : s[`${type}_container`]
-
-  const radioStyle =
-    isChallenge && isDifficultyType
-      ? s[`${type}_dark_radio`]
-      : s[`${type}_radio`]
-
   return (
     <>
       <div className={s.backdrop} onClick={handleBackdropClick}></div>
@@ -66,29 +51,13 @@ export default function PickerPopup({
         classNames="content"
         unmountOnExit
       >
-        <div className={containerStyle}>
-          {options.map(option => (
-            <label key={option} className={s[`${type}_label`]}>
-              <input
-                type="radio"
-                checked={value === option}
-                name={type}
-                value={option}
-                onChange={handleOptionsChange}
-                className={radioStyle}
-              />
-              <span
-                className={
-                  isDifficultyType
-                    ? [s[`${type}_text`], s[`${option}`]].join(' ')
-                    : s[`${type}_text`]
-                }
-              >
-                {option}
-              </span>
-            </label>
-          ))}
-        </div>
+        <CustomRadioList
+          isChallenge={isChallenge}
+          type={type}
+          options={options}
+          value={value}
+          handleOptionsChange={handleOptionsChange}
+        />
       </CSSTransition>
     </>
   )
