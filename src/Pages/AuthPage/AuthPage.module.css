@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 767px) {
   .containerLanding {
-    background: url('../../images/landing\(mobile\)1x.webp') no-repeat;
+    background: url('../../images/landing\(mobile\)2x.webp') no-repeat;
     background-size: 850px auto;
     background-position: bottom -520px left -470px;
     overflow: hidden;
@@ -150,7 +150,7 @@
 
 @media screen and (min-width: 1280px) {
   .containerLanding {
-    background: url('../../images/landing\(desk\)1x.webp') no-repeat;
+    background: url('../../images/landing\(desk\)2x.webp') no-repeat;
     background-size: 1580px, auto;
     background-position: top -200px left 267px;
     overflow: hidden;
