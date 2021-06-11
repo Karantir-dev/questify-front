@@ -2,12 +2,12 @@ import PropTypes from 'prop-types'
 import styles from './StaticCard.module.css'
 import Icon from '../Icon'
 
-function CardStatic({
+function StaticCard({
   id,
   isChallenge,
   difficulty,
   category,
-  date,
+  deadline,
   text,
   isCompleted,
   handleEditCard,
@@ -38,7 +38,7 @@ function CardStatic({
       </h2>
 
       <h3 className={styles.dateStyle}>
-        {isChallenge ? `by ${date}` : `${date}`}
+        {isChallenge ? `by ${deadline}` : `${deadline}`}
       </h3>
 
       <div>
@@ -48,7 +48,7 @@ function CardStatic({
   )
 }
 
-CardStatic.propTypes = {
+StaticCard.propTypes = {
   isChallenge: PropTypes.bool,
   difficulty: PropTypes.string,
   category: PropTypes.string,
@@ -58,4 +58,4 @@ CardStatic.propTypes = {
   handleEditCard: PropTypes.func,
 }
 
-export default CardStatic
+export default StaticCard
