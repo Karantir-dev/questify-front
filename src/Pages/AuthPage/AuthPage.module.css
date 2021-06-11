@@ -87,9 +87,10 @@
   }
 
   .switchButton {
-    top: 31.5%;
+    top: 200px;
     left: 80%;
     padding: 4px;
+    min-width: 70px;
     font-size: 14px;
     letter-spacing: 0.1em;
   }
@@ -136,7 +137,7 @@
   }
 
   .switchButton {
-    top: 45%;
+    top: 200px;
     left: 72%;
     font-size: 18px;
     padding: 5px;
@@ -185,7 +186,7 @@
   }
 
   .switchButton {
-    top: 52.5%;
+    top: 270px;
     left: 51%;
     font-size: 24px;
     letter-spacing: 0.1em;
