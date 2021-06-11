@@ -11,8 +11,8 @@ function CardList({ cards }) {
           id,
           isChallenge,
           difficulty,
-          categorie,
-          date,
+          category,
+          deadline,
           text,
           isCompleted,
         }) => (
@@ -20,8 +20,8 @@ function CardList({ cards }) {
           <Card
             isChallenge={isChallenge}
             difficulty={difficulty}
-            categorie={categorie}
-            date={date}
+            category={category}
+            deadline={deadline}
             text={text}
             isCompleted={isCompleted}
             />
@@ -39,8 +39,8 @@ CardList.propTypes = {
       isChallenge: PropTypes.bool.isRequired,
       isCompleted: PropTypes.bool.isRequired,
       difficulty: PropTypes.string.isRequired,
-      categorie: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      deadline: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
     }),
   ),
