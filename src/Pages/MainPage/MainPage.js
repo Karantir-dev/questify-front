@@ -49,29 +49,29 @@ export default function Main() {
           <h2 className={s.sectionTitle}>TODAY</h2>
 
           {showEditForm && <CreateEditCard />}
-          <CardList cards={activeTodayCards}/>
+          {/* <CardList cards={activeTodayCards}/> */}
           <TestCard />
         </section>
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
-          <CardList cards={activeTomorrowCards} />
+          {/* <CardList cards={activeTomorrowCards} /> */}
         </section>
 
         
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS WEEK</h2>
-           <CardList cards={activeThisWeekCards} />
+           {/* <CardList cards={activeThisWeekCards} /> */}
         </section>
         
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS MONTH</h2>
-           <CardList cards={activeThisMonthCards} />
+           {/* <CardList cards={activeThisMonthCards} /> */}
         </section>
         
         <section className={s.section}>
           <h2 className={s.sectionTitle}>NEXT MONTHS</h2>
-           <CardList cards={activeNextMonthsCards} />
+           {/* <CardList cards={activeNextMonthsCards} /> */}
           </section>
 
         <section className={s.sectionDone}>
@@ -85,7 +85,7 @@ export default function Main() {
             </button>
           </div>
 
-          {doneIsShown && <CardList cards={doneCards} />}
+          {/* {doneIsShown && <CardList cards={doneCards} />} */}
         </section>
 
         <div className={s.buttonAddContainer}>
