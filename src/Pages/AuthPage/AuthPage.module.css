@@ -48,6 +48,16 @@
   background-color: var(--btn-main-color);
 }
 
+.containerLanding {
+  height: 100vh;
+}
+
+.containerForm {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /*-- @media (max-width: 767px) --*/
 
 @media screen and (max-width: 767px) {
@@ -59,8 +69,7 @@
   }
 
   .containerForm {
-    padding-top: 60px;
-    padding-left: 15px;
+    left: 15px;
     max-width: 297px;
   }
 
@@ -78,8 +87,8 @@
   }
 
   .switchButton {
-    top: 259px;
-    left: 250px;
+    top: 31.5%;
+    left: 80%;
     padding: 4px;
     font-size: 14px;
     letter-spacing: 0.1em;
@@ -106,9 +115,7 @@
   }
 
   .containerForm {
-    padding-left: 50px;
-    padding-top: 312px;
-    padding-bottom: 312px;
+    left: 50px;
     max-width: 425px;
   }
 
@@ -129,8 +136,8 @@
   }
 
   .switchButton {
-    top: 510px;
-    left: 355px;
+    top: 45%;
+    left: 72%;
     font-size: 18px;
     padding: 5px;
     letter-spacing: 0.1em;
@@ -157,9 +164,7 @@
   }
 
   .containerForm {
-    padding-top: 193px;
-    padding-bottom: 194px;
-    padding-left: 229px;
+    left: 229px;
     max-width: 800px;
   }
 
@@ -180,8 +185,8 @@
   }
 
   .switchButton {
-    top: 462px;
-    left: 635px;
+    top: 52.5%;
+    left: 51%;
     font-size: 24px;
     letter-spacing: 0.1em;
   }
