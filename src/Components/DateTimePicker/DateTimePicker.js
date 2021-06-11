@@ -1,4 +1,4 @@
-/* import React, { useState } from 'react'
+import React, { useState } from 'react'
 import DateTimePickerAPI from 'react-datetime-picker/dist/entry.nostyle'
 import './DateTimePicker.module.css'
 
@@ -20,4 +20,4 @@ function DateTimePicker({ date, handleDateChange }) {
   )
 }
 
-export default DateTimePicker */
+export default DateTimePicker
