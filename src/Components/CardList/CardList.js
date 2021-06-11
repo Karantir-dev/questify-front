@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Card from '../Card/Card'
+// import Card from '../Card/Card'
 import './CardList.module.css'
 
 function CardList({ cards }) {
@@ -13,16 +13,17 @@ function CardList({ cards }) {
           difficulty,
           category,
           deadline,
-          text
+          text,
+          isCompleted,
         }) => (
           <li key={id}>
-          <Card
+          {/* <Card
             isChallenge={isChallenge}
             difficulty={difficulty}
             category={category}
             deadline={deadline}
             text={text}
-            />
+            /> */}
           </li>
         ),
       )}
@@ -37,7 +38,7 @@ CardList.propTypes = {
       isChallenge: PropTypes.bool.isRequired,
       difficulty: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
+      deadline: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
     }),
   ),
