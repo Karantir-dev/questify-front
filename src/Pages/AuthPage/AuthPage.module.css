@@ -29,7 +29,7 @@
   color: var(--text-secondary-color);
 }
 
-  /*-- switchButton --*/
+/*-- switchButton --*/
 
 .switchButton {
   position: absolute;
@@ -47,14 +47,15 @@
   color: var(--white);
   background-color: var(--btn-main-color);
 }
-    
-  /*-- @media (max-width: 767px) --*/
+
+/*-- @media (max-width: 767px) --*/
 
 @media screen and (max-width: 767px) {
   .containerLanding {
     background: url('../../images/landing\(mobile\)1x.webp') no-repeat;
-    background-size: 320px, auto;
-    background-position: bottom 0 left 0;
+    background-size: 850px auto;
+    background-position: bottom -520px left -470px;
+    overflow: hidden;
   }
 
   .containerForm {
@@ -77,7 +78,7 @@
   }
 
   .switchButton {
-    top: 259px; 
+    top: 259px;
     left: 250px;
     padding: 4px;
     font-size: 14px;
@@ -85,25 +86,23 @@
   }
 }
 
-/* @media screen and (max-width: 767px) and (min-resolution: 192dpi) {
-  .containerQuest {
+@media screen and (max-width: 767px) and (min-resolution: 192dpi) {
+  .containerLanding {
     background: url('../../images/landing\(mobile\)4x.webp') no-repeat;
+    background-size: 850px auto;
+    background-position: bottom -520px left -470px;
+    overflow: hidden;
   }
-} */
+}
 
 /*-- @media (min-width: 768px) --*/
 
 @media screen and (min-width: 768px) {
   .containerLanding {
-    background: url('../../images/landing-up(tablet)1x.webp') no-repeat;
-    background-size: 335px, auto;
-    background-position: top 0 right 0;
-  }
-
-  .containerQuest {
-    background: url('../../images/landing-down(tablet)1x.webp') no-repeat;
-    background-size: 790px, auto;
-    background-position: bottom 0 right 0;
+    background: url('../../images/landing\(tablet\)2x.webp') no-repeat;
+    background-size: 1630px, auto;
+    background-position: top -205px left -135px;
+    overflow: hidden;
   }
 
   .containerForm {
@@ -130,7 +129,7 @@
   }
 
   .switchButton {
-    top: 510px; 
+    top: 510px;
     left: 355px;
     font-size: 18px;
     padding: 5px;
@@ -138,28 +137,23 @@
   }
 }
 
-/* @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
-  .containerQuest {
-    background: url('../../images/landing-down(tablet)4x.webp') no-repeat;
-  }
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .containerLanding {
-    background: url('../../images/landing-up(tablet)4x.webp') no-repeat;
+    background: url('../../images/landing\(tablet\)4x.webp') no-repeat;
+    background-size: 1630px, auto;
+    background-position: top -205px left -135px;
+    overflow: hidden;
   }
-} */
+}
 
 /*-- @media (min-width: 1280px) --*/
 
 @media screen and (min-width: 1280px) {
   .containerLanding {
-    background: url('../../images/landing-up(desk)1x.webp') no-repeat;
-    background-size: 439px, auto;
-    background-position: top 0 right 0;
-  }
-
-  .containerQuest {
-    background: url('../../images/landing-down(desk)1x.webp') no-repeat;
-    background-size: 1000px, auto;
-    background-position: bottom 0 right 0;
+    background: url('../../images/landing\(desk\)1x.webp') no-repeat;
+    background-size: 1580px, auto;
+    background-position: top -200px left 267px;
+    overflow: hidden;
   }
 
   .containerForm {
@@ -186,19 +180,18 @@
   }
 
   .switchButton {
-    top: 462px; 
+    top: 462px;
     left: 635px;
     font-size: 24px;
     letter-spacing: 0.1em;
   }
 }
 
-/* @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
-  .containerQuest {
-    background: url('../../images/landing-down(desk)4x.webp') no-repeat;
-  }
-
+@media screen and (min-width: 1280px) and (min-resolution: 192dpi) {
   .containerLanding {
-    background: url('../../images/landing-up(desk)4x.webp') no-repeat;
+    background: url('../../images/landing\(desk\)4x.webp') no-repeat;
+    background-size: 1580px, auto;
+    background-position: top -200px left 267px;
+    overflow: hidden;
   }
-} */
+}
