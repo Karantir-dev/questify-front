@@ -51,10 +51,11 @@
 
 .containerLanding {
   height: 100vh;
+  width: 100%;
 }
 
 .containerForm {
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -64,13 +65,13 @@
 @media screen and (max-width: 767px) {
   .containerLanding {
     background: url('../../images/landing\(mobile\)2x.webp') no-repeat;
-    background-size: 850px auto;
-    background-position: bottom -520px left -470px;
+    background-size: contain;
+    background-position: bottom 0 left 0;
     overflow: hidden;
   }
 
   .containerForm {
-    left: 15px;
+    margin: 0 auto;
     max-width: 297px;
   }
 
@@ -100,8 +101,8 @@
 @media screen and (max-width: 767px) and (min-resolution: 192dpi) {
   .containerLanding {
     background: url('../../images/landing\(mobile\)4x.webp') no-repeat;
-    background-size: 850px auto;
-    background-position: bottom -520px left -470px;
+    background-size: contain;
+    background-position: bottom 0 left 0;
     overflow: hidden;
   }
 }
@@ -111,8 +112,8 @@
 @media screen and (min-width: 768px) {
   .containerLanding {
     background: url('../../images/landing\(tablet\)2x.webp') no-repeat;
-    background-size: 1630px, auto;
-    background-position: top -205px left -135px;
+    background-size: contain;
+    background-position: bottom 0 right 0;
     overflow: hidden;
   }
 
@@ -148,8 +149,8 @@
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .containerLanding {
     background: url('../../images/landing\(tablet\)4x.webp') no-repeat;
-    background-size: 1630px, auto;
-    background-position: top -205px left -135px;
+    background-size: contain;
+    background-position: bottom 0 right 0;
     overflow: hidden;
   }
 }
@@ -159,16 +160,14 @@
 @media screen and (min-width: 1280px) {
   .containerLanding {
     background: url('../../images/landing\(desk\)2x.webp') no-repeat;
-    background-size: 1580px, auto;
-    background-position: top -200px left 267px;
+    background-size: contain;
+    background-position: bottom 0 right 0;
     overflow: hidden;
   }
 
   .containerForm {
-    padding-top: 193px;
-    padding-bottom: 194px;
-    padding-left: 229px;
-    max-width: 795px;
+    left: 229px;
+    max-width: 560px;
   }
 
   .logo {
@@ -188,8 +187,8 @@
   }
 
   .switchButton {
-    top: 270px;
-    left: 51%;
+    top: 315px;
+    left: 72%;
     font-size: 24px;
   }
 }
@@ -197,8 +196,8 @@
 @media screen and (min-width: 1280px) and (min-resolution: 192dpi) {
   .containerLanding {
     background: url('../../images/landing\(desk\)4x.webp') no-repeat;
-    background-size: 1580px, auto;
-    background-position: top -200px left 267px;
+    background-size: contain;
+    background-position: bottom 0 right 0;
     overflow: hidden;
   }
 }
