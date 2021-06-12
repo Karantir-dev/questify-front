@@ -23,7 +23,7 @@ function Card(
       deadline={deadline}
       text={text}
       isCompleted={isCompleted}
-      editFormShow={setEditFormShow}
+      onCloseEditMode={setEditFormShow}
     />
   ) : (
     <StaticCard
@@ -46,7 +46,6 @@ Card.propTypes = {
   deadline: PropTypes.string,
   text: PropTypes.string,
   isCompleted: PropTypes.bool,
-  setEditFormShow: PropTypes.func,
 }
 
 export default Card
