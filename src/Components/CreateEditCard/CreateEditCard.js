@@ -137,7 +137,7 @@ const CreateEditCard = ({
                   className={styles.trophyIcon}
                   name="trophy"
                   color="var(--primary-color)"
-                  size={14}
+                  size={15}
                 />
               ) : (
                 <Icon
@@ -223,7 +223,7 @@ const CreateEditCard = ({
                     <Icon
                       className={styles.clearIcon}
                       name="clear"
-                      color="#DB0837"
+                      color="var(--accent-red)"
                       size={10}
                     />
                   </button>

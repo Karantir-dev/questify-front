@@ -10,6 +10,12 @@
     3px 4px 4px rgba(21, 57, 90, 0.03);
 }
 
+.card:hover {
+box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.08),
+3px 5px 5px rgba(21, 57, 90, 0.08);
+}
+
+
 .cardChallenge{
     composes: card;
     background-color: var(--challenge-bg-color);
@@ -101,25 +107,49 @@ background-color: transparent;
     color: var(--white);
 }
 
+/* ////////////////////////подправить стили для дейтпикера после его финальной версии///////////////////////// */
 .datePicker{
     height: 14px;
 
     margin-top: 12px;
 }
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^подправить стили для дейтпикера после его финальной версии^^^^^^^^^^^^^^^^^^^^^^^ */
 
 .starIcon{
+    filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25));
 }
 
 .trophyIcon {
+    filter: drop-shadow(0px 4px 4px rgba(0, 215, 255, 0.25));
 }
 
-.saveIcon {
+.saveIcon:hover {
+    fill: currentColor;
+    color: var(--btn-active-color);
 }
 
-.clearIcon {
+.saveIcon:active {
+    fill: currentColor;
+    color: var(--link-active);
 }
 
-.doneIcon {
+.clearIcon:hover {
+    fill: currentColor;
+    color: var(--red-hover);
+}
+
+.clearIcon:active {
+    fill: currentColor;
+    color: var(--red-active);
+}
+
+.doneIcon:hover {
+    fill: currentColor;
+    color: var(--green-hover);
+}
+.doneIcon:active {
+    fill: currentColor;
+    color: var(--green-active);
 }
 
 .createBtn {
@@ -151,6 +181,29 @@ background-color: transparent;
     }
     .datePicker {
         margin-top: 16px;
+    }
+    .createBtn {
+        font-size: 16px;
+    }
+    .saveIcon {
+        width: 12px;
+        height: 12px;
+    }
+    .clearIcon {
+        width: 12px;
+        height: 12px;
+    }
+    .doneIcon {
+        width: 16px;
+        height: 16px;
+    }
+    .starIcon {
+        width: 19px;
+        height: 18px;
+    }
+    .trophyIcon {
+        width: 19px;
+        height: 19px;
     }
 }
 
