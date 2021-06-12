@@ -223,7 +223,7 @@ const CreateEditCard = ({
                     <Icon
                       className={styles.clearIcon}
                       name="clear"
-                      color="#DB0837"
+                      color="var(--accent-red)"
                       size={10}
                     />
                   </button>
