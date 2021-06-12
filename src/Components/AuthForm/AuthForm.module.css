@@ -42,7 +42,10 @@
 
 .inputForm:focus + .labelForm,
 .inputForm:not(:placeholder-shown) + .labelForm {
-  transform: translateY(-30px) translateX(0);
+  font-size: 12px;
+  line-height: 0.5;
+  color: var(--header-color);
+  transform: translateY(-25px) translateX(0);
 }
 
 @media screen and (max-width: 767px) {
