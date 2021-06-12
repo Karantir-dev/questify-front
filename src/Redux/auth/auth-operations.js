@@ -66,7 +66,7 @@ const getCurrentUser = () => (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState()
-  
+
   if (!persistedToken) {
     return
   }
@@ -88,5 +88,22 @@ const getCurrentUser = () => (dispatch, getState) => {
     )
 }
 
-const authOperations = { register, login, logout, getCurrentUser }
+const verifyUser = async token => async dispatch => {
+  dispatch(authActions.verifyUserRequest())
+
+  return await axios
+    .post(`users/verify/${token}`)
+    .then(() => {
+      dispatch(authActions.verifyUserSuccess())
+      return true
+    })
+    .catch(err => {
+      dispatch(
+        authActions.verifyUserError(err.response?.data?.message || err.message),
+      )
+      return false
+    })
+}
+
+const authOperations = { register, login, logout, getCurrentUser, verifyUser }
 export default authOperations

@@ -2,61 +2,55 @@
 .difficulty_button {
   display: inline-flex;
   align-items: center;
-  text-transform: capitalize;
-  width: 120px;
-  height: 35px;
-  font-size: 16px;
-  line-height: 16px;
-  padding: 10px 2px 10px 21px;
-  cursor: pointer;
-}
-.difficulty_buttonLabel_dark {
-  color: var(--text-secondary-color);
-}
-.difficulty_buttonLabel {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 7px;
-}
-
-.difficulty_text::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: none;
-  border-radius: 50%;
-  margin-right: 7px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
-}
-.easy::before {
-  background-color: var(--primary-color);
-}
-.normal::before {
-  background-color: var(--main-green);
-}
-.hard::before {
-  background-color: #db0837;
-}
-
-/*Category styles*/
-
-.category_button {
-  display: inline-flex;
-  align-items: center;
-  text-transform: capitalize;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
   width: 120px;
   height: 35px;
   padding: 10px 2px 10px 21px;
   border-radius: 0px 25px 25px 0px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.difficulty_button:hover,
+.difficulty_button:focus,
+.category_button:hover,
+.category_button:focus {
+  box-shadow: 1px -3px 4px 1px rgb(0 215 255 / 22%),
+    1px 3px 4px 1px rgb(0 215 255 / 22%);
+}
+
+.difficulty_buttonLabel_challenge {
+  color: var(--text-secondary-color);
+}
+
+.difficulty_buttonLabel {
+  margin-right: 7px;
+}
+
+.d_level_easy {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-right: 7px;
+}
+.d_level_normal {
+  composes: d_level_easy;
+  background-color: var(--main-green);
+}
+.d_level_hard {
+  composes: d_level_easy;
+  background-color: #db0837;
+}
+/*Category styles*/
+
+.category_button {
+  composes: difficulty_button;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
 }
 .category_buttonLabel {
   margin-right: 3px;
@@ -82,27 +76,19 @@
 }
 
 /*Common styles*/
-.category_radio,
-.difficulty_radio {
-  display: none;
-  /* position: absolute;
-  z-index: -1;
-  opacity: 0; */
-}
 
 @media screen and (min-width: 768px) {
-  .category_button {
-    font-size: 11px;
-    line-height: 11px;
-    width: 88px;
+  .difficulty_button {
+    font-size: 14px;
+    line-height: 14px;
+    width: 120px;
     height: 25px;
     padding: 8px 2px 6px 21px;
     border-radius: 0px 15px 15px 0px;
   }
-  .difficulty_button {
-    font-size: 14px;
-    line-height: 14px;
-    height: 25px;
-    padding: 8px 2px 6px 21px;
+  .category_button {
+    width: 88px;
+    font-size: 11px;
+    line-height: 11px;
   }
 }
