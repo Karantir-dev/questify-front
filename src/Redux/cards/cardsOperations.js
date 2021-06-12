@@ -4,17 +4,17 @@ import cardsActions from './cardsActions'
 axios.defaults.baseURL = 'https://goit23-project.herokuapp.com/'
 
 const fetchActiveCards = () => dispatch => {
-  // dispatch(cardsActions.fetchActiveCardsRequest())
-  // axios
-  //   .get('cards?isCompleted=false')
-  //   .then(({ data }) => dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards)))
-  //   .catch(err =>
-  //     dispatch(
-  //       cardsActions.fetchActiveCardsError(
-  //         err.response?.data?.message || err.message,
-  //       ),
-  //     ),
-  //   )
+  dispatch(cardsActions.fetchActiveCardsRequest())
+  axios
+    .get('cards?isCompleted=false')
+    .then(({ data }) => dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards)))
+    .catch(err =>
+      dispatch(
+        cardsActions.fetchActiveCardsError(
+          err.response?.data?.message || err.message,
+        ),
+      ),
+    )
 }
 
 const fetchDoneCards = () => dispatch => {
