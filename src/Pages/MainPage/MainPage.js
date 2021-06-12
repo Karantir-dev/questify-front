@@ -7,8 +7,7 @@ import Icon from '../../Components/Icon'
 import IconButton from '../../Components/IconButton/IconButton'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
-import CardStatic from '../../Components/Card/CardStatic'
-
+import StaticCard from '../../Components/StaticCard/StaticCard'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
@@ -31,8 +30,12 @@ export default function Main() {
   const doneCards = useSelector(cardsSelectors.getDoneCards)
 
   const activeThisWeekCards = useSelector(cardsSelectors.getActiveThisWeekCards)
-  const activeThisMonthCards = useSelector(cardsSelectors.getActiveThisMonthCards)
-  const activeNextMonthsCards = useSelector(cardsSelectors.getActiveNextMonthsCards)
+  const activeThisMonthCards = useSelector(
+    cardsSelectors.getActiveThisMonthCards,
+  )
+  const activeNextMonthsCards = useSelector(
+    cardsSelectors.getActiveNextMonthsCards,
+  )
 
   function onShowDone() {
     setDoneIsShown(!doneIsShown)
@@ -51,8 +54,8 @@ export default function Main() {
           {showEditForm && <CreateEditCard />}
           <CardList cards={activeTodayCards} />
         </section>
-           
-        <CardStatic
+
+        <StaticCard
           difficulty="hard"
           isChallenge="sds"
           text="Run the half-marathon Dubno"
@@ -65,21 +68,20 @@ export default function Main() {
           <CardList cards={activeTomorrowCards} />
         </section>
 
-        
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS WEEK</h2>
-           {/* <CardList cards={activeThisWeekCards} /> */}
+          {/* <CardList cards={activeThisWeekCards} /> */}
         </section>
-        
+
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS MONTH</h2>
-           {/* <CardList cards={activeThisMonthCards} /> */}
+          {/* <CardList cards={activeThisMonthCards} /> */}
         </section>
-        
+
         <section className={s.section}>
           <h2 className={s.sectionTitle}>NEXT MONTHS</h2>
-           {/* <CardList cards={activeNextMonthsCards} /> */}
-          </section>
+          {/* <CardList cards={activeNextMonthsCards} /> */}
+        </section>
 
         <section className={s.sectionDone}>
           <div className={s.lineWrapper}>

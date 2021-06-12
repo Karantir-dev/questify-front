@@ -5,18 +5,32 @@
   width: 290px;
   height: 260px;
   align-items: center;
+  background: var(--white);
   box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
     3px 4px 4px rgba(21, 57, 90, 0.03);
   border-radius: 10px;
   position: relative;
 }
 
+.baseContainer:hover {
+  background-color: rgb(192, 96, 32);
+  transition: background-color 200ms;
+}
+
 .ContainerChallenge {
   composes: baseContainer;
   background: var(--challenge-bg-color);
+  box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.08),
+    3px 5px 5px rgba(21, 57, 90, 0.08);
 }
 
-.Icon {
+.ContainerChallenge:hover {
+  background-color: rgb(192, 96, 32);
+  transition: background-color 200ms;
+}
+
+.IconTrophy,
+.IconStar {
   height: 19px;
   width: 19px;
   position: absolute;
@@ -50,7 +64,10 @@
   padding-left: 21px;
   padding-right: 21px;
   width: inherit;
-
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
   color: var(--white);
 }
 
@@ -58,6 +75,10 @@
   composes: taskNameChallenge;
   margin-top: 71px;
   color: var(--text-primary-color);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
 }
 
 .difficultyContainer {
@@ -182,9 +203,14 @@
     line-height: 14px;
   }
 
-  .Icon {
+  .IconTrophy {
     height: 14px;
     width: 14px;
+  }
+
+  .IconStar {
+    height: 15px;
+    width: 15px;
   }
 
   .cardType {

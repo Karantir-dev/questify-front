@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types'
 import styles from './StaticCard.module.css'
 import Icon from '../Icon'
+import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
 function StaticCard({
   id,
   isChallenge,
   difficulty,
   category,
-  deadline,
+  date,
   text,
   isCompleted,
-  handleEditCard,
 }) {
   return (
-    <div
+    <button
+      type="button"
       className={isChallenge ? styles.ContainerChallenge : styles.baseContainer}
-      onClick={handleEditCard}
+      // onClick={test}
     >
       <div className={styles.difficultyContainer}>
         <div className={styles.difficultyLevel}>
@@ -24,9 +25,9 @@ function StaticCard({
         </div>
 
         {isChallenge ? (
-          <Icon className={styles.Icon} name="trophy" />
+          <Icon className={styles.IconTrophy} name="trophy" />
         ) : (
-          <Icon className={styles.Icon} name="Star" />
+          <Icon className={styles.IconStar} name="Star" />
         )}
       </div>
 
@@ -38,13 +39,13 @@ function StaticCard({
       </h2>
 
       <h3 className={styles.dateStyle}>
-        {isChallenge ? `by ${deadline}` : `${deadline}`}
+        {isChallenge ? `by ${date}` : `${date}`}
       </h3>
 
       <div>
         <div className={styles[category]}>{category}</div>
       </div>
-    </div>
+    </button>
   )
 }
 
@@ -55,7 +56,6 @@ StaticCard.propTypes = {
   date: PropTypes.string,
   text: PropTypes.string,
   isCompleted: PropTypes.bool,
-  handleEditCard: PropTypes.func,
 }
 
 export default StaticCard
