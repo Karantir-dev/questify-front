@@ -38,9 +38,17 @@ function StaticCard({
         </div>
 
         {isChallenge ? (
-          <Icon className={styles.IconTrophy} name="trophy" />
+          <Icon
+            className={styles.IconTrophy}
+            name="trophy"
+            color="var(--primary-color)"
+          />
         ) : (
-          <Icon className={styles.IconStar} name="Star" />
+          <Icon
+            className={styles.IconStar}
+            name="Star"
+            color="var(--primary-color)"
+          />
         )}
       </div>
 
@@ -66,7 +74,7 @@ StaticCard.propTypes = {
   isChallenge: PropTypes.bool,
   difficulty: PropTypes.string,
   category: PropTypes.string,
-  date: PropTypes.string,
+  deadline: PropTypes.string,
   text: PropTypes.string,
   isCompleted: PropTypes.bool,
 }
