@@ -75,6 +75,10 @@
   background-color: var(--work-color);
 }
 
+.Icon {
+  fill: var(--primary-color);
+}
+
 /*Common styles*/
 
 @media screen and (min-width: 768px) {

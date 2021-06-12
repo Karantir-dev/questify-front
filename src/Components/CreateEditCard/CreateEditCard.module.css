@@ -1,223 +1,220 @@
 .card {
-    position: relative;
-    padding: 18px 0 26px;
-    width: 205px;
-    height: 199px;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
-        3px 4px 4px rgba(21, 57, 90, 0.03);
+  position: relative;
+  padding: 18px 0 26px;
+  width: 205px;
+  height: 199px;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
+    3px 4px 4px rgba(21, 57, 90, 0.03);
 }
 
 .card:hover {
-    box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.08),
-        3px 5px 5px rgba(21, 57, 90, 0.08);
+  box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.08),
+    3px 5px 5px rgba(21, 57, 90, 0.08);
 }
 
-
 .cardChallenge {
-    composes: card;
-    background-color: var(--challenge-bg-color);
+  composes: card;
+  background-color: var(--challenge-bg-color);
 }
 
 .cardTitle {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: var(--text-secondary-color);
-    margin: 10px 0 0 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary-color);
+  margin: 10px 0 0 0;
 }
 
 .buttonsList {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.buttonsList>li {
-    position: relative;
-    display: inline-block;
-    height: 16px;
+.buttonsList > li {
+  position: relative;
+  display: inline-block;
+  height: 16px;
 }
 
-.buttonsList>li:not(:first-child) {
-    margin-left: 14px;
+.buttonsList > li:not(:first-child) {
+  margin-left: 14px;
 }
 
-.buttonsList>li:not(:first-child)::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-7px, -50%);
-    height: 16px;
-    width: 1px;
-    background-color: var(--text-secondary-color);
+.buttonsList > li:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-7px, -50%);
+  height: 16px;
+  width: 1px;
+  background-color: var(--text-secondary-color);
 }
 
 .cardTopButtons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 21px;
 }
 
 .cardBottomButtons {
-    composes: cardTopButtons;
-    margin-top: 36px;
-
+  composes: cardTopButtons;
+  margin-top: 36px;
 }
 
 .cardInputWrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .cardInput {
-    font-size: 16px;
-    height: 16px;
-    width: 163px;
-    outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid var(--primary-color);
-    caret-color: var(--primary-color);
-    background-color: transparent;
+  font-size: 16px;
+  height: 16px;
+  width: 163px;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--primary-color);
+  caret-color: var(--primary-color);
+  background-color: transparent;
 }
 
 .cardInputChallenge {
-    composes: cardInput;
-    color: var(--white);
+  composes: cardInput;
+  color: var(--white);
 }
 
 /* ////////////////////////подправить стили для дейтпикера после его финальной версии///////////////////////// */
 .datePicker {
-    height: 14px;
+  height: 14px;
 
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^подправить стили для дейтпикера после его финальной версии^^^^^^^^^^^^^^^^^^^^^^^ */
 
 .starIcon {
-    filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25));
+  filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25));
 }
 
 .trophyIcon {
-    filter: drop-shadow(0px 4px 4px rgba(0, 215, 255, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 215, 255, 0.25));
 }
 
 .saveIcon:hover {
-    fill: currentColor;
-    color: var(--btn-active-color);
+  fill: currentColor;
+  color: var(--btn-active-color);
 }
 
 .saveIcon:active {
-    fill: currentColor;
-    color: var(--link-active);
+  fill: currentColor;
+  color: var(--link-active);
 }
 
 .clearIcon:hover {
-    fill: currentColor;
-    color: var(--red-hover);
+  fill: currentColor;
+  color: var(--red-hover);
 }
 
 .clearIcon:active {
-    fill: currentColor;
-    color: var(--red-active);
+  fill: currentColor;
+  color: var(--red-active);
 }
 
 .doneIcon:hover {
-    fill: currentColor;
-    color: var(--green-hover);
+  fill: currentColor;
+  color: var(--green-hover);
 }
 
 .doneIcon:active {
-    fill: currentColor;
-    color: var(--green-active);
+  fill: currentColor;
+  color: var(--green-active);
 }
 
 .createBtn {
-    color: var(--primary-color);
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 1;
-    text-align: right;
-    letter-spacing: 0.02em;
+  color: var(--primary-color);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1;
+  text-align: right;
+  letter-spacing: 0.02em;
 }
 
 .createBtn:hover {
-    color: var(--btn-active-color);
+  color: var(--btn-active-color);
 }
 
 .createBtn:active {
-    color: var(--link-active);
+  color: var(--link-active);
 }
 
 @media screen and (max-width: 768px) {
-    .card {
-        width: 290px;
-        height: 260px;
-        padding: 18px 0 42px;
-    }
+  .card {
+    width: 290px;
+    height: 260px;
+    padding: 18px 0 42px;
+  }
 
-    .cardTitle {
-        font-size: 14px;
-        margin: 30px 0 0 0;
-    }
+  .cardTitle {
+    font-size: 14px;
+    margin: 30px 0 0 0;
+  }
 
-    .cardBottomButtons {
-        margin-top: 46px;
-    }
+  .cardBottomButtons {
+    margin-top: 46px;
+  }
 
-    .cardInput {
-        margin-top: 19px;
-    }
+  .cardInput {
+    margin-top: 19px;
+  }
 
-    .datePicker {
-        margin-top: 16px;
-    }
+  .datePicker {
+    margin-top: 16px;
+  }
 
-    .createBtn {
-        font-size: 16px;
-    }
+  .createBtn {
+    font-size: 16px;
+  }
 
-    .saveIcon {
-        width: 12px;
-        height: 12px;
-    }
+  .saveIcon {
+    width: 12px;
+    height: 12px;
+  }
 
-    .clearIcon {
-        width: 12px;
-        height: 12px;
-    }
+  .clearIcon {
+    width: 12px;
+    height: 12px;
+  }
 
-    .doneIcon {
-        width: 16px;
-        height: 16px;
-    }
+  .doneIcon {
+    width: 16px;
+    height: 16px;
+  }
 
-    .starIcon {
-        width: 19px;
-        height: 18px;
-    }
+  .starIcon {
+    width: 19px;
+    height: 18px;
+  }
 
-    .trophyIcon {
-        width: 19px;
-        height: 19px;
-    }
+  .trophyIcon {
+    width: 19px;
+    height: 19px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .card {
-        margin: 25px 28px;
-    }
+  .card {
+    margin: 25px 28px;
+  }
 }
