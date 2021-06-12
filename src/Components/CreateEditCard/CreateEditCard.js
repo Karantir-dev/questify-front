@@ -137,7 +137,7 @@ const CreateEditCard = ({
                   className={styles.trophyIcon}
                   name="trophy"
                   color="var(--primary-color)"
-                  size={14}
+                  size={15}
                 />
               ) : (
                 <Icon
