@@ -1,24 +1,21 @@
-import styles from '../AuthPage/AuthPage.module.css'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
-import { useState } from 'react'
+import Loader from '../../Components/Loader/Loader'
+import authSelectors from '../../Redux/auth/auth-selectors'
+
+import styles from '../AuthPage/AuthPage.module.css'
 
 export default function Landing() {
   const [showSignup, setShowSignup] = useState(false)
-
-  const loginHandler = event => {
-    event.preventDefault()
-    console.log('login handler')
-  }
-
-  const signupHandler = event => {
-    event.preventDefault()
-    console.log('signup handler')
-  }
+  const [registerSuccess, setRegisterSuccess] = useState(false)
 
   const switchButtonHandler = () => {
     setShowSignup(!showSignup)
   }
+
+  const isLoading = useSelector(authSelectors.getIsLoadding)
 
   return (
     <div className={styles.containerLanding}>
@@ -30,20 +27,34 @@ export default function Landing() {
           Questify will turn your life into a thrilling game full of amazing
           quests and exciting challenges.
         </p>
-        <p className={styles.descriptionRegister}>
-          {showSignup
-            ? 'Write your credentials to sign up, or'
-            : 'Write your credentials to log in, or'}
 
-          <button className={styles.switchButton} onClick={switchButtonHandler}>
-            {showSignup ? 'log in' : 'sign up'}
-          </button>
-        </p>
-
-        {showSignup ? (
-          <AuthForm onSubmit={signupHandler} />
+        {isLoading ? (
+          <Loader />
+        ) : registerSuccess ? (
+          <p className={styles.successRegText}>
+            You have successfully registered, go to your email to confirm it
+          </p>
         ) : (
-          <LoginForm onSubmit={loginHandler} />
+          <>
+            <p className={styles.descriptionRegister}>
+              {showSignup
+                ? 'Write your credentials to sign up, or'
+                : 'Write your credentials to log in, or'}
+
+              <button
+                className={styles.switchButton}
+                onClick={switchButtonHandler}
+              >
+                {showSignup ? 'log in' : 'sign up'}
+              </button>
+            </p>
+
+            {showSignup ? (
+              <AuthForm onRegister={setRegisterSuccess} />
+            ) : (
+              <LoginForm />
+            )}
+          </>
         )}
       </div>
     </div>

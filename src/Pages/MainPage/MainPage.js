@@ -69,17 +69,17 @@ export default function Main() {
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS WEEK</h2>
-          {/* <CardList cards={activeThisWeekCards} /> */}
+          <CardList cards={activeThisWeekCards} />
         </section>
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS MONTH</h2>
-          {/* <CardList cards={activeThisMonthCards} /> */}
+          <CardList cards={activeThisMonthCards} />
         </section>
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>NEXT MONTHS</h2>
-          {/* <CardList cards={activeNextMonthsCards} /> */}
+          <CardList cards={activeNextMonthsCards} />
         </section>
 
         <section className={s.sectionDone}>

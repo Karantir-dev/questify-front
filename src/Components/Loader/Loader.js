@@ -1,16 +1,14 @@
-import Loader from "react-loader-spinner"
+import Loader from 'react-loader-spinner'
 import styles from './Loader.module.css'
 
-export default function Loaders () {
+export default function Loaders({ size }) {
   return (
-    <div className={styles.containerLoader}>
-      <Loader
-        type="ThreeDots"
-        color="#00d7ff"
-        height={100}
-        width={100}
-        timeout={1000} //3 secs
-      />
-    </div>  
+    <Loader
+      className={styles.containerLoader}
+      type="ThreeDots"
+      color="#00d7ff"
+      height={size}
+      width={size}
+    />
   )
 }

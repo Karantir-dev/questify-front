@@ -44,7 +44,7 @@
 .inputForm:not(:placeholder-shown) + .labelForm {
   font-size: 12px;
   line-height: 0.5;
-  color: var(--header-color);
+  color: var(--primary-color);
   transform: translateY(-25px) translateX(0);
 }
 

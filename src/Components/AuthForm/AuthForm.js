@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import styles from './AuthForm.module.css'
 import IconButton from '../IconButton/IconButton'
 
-export default function AuthForm() {
+export default function AuthForm({ onRegister }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -46,7 +46,7 @@ export default function AuthForm() {
         authActions.registerError('Enter a password at least 8 characters!'),
       )
     } else {
-      dispatch(authOperations.register({ name, email, password }))
+      dispatch(authOperations.register({ name, email, password }, onRegister))
       clear()
     }
   }

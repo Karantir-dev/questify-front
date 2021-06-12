@@ -45,7 +45,7 @@ export default function App() {
 
   return (
     <div>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader size={100} />}>
         <Switch>
           <PrivateRoute exact path="/" redirectTo="/auth">
             <MainPage />

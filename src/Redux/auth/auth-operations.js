@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 import authActions from './auth-actions'
 
 axios.defaults.baseURL = 'https://goit23-project.herokuapp.com/'
@@ -13,13 +12,14 @@ const token = {
   },
 }
 
-const register = credentials => dispatch => {
+const register = (credentials, onRegister) => dispatch => {
   dispatch(authActions.registerRequest())
 
   axios
     .post('users/signup', credentials)
     .then(() => {
       dispatch(authActions.registerSuccess())
+      onRegister(true)
     })
     .catch(err => {
       dispatch(

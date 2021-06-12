@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import styles from './CreateEditCard.module.css'
 import Modal from '../DeleteModal/Modal'

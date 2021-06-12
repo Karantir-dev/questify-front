@@ -25,8 +25,8 @@ const isAuthenticated = createReducer(false, {
 })
 
 const isLoading = createReducer(false, {
-  [authActions.registerSuccess]: () => false,
   [authActions.registerRequest]: () => true,
+  [authActions.registerSuccess]: () => false,
   [authActions.registerError]: () => false,
   [authActions.logInRequest]: () => true,
   [authActions.logInSuccess]: () => false,
