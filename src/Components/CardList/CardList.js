@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Card from '../Card/Card'
+import StaticCard from '../StaticCard/StaticCard'
+
 import './CardList.module.css'
 
 function CardList({ cards }) {
@@ -11,20 +12,21 @@ function CardList({ cards }) {
           id,
           isChallenge,
           difficulty,
-          categorie,
-          date,
+          category,
+          deadline,
           text,
           isCompleted,
         }) => (
           <li key={id}>
-          <Card
-            isChallenge={isChallenge}
-            difficulty={difficulty}
-            categorie={categorie}
-            date={date}
-            text={text}
-            isCompleted={isCompleted}
+            <StaticCard
+              isChallenge={isChallenge}
+              difficulty={difficulty}
+              category={category}
+              deadline={deadline}
+              text={text}
+              isCompleted={isCompleted}
             />
+
           </li>
         ),
       )}
@@ -37,10 +39,9 @@ CardList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       isChallenge: PropTypes.bool.isRequired,
-      isCompleted: PropTypes.bool.isRequired,
       difficulty: PropTypes.string.isRequired,
-      categorie: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      deadline: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
     }),
   ),

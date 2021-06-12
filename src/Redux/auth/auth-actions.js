@@ -16,6 +16,10 @@ const getCurrentUserRequest = createAction('GET_CURRENT_USER_REQUEST')
 const getCurrentUserSuccess = createAction('GET_CURRENT_USER_SUCCESS')
 const getCurrentUserError = createAction('GET_CURRENT_USER_ERROR')
 
+const verifyUserRequest = createAction('VERIFY_USER_REQUEST')
+const verifyUserSuccess = createAction('VERIFY_USER_SUCCESS')
+const verifyUserError = createAction('VERIFY_USER_ERROR')
+
 const authActions = {
   registerRequest,
   registerSuccess,
@@ -29,5 +33,8 @@ const authActions = {
   getCurrentUserRequest,
   getCurrentUserSuccess,
   getCurrentUserError,
+  verifyUserRequest,
+  verifyUserSuccess,
+  verifyUserError,
 }
 export default authActions

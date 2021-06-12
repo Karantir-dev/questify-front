@@ -8,6 +8,7 @@ import PrivateRoute from './Components/PrivateRoutes'
 import PublicRoute from './Components/PublicRoute'
 import authOperations from './Redux/auth/auth-operations'
 import authSelectors from './Redux/auth/auth-selectors'
+import Loader from './Components/Loader/Loader'
 
 import 'react-toastify/dist/ReactToastify.css'
 import s from './App.module.css'
@@ -40,20 +41,20 @@ export default function App() {
 
   return (
     <div>
-      <Suspense fallback={<h1>Загружаем...</h1>}>
-        {isLoading ? (
-          <h1>Загружаем...</h1>
-        ) : (
-          <Switch>
-            <PrivateRoute exact path="/" redirectTo="/auth">
-              <MainPage />
-            </PrivateRoute>
+      <Suspense fallback={<Loader/>}>
+        <Switch>
+          <PrivateRoute exact path="/" redirectTo="/auth">
+            <MainPage />
+          </PrivateRoute>
 
-            <PublicRoute path="/auth" restricted redirectTo="/">
-              <AuthPage />
-            </PublicRoute>
-          </Switch>
-        )}
+          <PublicRoute exact path="/auth" restricted redirectTo="/">
+            <AuthPage />
+          </PublicRoute>
+
+          <PublicRoute path="/auth/:verifyToken" restricted redirectTo="/">
+            <AuthPage />
+          </PublicRoute>
+        </Switch>
       </Suspense>
 
       <ToastContainer className={s.notif} />

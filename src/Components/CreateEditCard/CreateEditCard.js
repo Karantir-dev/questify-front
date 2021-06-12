@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 import styles from './CreateEditCard.module.css'
-import Modal from '../Modal/Modal'
+import Modal from '../DeleteModal/Modal'
 import CompletedCard from '../CompletedCard/CompletedCard'
 import DateTimePicker from '../DateTimePicker/DateTimePicker'
 import OptionsPicker from '../OptionsPicker/OptionsPicker'
@@ -19,16 +19,15 @@ const TITLES = {
 const CreateEditCard = ({
   isChallengeProp = false,
   isCompletedProp = false,
-  textProp = 'sdsd',
-  difficultyProp = 'Normal',
-  categoryProp = 'FAMILY',
+  textProp = '',
+  difficultyProp = 'normal',
+  categoryProp = 'family',
   deadlineProp = new Date(),
   cardId = null,
   onDeleteNewCard = null,
 }) => {
   const dispatch = useDispatch()
   const [isDeleting, setIsDeleting] = useState(false)
-  const [isUpdatingToCompleted, setIsUpdatingToCompleted] = useState(false)
   const [isCompleted, setIsCompleted] = useState(isCompletedProp)
   const [text, setText] = useState(textProp)
   const [isChallenge, setIsChallenge] = useState(isChallengeProp)
@@ -59,11 +58,10 @@ const CreateEditCard = ({
 
   const handleCardCompletedStatus = () => {
     setIsCompleted(true)
-    setIsUpdatingToCompleted(true)
   }
 
   const onCompletingModalClosed = () => {
-    setIsUpdatingToCompleted(false)
+    setIsCompleted(false)
   }
 
   const handleCreateCard = useCallback(
@@ -71,14 +69,14 @@ const CreateEditCard = ({
       dispatch(
         cardsOperations.addCard(
           text,
+          deadline,
+          difficulty,
+          category,
           isChallenge,
           isCompleted,
-          category,
-          difficulty,
-          deadline,
         ),
       ),
-    [dispatch, text, isChallenge, isCompleted, category, difficulty, deadline],
+    [dispatch, text, deadline, difficulty, category, isChallenge, isCompleted],
   )
 
   const handleEditCard = useCallback(
@@ -108,7 +106,7 @@ const CreateEditCard = ({
   return (
     <>
       <div className={isChallenge ? styles.cardChallenge : styles.card}>
-        {isUpdatingToCompleted && (
+        {isCompleted && (
           <CompletedCard
             text={text}
             isChallenge={isChallenge}

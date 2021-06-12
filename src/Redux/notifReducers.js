@@ -10,6 +10,7 @@ const notifReducer = createReducer(null, {
   [authActions.registerError]: setNotification,
   [authActions.logInError]: setNotification,
   [authActions.logOutError]: setNotification,
+  [authActions.verifyUserError]: setNotification,
   [cardsActions.fetchActiveCardsError]: setNotification,
   [cardsActions.fetchDoneCardsError]: setNotification,
   [cardsActions.deleteCardError]: setNotification,
