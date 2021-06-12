@@ -36,7 +36,7 @@ export default function Landing() {
 
   return (
     <div className={styles.containerLanding}>
-      <div className={styles.containerQuest}>
+      
         <div className={styles.containerForm}>
           {isVerify && (
             <h2>
@@ -71,7 +71,7 @@ export default function Landing() {
             <LoginForm onSubmit={loginHandler} />
           )}
         </div>
-      </div>
+      
     </div>
   )
 }
