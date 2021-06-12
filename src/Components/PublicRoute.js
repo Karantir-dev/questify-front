@@ -7,10 +7,10 @@ import authSelectors from '../Redux/auth/auth-selectors'
  * - Otherwise render the component
  */
 export default function PublicRoute({ redirectTo, children, ...routeProps }) {
-  const getIsAuthenticated = useSelector(authSelectors.getIsAuthenticated)
+  const isAuthenticated = useSelector(authSelectors.getIsAuthenticated)
   return (
     <Route {...routeProps}>
-      {getIsAuthenticated && routeProps.restricted ? (
+      {isAuthenticated && routeProps.restricted ? (
         <Redirect to={redirectTo} />
       ) : (
         children

@@ -19,6 +19,11 @@ const MainPage = lazy(() =>
 const AuthPage = lazy(() =>
   import('./Pages/AuthPage/AuthPage' /* webpackChunkName: "AuthPage"*/),
 )
+const VerificationPage = lazy(() =>
+  import(
+    './Pages/VerificationPage/VerificationPage' /* webpackChunkName: "VerificationPage"*/
+  ),
+)
 
 export default function App() {
   const dispatch = useDispatch()
@@ -51,7 +56,7 @@ export default function App() {
           </PublicRoute>
 
           <PublicRoute path="/auth/:verifyToken" restricted redirectTo="/">
-            <AuthPage />
+            <VerificationPage />
           </PublicRoute>
         </Switch>
       </Suspense>

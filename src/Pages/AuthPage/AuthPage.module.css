@@ -88,8 +88,8 @@
   }
 
   .switchButton {
-    top: 200px;
-    left: 80%;
+    /* top: 200px;
+    left: 80%; */
     padding: 4px;
     min-width: 70px;
     font-size: 14px;
@@ -138,8 +138,8 @@
   }
 
   .switchButton {
-    top: 200px;
-    left: 72%;
+    /* top: 200px;
+    left: 72%; */
     font-size: 18px;
     padding: 3px;
   }
@@ -186,8 +186,8 @@
   }
 
   .switchButton {
-    top: 315px;
-    left: 72%;
+    /* top: 315px;
+    left: 72%; */
     font-size: 24px;
   }
 }
