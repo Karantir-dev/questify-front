@@ -5,18 +5,32 @@
   width: 290px;
   height: 260px;
   align-items: center;
+  background: var(--white);
   box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
     3px 4px 4px rgba(21, 57, 90, 0.03);
   border-radius: 10px;
   position: relative;
 }
 
+.baseContainer:hover {
+  background-color: rgb(192, 96, 32);
+  transition: background-color 200ms;
+}
+
 .ContainerChallenge {
   composes: baseContainer;
   background: var(--challenge-bg-color);
+  box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.08),
+    3px 5px 5px rgba(21, 57, 90, 0.08);
 }
 
-.Icon {
+.ContainerChallenge:hover {
+  background-color: rgb(192, 96, 32);
+  transition: background-color 200ms;
+}
+
+.IconTrophy,
+.IconStar {
   height: 19px;
   width: 19px;
   position: absolute;
@@ -50,7 +64,10 @@
   padding-left: 21px;
   padding-right: 21px;
   width: inherit;
-
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
   color: var(--white);
 }
 
@@ -58,9 +75,13 @@
   composes: taskNameChallenge;
   margin-top: 71px;
   color: var(--text-primary-color);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
 }
 
-.difficaltyContainer {
+.difficultyContainer {
   display: flex;
   width: inherit;
   align-items: center;
@@ -74,7 +95,7 @@
   margin-left: 21px;
 }
 
-.difficalty {
+.difficulty {
   font-family: HelveticaNeueCyr;
   font-style: normal;
   font-weight: normal;
@@ -85,20 +106,20 @@
   color: var(--text-secondary-color);
 }
 
-.difficaltyNormal {
+.Normal {
   border-radius: 50%;
   height: 10px;
   width: 10px;
   background-color: var(--main-green);
 }
 
-.difficaltyEasy {
-  composes: difficaltyNormal;
+.Easy {
+  composes: Normal;
   background-color: var(--primary-color);
 }
 
-.difficaltyHard {
-  composes: difficaltyNormal;
+.Hard {
+  composes: Normal;
   background-color: var(--main-red);
 }
 
@@ -114,7 +135,7 @@
   margin-top: 10px;
 }
 
-.categstuff {
+.stuff {
   padding-left: 21px;
   margin: 0;
   display: flex;
@@ -136,28 +157,28 @@
   background-color: var(--text-secondary-color);
 }
 
-.categfamily {
-  composes: categstuff;
+.family {
+  composes: stuff;
   background-color: var(--family-color);
 }
 
-.categhealth {
-  composes: categstuff;
+.health {
+  composes: stuff;
   background-color: var(--health-color);
 }
 
-.categlearning {
-  composes: categstuff;
+.learning {
+  composes: stuff;
   background-color: var(--learning-color);
 }
 
-.categleisure {
-  composes: categstuff;
-  backgound-color: var(--leisure-color);
+.leisure {
+  composes: stuff;
+  background-color: var(--leisure-color);
 }
 
-.categwork {
-  composes: categstuff;
+.work {
+  composes: stuff;
   background-color: var(--work-color);
 }
 
@@ -182,9 +203,14 @@
     line-height: 14px;
   }
 
-  .Icon {
+  .IconTrophy {
     height: 14px;
     width: 14px;
+  }
+
+  .IconStar {
+    height: 15px;
+    width: 15px;
   }
 
   .cardType {
@@ -193,12 +219,12 @@
     line-height: 12px;
   }
 
-  .categstuff,
-  .categfamily,
-  .categhealth,
-  .categlearning,
-  .categleisure,
-  .categwork {
+  .stuff,
+  .family,
+  .health,
+  .learning,
+  .leisure,
+  .work {
     font-size: 11px;
     line-height: 11px;
     height: 25px;
@@ -206,14 +232,14 @@
     bottom: 21px;
   }
 
-  .difficalty {
+  .difficulty {
     font-size: 14px;
     line-height: 14px;
   }
 
-  .difficaltyNormal,
-  .difficaltyEasy,
-  .difficaltyHard {
+  .Normal,
+  .Easy,
+  .Hard {
     height: 8px;
     width: 8px;
   }

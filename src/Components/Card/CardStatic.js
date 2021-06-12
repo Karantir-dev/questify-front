@@ -1,7 +1,7 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './CardStatic.module.css'
+import styles from './StaticCard.module.css'
 import Icon from '../Icon'
+import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
 function CardStatic({
   id,
@@ -11,29 +11,23 @@ function CardStatic({
   date,
   text,
   isCompleted,
-  handleEditCard,
 }) {
-  const dif = difficulty.toLowerCase()
-  const categ = category.toLowerCase()
-
   return (
-    <div
+    <button
+      type="button"
       className={isChallenge ? styles.ContainerChallenge : styles.baseContainer}
-      onClick={handleEditCard}
+      // onClick={test}
     >
-      <div className={styles.difficaltyContainer}>
+      <div className={styles.difficultyContainer}>
         <div className={styles.difficultyLevel}>
-          {dif == 'easy' && <div className={styles.difficaltyEasy}></div>}
-
-          {dif == 'normal' && <div className={styles.difficaltyNormal}></div>}
-          {dif == 'hard' && <div className={styles.difficaltyHard}></div>}
-
-          <h3 className={styles.difficalty}>{difficulty}</h3>
+          <div className={styles[difficulty]}></div>
+          <h3 className={styles.difficulty}>{difficulty}</h3>
         </div>
+
         {isChallenge ? (
-          <Icon className={styles.Icon} name="trophy" />
+          <Icon className={styles.IconTrophy} name="trophy" />
         ) : (
-          <Icon className={styles.Icon} name="Star" />
+          <Icon className={styles.IconStar} name="Star" />
         )}
       </div>
 
@@ -43,25 +37,15 @@ function CardStatic({
       >
         {text}
       </h2>
+
       <h3 className={styles.dateStyle}>
         {isChallenge ? `by ${date}` : `${date}`}
       </h3>
 
       <div>
-        <div
-          className={
-            (categ == 'stuff' && styles.categstuff) ||
-            (categ == 'family' && styles.categfamily) ||
-            (categ == 'health' && styles.categhealth) ||
-            (categ == 'learning' && styles.categlearning) ||
-            (categ == 'leisure' && styles.categleisure) ||
-            (categ == 'work' && styles.categwork)
-          }
-        >
-          {category}
-        </div>
+        <div className={styles[category]}>{category}</div>
       </div>
-    </div>
+    </button>
   )
 }
 
@@ -71,6 +55,7 @@ CardStatic.propTypes = {
   category: PropTypes.string,
   date: PropTypes.string,
   text: PropTypes.string,
+  isCompleted: PropTypes.bool,
   handleEditCard: PropTypes.func,
 }
 
