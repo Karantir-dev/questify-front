@@ -1,12 +1,12 @@
 import React from 'react';
 import DateTimePickerAPI from 'react-datetime-picker';
-// import './DateTimePicker.module.css';
+import './DateTimePicker.module.css';
 
 function DateTimePicker({ date, handleDateChange }) {
   const minDate = new Date()
     
   return (
-    <div>
+    <div className="date-time-picker-container">
       <DateTimePickerAPI
         onChange={(date => {
           handleDateChange(date.getTime())
