@@ -41,19 +41,19 @@ export default function App() {
   return (
     <div>
       <Suspense fallback={<h1>Загружаем...</h1>}>
-        {isLoading ? (
-          <h1>Загружаем...</h1>
-        ) : (
-          <Switch>
-            <PrivateRoute exact path="/" redirectTo="/auth">
-              <MainPage />
-            </PrivateRoute>
+        <Switch>
+          <PrivateRoute exact path="/" redirectTo="/auth">
+            <MainPage />
+          </PrivateRoute>
 
-            <PublicRoute path="/auth" restricted redirectTo="/">
-              <AuthPage />
-            </PublicRoute>
-          </Switch>
-        )}
+          <PublicRoute exact path="/auth" restricted redirectTo="/">
+            <AuthPage />
+          </PublicRoute>
+
+          <PublicRoute path="/auth/:verifyToken" restricted redirectTo="/">
+            <AuthPage />
+          </PublicRoute>
+        </Switch>
       </Suspense>
 
       <ToastContainer className={s.notif} />

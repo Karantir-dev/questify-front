@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 
-import CompletedCard from '../../Components/CompletedCard/CompletedCard'
+import CompletedCard from '../CompletedCard/CompletedCard'
 
 import s from './Modal.module.css'
 import './ModalAnimation.css'
@@ -44,7 +44,7 @@ export default function TestCard({
   const onCompletedCard = useCallback(() => {
     setIsCompleted(prevIsCompleted => !prevIsCompleted)
   }, [])
-  
+
   const classList = isCompleted ? s.animCard : s.card
 
   return (
@@ -89,7 +89,6 @@ export default function TestCard({
             />
           </CSSTransition>
         </div>
-        
       </div>
       <CSSTransition
         in={isCompleted}
