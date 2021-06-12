@@ -32,11 +32,11 @@
 /*-- switchButton --*/
 
 .switchButton {
-  position: absolute;
   font-family: HelveticaNeueCyr;
   font-style: normal;
   font-weight: normal;
-  border-radius: 20px;
+  margin-left: 10px;
+  border-radius: 10px;
   outline: none;
   color: var(--btn-main-color);
   border: 2px solid var(--btn-main-color);
@@ -46,6 +46,7 @@
 .switchButton:focus {
   color: var(--white);
   background-color: var(--btn-main-color);
+  filter: drop-shadow(0px 0px 5px var(--btn-main-color));
 }
 
 .containerLanding {
@@ -92,7 +93,7 @@
     padding: 4px;
     min-width: 70px;
     font-size: 14px;
-    letter-spacing: 0.1em;
+    margin-left: 3px;
   }
 }
 
@@ -140,8 +141,7 @@
     top: 200px;
     left: 72%;
     font-size: 18px;
-    padding: 5px;
-    letter-spacing: 0.1em;
+    padding: 3px;
   }
 }
 
@@ -165,8 +165,10 @@
   }
 
   .containerForm {
-    left: 229px;
-    max-width: 800px;
+    padding-top: 193px;
+    padding-bottom: 194px;
+    padding-left: 229px;
+    max-width: 795px;
   }
 
   .logo {
@@ -189,7 +191,6 @@
     top: 270px;
     left: 51%;
     font-size: 24px;
-    letter-spacing: 0.1em;
   }
 }
 
