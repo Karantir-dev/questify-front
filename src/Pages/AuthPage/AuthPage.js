@@ -23,7 +23,7 @@ export default function Landing() {
 
   return (
     <div className={styles.containerLanding}>
-      <div className={styles.containerQuest}>
+      
         <div className={styles.containerForm}>
           <a className={styles.logo} href="/">
             Questify
@@ -45,7 +45,7 @@ export default function Landing() {
             {showSignup ? "log in" : "sign up"}
           </button>
         </div>
-      </div>
+      
     </div>
   )
 }
