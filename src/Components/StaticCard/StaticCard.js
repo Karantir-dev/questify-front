@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './StaticCard.module.css'
 import Icon from '../Icon'
@@ -8,15 +9,27 @@ function StaticCard({
   isChallenge,
   difficulty,
   category,
-  date,
+  deadline,
   text,
   isCompleted,
 }) {
-  return (
+  const [editModeOpen, setEditModeOpen] = useState(false)
+
+  return editModeOpen ? (
+    <CreateEditCard
+      cardId={id}
+      isChallengeProp={isChallenge}
+      isCompletedProp={isCompleted}
+      textProp={text}
+      difficultyProp={difficulty}
+      categoryProp={category}
+      deadlineProp={deadline}
+    />
+  ) : (
     <button
       type="button"
       className={isChallenge ? styles.ContainerChallenge : styles.baseContainer}
-      // onClick={test}
+      onClick={() => setEditModeOpen(true)}
     >
       <div className={styles.difficultyContainer}>
         <div className={styles.difficultyLevel}>
@@ -39,7 +52,7 @@ function StaticCard({
       </h2>
 
       <h3 className={styles.dateStyle}>
-        {isChallenge ? `by ${date}` : `${date}`}
+        {isChallenge ? `by ${deadline}` : `${deadline}`}
       </h3>
 
       <div>

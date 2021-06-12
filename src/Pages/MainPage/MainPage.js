@@ -53,15 +53,14 @@ export default function Main() {
           <h2 className={s.sectionTitle}>TODAY</h2>
           {showEditForm && <CreateEditCard />}
           <CardList cards={activeTodayCards} />
+          <StaticCard
+            difficulty="hard"
+            isChallenge="sds"
+            text="Run the half-marathon Dubno"
+            date="Tuesday, 00:00"
+            category="leisure"
+          />
         </section>
-
-        <StaticCard
-          difficulty="hard"
-          isChallenge="sds"
-          text="Run the half-marathon Dubno"
-          date="Tuesday, 00:00"
-          category="leisure"
-        />
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>

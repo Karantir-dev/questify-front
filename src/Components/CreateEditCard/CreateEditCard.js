@@ -25,6 +25,7 @@ const CreateEditCard = ({
   deadlineProp = new Date(),
   cardId = null,
   onDeleteNewCard = null,
+  // onCloseThis = null
 }) => {
   const dispatch = useDispatch()
   const [isDeleting, setIsDeleting] = useState(false)
@@ -124,7 +125,7 @@ const CreateEditCard = ({
         <div className={styles.cardTopButtons}>
           <div className={styles.optionsPicker}>
             <OptionsPicker
-              type={'difficulty'}
+              type="difficulty"
               getOptionValue={setDifficulty}
               initialValue={difficulty}
               isChallenge={isChallenge}
@@ -176,7 +177,7 @@ const CreateEditCard = ({
         <div className={styles.cardBottomButtons}>
           <div className={styles.optionsPicker}>
             <OptionsPicker
-              type={'category'}
+              type="category"
               getOptionValue={setCategory}
               initialValue={category}
               isChallenge={isChallenge}

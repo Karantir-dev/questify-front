@@ -7,6 +7,17 @@ import './CardList.module.css'
 function CardList({ cards }) {
   return (
     <ul>
+      {/* <li key={id}>
+        <CreateEditCard
+          isChallenge={isChallenge}
+          difficulty={difficulty}
+          category={category}
+          deadline={deadline}
+          text={text}
+          isCompleted={isCompleted}
+        />
+      </li> */}
+
       {cards.map(
         ({
           id,
@@ -19,6 +30,7 @@ function CardList({ cards }) {
         }) => (
           <li key={id}>
             <StaticCard
+              id={id}
               isChallenge={isChallenge}
               difficulty={difficulty}
               category={category}
@@ -26,7 +38,6 @@ function CardList({ cards }) {
               text={text}
               isCompleted={isCompleted}
             />
-
           </li>
         ),
       )}
