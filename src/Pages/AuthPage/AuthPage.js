@@ -3,7 +3,6 @@ import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
 import authOpertaions from '../../Redux/auth/auth-operations'
 
@@ -33,7 +32,6 @@ export default function Landing() {
 
   return (
     <div className={styles.containerLanding}>
-      <CreateEditCard />
       <div className={styles.containerQuest}>
         <div className={styles.containerForm}>
           {isVerify && (

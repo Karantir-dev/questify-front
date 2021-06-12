@@ -88,7 +88,7 @@ const getCurrentUser = () => (dispatch, getState) => {
     )
 }
 
-const verifyUser = token => async dispatch => {
+const verifyUser = async token => async dispatch => {
   dispatch(authActions.verifyUserRequest())
 
   return await axios
