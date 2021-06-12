@@ -88,20 +88,19 @@ const getCurrentUser = () => (dispatch, getState) => {
     )
 }
 
-const verifyUser = async token => async dispatch => {
+const verifyUser = (token, isVerify) => dispatch => {
   dispatch(authActions.verifyUserRequest())
 
-  return await axios
-    .post(`users/verify/${token}`)
+  axios
+    .get(`users/verify/${token}`)
     .then(() => {
       dispatch(authActions.verifyUserSuccess())
-      return true
+      isVerify(true)
     })
     .catch(err => {
       dispatch(
         authActions.verifyUserError(err.response?.data?.message || err.message),
       )
-      return false
     })
 }
 

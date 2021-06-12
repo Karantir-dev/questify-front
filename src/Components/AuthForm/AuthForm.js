@@ -59,12 +59,10 @@ export default function AuthForm() {
 
   return (
     <div className={styles.registerPage}>
-      <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
-       
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>
           <input
             className={styles.inputForm}
-            autoComplete="off"
             type="text"
             name="name"
             id="name"
@@ -72,13 +70,14 @@ export default function AuthForm() {
             value={name}
             onChange={handleChange}
           />
-          <label htmlFor="name" className={styles.labelForm}>Name</label>
+          <label htmlFor="name" className={styles.labelForm}>
+            Name
+          </label>
         </div>
 
         <div className={styles.inputContainer}>
           <input
             className={styles.inputForm}
-            autoComplete="off"
             type="email"
             name="email"
             id="email"
@@ -86,7 +85,9 @@ export default function AuthForm() {
             value={email}
             onChange={handleChange}
           />
-          <label htmlFor="email" className={styles.labelForm}>Email</label>
+          <label htmlFor="email" className={styles.labelForm}>
+            Email
+          </label>
         </div>
 
         <div className={styles.inputContainer}>
@@ -99,7 +100,9 @@ export default function AuthForm() {
             value={password}
             onChange={handleChange}
           />
-          <label htmlFor="password" className={styles.labelForm}>Password</label>
+          <label htmlFor="password" className={styles.labelForm}>
+            Password
+          </label>
         </div>
 
         <IconButton

@@ -32,12 +32,10 @@ export default function LoginRouter() {
 
   return (
     <div className={styles.loginPage}>
-      <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
-        
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>
           <input
             className={styles.inputForm}
-            autoComplete="off"
             type="email"
             name="email"
             placeholder=" "
@@ -45,9 +43,11 @@ export default function LoginRouter() {
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
-          <label htmlFor="email" className={styles.labelForm}>Email</label>
+          <label htmlFor="email" className={styles.labelForm}>
+            Email
+          </label>
         </div>
-          
+
         <div className={styles.inputContainer}>
           <input
             className={styles.inputForm}
@@ -58,7 +58,9 @@ export default function LoginRouter() {
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
-          <label htmlFor="password" className={styles.labelForm}>Password</label>
+          <label htmlFor="password" className={styles.labelForm}>
+            Password
+          </label>
         </div>
 
         <IconButton

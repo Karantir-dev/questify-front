@@ -7,7 +7,7 @@ import resetNotification from './Redux/notifAction'
 import PrivateRoute from './Components/PrivateRoutes'
 import PublicRoute from './Components/PublicRoute'
 import authOperations from './Redux/auth/auth-operations'
-import authSelectors from './Redux/auth/auth-selectors'
+
 import Loader from './Components/Loader/Loader'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -26,7 +26,6 @@ export default function App() {
   useEffect(() => {
     dispatch(authOperations.getCurrentUser())
   }, [dispatch])
-  const isLoading = useSelector(authSelectors.getIsLoadding)
 
   const notification = useSelector(state => state.notification)
   if (notification !== null) {
@@ -41,7 +40,7 @@ export default function App() {
 
   return (
     <div>
-      <Suspense fallback={<Loader/>}>
+      <Suspense fallback={<Loader />}>
         <Switch>
           <PrivateRoute exact path="/" redirectTo="/auth">
             <MainPage />

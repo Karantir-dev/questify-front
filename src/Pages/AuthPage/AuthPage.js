@@ -1,13 +1,15 @@
 import styles from '../AuthPage/AuthPage.module.css'
 import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
-import authOpertaions from '../../Redux/auth/auth-operations'
+import authOperations from '../../Redux/auth/auth-operations'
 
 export default function Landing() {
-  const [showSignup, setShowSignup] = useState(true)
+  const [showSignup, setShowSignup] = useState(false)
+  const [isVerify, setIsVerify] = useState(false)
 
   const loginHandler = event => {
     event.preventDefault()
@@ -23,12 +25,14 @@ export default function Landing() {
     setShowSignup(!showSignup)
   }
 
-  let { verifyToken } = useParams()
-  let isVerify
-  if (verifyToken) {
-    isVerify = authOpertaions.verifyUser(verifyToken)
-    console.log(isVerify)
-  }
+  const dispatch = useDispatch()
+
+  const { verifyToken } = useParams()
+  useEffect(() => {
+    if (verifyToken && !isVerify) {
+      dispatch(authOperations.verifyUser(verifyToken, setIsVerify))
+    }
+  }, [dispatch])
 
   return (
     <div className={styles.containerLanding}>
@@ -49,21 +53,23 @@ export default function Landing() {
             quests and exciting challenges.
           </p>
           <p className={styles.descriptionRegister}>
-            {!showSignup
+            {showSignup
               ? 'Write your credentials to sign up, or'
               : 'Write your credentials to log in, or'}
-              
-              <button className={styles.switchButton} onClick={switchButtonHandler}>
-                {!showSignup ? 'log in' : 'sign up'}
-              </button>
+
+            <button
+              className={styles.switchButton}
+              onClick={switchButtonHandler}
+            >
+              {showSignup ? 'log in' : 'sign up'}
+            </button>
           </p>
 
-          {!showSignup ? (
+          {showSignup ? (
             <AuthForm onSubmit={signupHandler} />
           ) : (
             <LoginForm onSubmit={loginHandler} />
           )}
-
         </div>
       </div>
     </div>
