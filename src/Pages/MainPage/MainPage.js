@@ -28,6 +28,10 @@ export default function Main() {
   const activeTomorrowCards = useSelector(cardsSelectors.getActiveTomorrowCards)
   const doneCards = useSelector(cardsSelectors.getDoneCards)
 
+  const activeThisWeekCards = useSelector(cardsSelectors.getActiveThisWeekCards)
+  const activeThisMonthCards = useSelector(cardsSelectors.getActiveThisMonthCards)
+  const activeNextMonthsCards = useSelector(cardsSelectors.getActiveNextMonthsCards)
+
   function onShowDone() {
     setDoneIsShown(!doneIsShown)
 
@@ -51,6 +55,22 @@ export default function Main() {
           <h2 className={s.sectionTitle}>TOMORROW</h2>
           <CardList cards={activeTomorrowCards} />
         </section>
+
+        
+        <section className={s.section}>
+          <h2 className={s.sectionTitle}>THIS WEEK</h2>
+           {/* <CardList cards={activeThisWeekCards} /> */}
+        </section>
+        
+        <section className={s.section}>
+          <h2 className={s.sectionTitle}>THIS MONTH</h2>
+           {/* <CardList cards={activeThisMonthCards} /> */}
+        </section>
+        
+        <section className={s.section}>
+          <h2 className={s.sectionTitle}>NEXT MONTHS</h2>
+           {/* <CardList cards={activeNextMonthsCards} /> */}
+          </section>
 
         <section className={s.sectionDone}>
           <div className={s.lineWrapper}>

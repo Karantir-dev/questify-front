@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import StaticCard from '../StaticCard/StaticCard'
+
 import './CardList.module.css'
 
 function CardList({ cards }) {
@@ -25,6 +26,7 @@ function CardList({ cards }) {
               text={text}
               isCompleted={isCompleted}
             />
+
           </li>
         ),
       )}
@@ -37,7 +39,6 @@ CardList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       isChallenge: PropTypes.bool.isRequired,
-      isCompleted: PropTypes.bool.isRequired,
       difficulty: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
       deadline: PropTypes.string.isRequired,
