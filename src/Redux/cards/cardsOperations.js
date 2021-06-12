@@ -7,7 +7,9 @@ const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest())
   axios
     .get('cards?isCompleted=false')
-    .then(({ data }) => dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards)))
+    .then(({ data }) =>
+      dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards)),
+    )
     .catch(err =>
       dispatch(
         cardsActions.fetchActiveCardsError(

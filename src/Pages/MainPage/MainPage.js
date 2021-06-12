@@ -12,7 +12,6 @@ import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
 import s from './MainPage.module.css'
-import StaticCard from '../../Components/StaticCard/StaticCard'
 
 export default function Main() {
   const [showEditForm, setShowEditForm] = useState(false)
@@ -47,22 +46,14 @@ export default function Main() {
       <div className={s.container}>
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TODAY</h2>
-          <CreateEditCard />
           {showEditForm && <CreateEditCard />}
-          {/* <CardList cards={activeTodayCards}/> */}
+          <CardList cards={activeTodayCards} />
           {/* <TestCard /> */}
-          <StaticCard
-            difficulty="Hard"
-            isChallenge={false}
-            text="Run the half-marathon Dubnoaaaaaaaaaaaaaaaaaaaa"
-            date="Tuesday, 00:00"
-            category="leisure"
-          />
         </section>
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
-          {/* <CardList cards={activeTomorrowCards} /> */}
+          <CardList cards={activeTomorrowCards} />
         </section>
 
         
@@ -92,7 +83,7 @@ export default function Main() {
             </button>
           </div>
 
-          {/* {doneIsShown && <CardList cards={doneCards} />} */}
+          {doneIsShown && <CardList cards={doneCards} />}
         </section>
 
         <div className={s.buttonAddContainer}>
