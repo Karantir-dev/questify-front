@@ -123,33 +123,29 @@ const CreateEditCard = ({
           />
         )}
         <div className={styles.cardTopButtons}>
-          <div className={styles.optionsPicker}>
-            <OptionsPicker
-              type="difficulty"
-              getOptionValue={setDifficulty}
-              initialValue={difficulty}
-              isChallenge={isChallenge}
-            />
-          </div>
-          <div className={styles.cardOperationsButtons}>
-            <button type="button" onClick={handleCardTypeToggle}>
-              {isChallenge ? (
-                <Icon
-                  className={styles.trophyIcon}
-                  name="trophy"
-                  color="var(--primary-color)"
-                  size={15}
-                />
-              ) : (
-                <Icon
-                  className={styles.starIcon}
-                  name="Star"
-                  color="var(--primary-color)"
-                  size={15}
-                />
-              )}
-            </button>
-          </div>
+          <OptionsPicker
+            type="difficulty"
+            getOptionValue={setDifficulty}
+            initialValue={difficulty}
+            isChallenge={isChallenge}
+          />
+          <button type="button" onClick={handleCardTypeToggle}>
+            {isChallenge ? (
+              <Icon
+                className={styles.trophyIcon}
+                name="trophy"
+                color="var(--primary-color)"
+                size={15}
+              />
+            ) : (
+              <Icon
+                className={styles.starIcon}
+                name="Star"
+                color="var(--primary-color)"
+                size={15}
+              />
+            )}
+          </button>
         </div>
         <h3 className={styles.cardTitle}>
           {isChallenge
@@ -175,14 +171,12 @@ const CreateEditCard = ({
           <DateTimePicker date={deadline} handleDateChange={setDeadline} />
         </div>
         <div className={styles.cardBottomButtons}>
-          <div className={styles.optionsPicker}>
-            <OptionsPicker
-              type="category"
-              getOptionValue={setCategory}
-              initialValue={category}
-              isChallenge={isChallenge}
-            />
-          </div>
+          <OptionsPicker
+            type="category"
+            getOptionValue={setCategory}
+            initialValue={category}
+            isChallenge={isChallenge}
+          />
           <div className={styles.cardOperationsButtons}>
             {textProp ? (
               <ul className={styles.buttonsList}>
