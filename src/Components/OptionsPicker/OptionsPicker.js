@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import CustomRadioList from '../CustomRadioList/CustomRadioList'
 import Icon from '../Icon'
 import PickerPopup from '../PickerPopup/PickerPopup'
 import s from './OptionsPicker.module.css'
@@ -37,43 +38,38 @@ export default function OptionsPicker({
     setShowModal(false)
   }
 
-  const btnClasses = [s[`${type}_button`], s[value]].join(' ')
+  const btnClasses = isDifficultyType
+    ? s[type + '_button']
+    : [s[type + '_button'], s[value]].join(' ')
 
-  const btnLabelClasses = isChallenge
-    ? [
-        s[`${type}_buttonLabel`],
-        s[`${type}_text`],
-        s[`${type}_buttonLabel_dark`],
-        s[value],
-      ].join(' ')
-    : [s[`${type}_buttonLabel`], s[`${type}_text`], s[value]].join(' ')
+  const btnLabelClasses =
+    isChallenge && isDifficultyType
+      ? [s[type + '_buttonLabel'], s[type + '_buttonLabel_challenge']].join(' ')
+      : s[type + '_buttonLabel']
 
   return (
     <>
       <button
         type="button"
         value={value}
-        className={isDifficultyType ? s[`${type}_button`] : btnClasses}
+        className={btnClasses}
         onClick={() => setShowModal(true)}
       >
-        <span
-          className={
-            isDifficultyType ? btnLabelClasses : s[`${type}_buttonLabel`]
-          }
-        >
-          {value}
-        </span>
+        {isDifficultyType && <span className={s['d_level_' + value]}></span>}
+        <span className={btnLabelClasses}>{value}</span>
         <Icon name="triangle-down" size={12} />
       </button>
+
       {showModal && (
-        <PickerPopup
-          onClose={() => setShowModal(false)}
-          type={type}
-          options={options}
-          value={value}
-          handleOptionsChange={handleOptionsChange}
-          isChallenge={isChallenge}
-        />
+        <PickerPopup onClose={() => setShowModal(false)}>
+          <CustomRadioList
+            isChallenge={isChallenge}
+            type={type}
+            options={options}
+            value={value}
+            handleOptionsChange={handleOptionsChange}
+          />
+        </PickerPopup>
       )}
     </>
   )
