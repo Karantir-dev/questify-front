@@ -168,7 +168,7 @@ const CreateEditCard = ({
           />
         </div>
         <div className={styles.datePicker}>
-          <DateTimePicker date={deadline} handleDateChange={setDeadline} />
+          <DateTimePicker deadline={deadline} handleDateChange={setDeadline} />
         </div>
         <div className={styles.cardBottomButtons}>
           <OptionsPicker
