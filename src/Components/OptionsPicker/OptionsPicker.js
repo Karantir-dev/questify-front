@@ -57,7 +57,7 @@ export default function OptionsPicker({
       >
         {isDifficultyType && <span className={s['d_level_' + value]}></span>}
         <span className={btnLabelClasses}>{value}</span>
-        <Icon className={s.Icon} name="triangle-down" size={12} />
+        <Icon name="triangle-down" size={12} color="var(--primary-color)" />
       </button>
 
       {showModal && (
