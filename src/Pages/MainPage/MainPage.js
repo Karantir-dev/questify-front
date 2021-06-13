@@ -23,7 +23,7 @@ export default function Main() {
   const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards)
   const activeTomorrowCards = useSelector(cardsSelectors.getActiveTomorrowCards)
   const doneCards = useSelector(cardsSelectors.getDoneCards)
-
+  const challengeCards = useSelector(cardsSelectors.getChallengeCards)
   const activeThisWeekCards = useSelector(cardsSelectors.getActiveThisWeekCards)
   const activeThisMonthCards = useSelector(
     cardsSelectors.getActiveThisMonthCards,
@@ -31,6 +31,9 @@ export default function Main() {
   const activeNextMonthsCards = useSelector(
     cardsSelectors.getActiveNextMonthsCards,
   )
+
+  const todayCards = [...activeTodayCards, ...challengeCards]
+
 
   function onShowDone() {
     setDoneIsShown(!doneIsShown)
@@ -44,7 +47,7 @@ export default function Main() {
     <>
       <Header />
       <div className={s.container}>
-        <TodaySection cards={activeTodayCards} />
+        <TodaySection cards={todayCards} />
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>

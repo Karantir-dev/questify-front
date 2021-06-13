@@ -3,7 +3,7 @@ import StaticCard from '../StaticCard/StaticCard'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 import PropTypes from 'prop-types'
 
-function Card(
+function Card({
   id,
   isChallenge,
   difficulty,
@@ -11,7 +11,7 @@ function Card(
   deadline,
   text,
   isCompleted,
-) {
+}) {
   const [editFormShow, setEditFormShow] = useState(false)
 
   return editFormShow ? (
