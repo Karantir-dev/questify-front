@@ -8,6 +8,7 @@ import DateTimePicker from '../DateTimePicker/DateTimePicker'
 import OptionsPicker from '../OptionsPicker/OptionsPicker'
 import Icon from '../Icon'
 import cardsOperations from '../../Redux/cards/cardsOperations'
+import cardActions from '../../Redux/cards/cardsActions'
 
 const TITLES = {
   EDIT_CHALLENGE: 'EDIT CHALLENGE',
@@ -64,44 +65,49 @@ const CreateEditCard = ({
     setIsCompleted(false)
   }
 
-  const handleCreateCard = useCallback(
-    () =>
-      dispatch(
-        cardsOperations.addCard(
-          text,
-          deadline,
-          difficulty,
-          category,
-          isChallenge,
-          isCompleted,
-        ),
+  const onClickCreateCard = () =>
+    dispatch(
+      cardsOperations.addCard(
+        text,
+        deadline,
+        difficulty,
+        category,
+        isChallenge,
+        isCompleted,
       ),
-    [dispatch, text, deadline, difficulty, category, isChallenge, isCompleted],
-  )
+    )
 
-  const handleEditCard = useCallback(
-    () =>
-      dispatch(
-        cardsOperations.editCard(cardId, {
-          text,
-          isChallenge,
-          isCompleted,
-          category,
-          difficulty,
-          deadline,
-        }),
-      ),
-    [
-      dispatch,
-      cardId,
-      text,
-      isChallenge,
-      isCompleted,
-      category,
-      difficulty,
-      deadline,
-    ],
-  )
+  const handleCreateCard = () => {
+    if (text.trim() === '') {
+      dispatch(cardActions.addCardError('Please, enter some text.'))
+      return
+    }
+
+    onClickCreateCard()
+    handleHideCard()
+  }
+
+  const onClickEditCard = () =>
+    dispatch(
+      cardsOperations.editCard(cardId, {
+        text,
+        isChallenge,
+        isCompleted,
+        category,
+        difficulty,
+        deadline,
+      }),
+    )
+
+  const handleEditCard = () => {
+    if (text.trim() === '') {
+      dispatch(cardActions.addCardError('Please, enter some text.'))
+      return
+    }
+
+    onClickEditCard()
+    handleHideCard()
+  }
 
   return (
     <>
