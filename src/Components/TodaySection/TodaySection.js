@@ -20,7 +20,9 @@ export default function TodaySection({ cards }) {
           category="work"
           deadline={new Date('2021-06-17')}
           text="qweqweqaaaaaaaaaaaaaaaaaaaaaaawe"
-        /> */ <CardInfo title="To add a new card, click the button in the lower right corner"/>}
+        /> */}
+        <CardInfo title="To add a new card, click the button in the lower right corner" />
+
         <CardList
           isCreateFormShown={createFormShown}
           onCloseForm={setCreateFormShown}

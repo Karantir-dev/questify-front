@@ -6,7 +6,7 @@ function StaticCard({ isChallenge, difficulty, category, deadline, text }) {
   const optionsTime = { hour12: false, hour: 'numeric', minute: 'numeric' }
   const date = new Date(deadline).toLocaleTimeString('en-US', optionsTime)
   let time
-  console.log(new Date().getTime())
+
   if (
     new Date().toLocaleDateString() === new Date(deadline).toLocaleDateString()
   ) {
