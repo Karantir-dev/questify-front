@@ -23,7 +23,7 @@ function Card({
       difficultyProp={difficulty}
       categoryProp={category}
       deadlineProp={deadline}
-      onCloseEditMode={setEditFormShow}
+      handleHideCard={() => setEditFormShow(false)}
     />
   ) : (
     <button type="button" onClick={() => setEditFormShow(true)}>

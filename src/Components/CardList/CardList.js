@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import Card from '../Card/Card'
+import CardInfo from '../../Components/CardInfo/CardInfo'
 import CreateEditCard from '../CreateEditCard/CreateEditCard'
 
 import './CardList.module.css'
@@ -12,6 +13,10 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
           <CreateEditCard handleHideCard={onCloseForm} />
         </li>
       )}
+
+      {
+        <CardInfo title="To add a new card, click the button in the lower right corner" />
+      }
 
       {cards.map(
         ({

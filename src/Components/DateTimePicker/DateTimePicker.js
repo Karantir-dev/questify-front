@@ -1,4 +1,3 @@
-
 import Flatpickr from 'react-flatpickr'
 import Icon from '../Icon'
 
@@ -7,12 +6,13 @@ import './DateTimePicker.css'
 
 function DateTimePicker({ deadline, handleDateChange }) {
   return (
-    <div className="flatpickr">
+    <div className="date-time-container">
       <Flatpickr
-        minDate={new Date()}
         data-enable-time
         value={deadline}
-        onChange={date => handleDateChange(date)}
+        onChange={date => {
+          handleDateChange(new Date(date))
+        }}
       />
 
       <Icon
