@@ -9,19 +9,20 @@
 }
 
 @media screen and (max-width: 768px) {
-  .flatpickr {
+  .date-time-container {
     width: 248px;
   }
 }
 
 .date-time-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   width: 163px;
 }
 
 .flatpickrInputIconCalendar {
+  position: absolute;
+  top: 15%;
+  right: 10%;
   filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25));
 }
 

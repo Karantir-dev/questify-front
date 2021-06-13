@@ -1,9 +1,9 @@
-.cardBackdrop{
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
+.cardBackdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .card {
@@ -105,7 +105,9 @@ right: 0;
 /* ////////////////////////подправить стили для дейтпикера после его финальной версии///////////////////////// */
 .datePicker {
   height: 14px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 12px;
 }
 
