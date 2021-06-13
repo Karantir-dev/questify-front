@@ -6,11 +6,11 @@ import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import IconButton from '../../Components/IconButton/IconButton'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
-
+import ReactTooltip from 'react-tooltip';
 import StaticCard from '../../Components/StaticCard/StaticCard'
-
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
+import HintCard from '../../Components/HintCard/HintCard'
 
 import s from './MainPage.module.css'
 
@@ -105,6 +105,7 @@ export default function Main() {
           >
             <Icon className={s.Icon} name={'plus'} size={15} />
           </IconButton>
+      
         </div>
       </div>
     </>

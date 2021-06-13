@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import DateTimePickerAPI from 'react-datetime-picker';
 import './DateTimePicker.module.css';
 
@@ -18,4 +18,4 @@ function DateTimePicker({ date, handleDateChange }) {
   )
 }
 
-export default DateTimePicker
+export default DateTimePicker */
