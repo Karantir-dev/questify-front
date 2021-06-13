@@ -1,5 +1,6 @@
-import DateTimePickerAPI from 'react-datetime-picker'
-import './DateTimePicker.css'
+/* import React from 'react';
+import DateTimePickerAPI from 'react-datetime-picker';
+import './DateTimePicker.module.css';
 
 function DateTimePicker({ date, handleDateChange }) {
   const minDate = new Date()
@@ -17,4 +18,4 @@ function DateTimePicker({ date, handleDateChange }) {
   )
 }
 
-export default DateTimePicker
+export default DateTimePicker */
