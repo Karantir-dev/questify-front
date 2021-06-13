@@ -1,8 +1,7 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './StaticCard.module.css'
 import Icon from '../Icon'
-import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
 function StaticCard({
   id,
@@ -13,23 +12,9 @@ function StaticCard({
   text,
   isCompleted,
 }) {
-  const [editModeOpen, setEditModeOpen] = useState(false)
-
-  return editModeOpen ? (
-    <CreateEditCard
-      cardId={id}
-      isChallengeProp={isChallenge}
-      isCompletedProp={isCompleted}
-      textProp={text}
-      difficultyProp={difficulty}
-      categoryProp={category}
-      deadlineProp={deadline}
-    />
-  ) : (
-    <button
-      type="button"
+  return (
+    <div
       className={isChallenge ? styles.ContainerChallenge : styles.baseContainer}
-      onClick={() => setEditModeOpen(true)}
     >
       <div className={styles.difficultyContainer}>
         <div className={styles.difficultyLevel}>
@@ -66,7 +51,7 @@ function StaticCard({
       <div>
         <div className={styles[category]}>{category}</div>
       </div>
-    </button>
+    </div>
   )
 }
 

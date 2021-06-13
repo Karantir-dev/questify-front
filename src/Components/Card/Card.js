@@ -16,25 +16,27 @@ function Card(
 
   return editFormShow ? (
     <CreateEditCard
-      id={id}
-      isChallenge={isChallenge}
-      difficulty={difficulty}
-      category={category}
-      deadline={deadline}
-      text={text}
-      isCompleted={isCompleted}
+      cardId={id}
+      isChallengeProp={isChallenge}
+      isCompletedProp={isCompleted}
+      textProp={text}
+      difficultyProp={difficulty}
+      categoryProp={category}
+      deadlineProp={deadline}
       onCloseEditMode={setEditFormShow}
     />
   ) : (
-    <StaticCard
-      id={id}
-      isChallenge={isChallenge}
-      difficulty={difficulty}
-      category={category}
-      deadline={deadline}
-      text={text}
-      isCompleted={isCompleted}
-    />
+    <button type="button" onClick={() => setEditFormShow(true)}>
+      <StaticCard
+        id={id}
+        isChallenge={isChallenge}
+        difficulty={difficulty}
+        category={category}
+        deadline={deadline}
+        text={text}
+        isCompleted={isCompleted}
+      />
+    </button>
   )
 }
 
