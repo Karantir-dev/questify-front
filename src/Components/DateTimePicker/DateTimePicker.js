@@ -1,41 +1,27 @@
+import React, {useState} from "react";
 import Flatpickr from "react-flatpickr";
 import Icon from '../Icon'
-import { Component } from "react";
 import "flatpickr/dist/themes/material_blue.css";
 import "./DateTimePicker.css";
 
-class DateTimePicker extends Component   {
-  constructor() {
-    super();
-
-    this.state = {
-      date: new Date()
-    };
-  }
-
-  render() {
-    const { date } = this.state;
-    return (
-      <div className="date-time-container">
-        <Flatpickr
-          data-enable-time
-          value={date}
-          minDate={date}
-          onChange={date => {
-          this.setState({ date });
-        }}
-        />
-        <Icon
-          title="toggle"
-          data-toggle
-          className="flatpickrInputIconCalendar"
-          name="calendar"
-          color="#00d7ff"
-          size={14}
-        />
-      </div>
-    );
-  }
+function DateTimePicker() {
+  const [date, setDate] = useState(new Date())
+  return (
+    <div className="date-time-container">
+      <Flatpickr
+        minDate={date}
+        data-enable-time
+        value={date}
+        onChange={date => setDate(date)}
+      />
+      <Icon
+        className="flatpickrInputIconCalendar"
+        name="calendar"
+        color="#00D7FF"
+        size={14}
+      />
+    </div>
+  )
 }
 
 export default DateTimePicker 
