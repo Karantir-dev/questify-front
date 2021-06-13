@@ -14,9 +14,9 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
         </li>
       )}
 
-      {
+      {/* {
         <CardInfo title="To add a new card, click the button in the lower right corner" />
-      }
+      } */}
 
       {cards.map(
         ({
