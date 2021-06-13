@@ -87,6 +87,7 @@ export default function Main() {
             <button className={s.btnDone} onClick={onShowDone}>
               DONE
               <Icon
+                className={s.IconDone}
                 name={doneIsShown ? 'triangle-up' : 'triangle-down'}
                 size={12}
               />
@@ -102,7 +103,7 @@ export default function Main() {
             onClick={() => setShowEditForm(true)}
             aria-label="Add"
           >
-            <Icon name={'plus'} size={15} />
+            <Icon className={s.Icon} name={'plus'} size={15} />
           </IconButton>
         </div>
       </div>

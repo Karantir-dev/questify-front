@@ -49,6 +49,10 @@
   color: var(--text-primary-color);
 }
 
+.IconDone {
+  fill: var(--primary-color);
+}
+
 .btnDone {
   composes: sectionTitle;
   margin: 0;
@@ -73,6 +77,10 @@
     var(--text-secondary-color) 40%
   );
   background-size: 20px 100%;
+}
+
+.Icon {
+  fill: var(--white);
 }
 
 .buttonAddCard {
