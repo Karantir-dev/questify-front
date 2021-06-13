@@ -32,7 +32,7 @@ export default function Main() {
     cardsSelectors.getActiveNextMonthsCards,
   )
 
-  const todayCards = [...activeTodayCards, ...challengeCards]
+  const todayCards = [...getSorted(activeTodayCards), ...getSorted(challengeCards)]
 
 
   function onShowDone() {
@@ -43,6 +43,21 @@ export default function Main() {
     }
   }
 
+  function getSorted(list) {
+    return list.sort((a, b) => {
+      const dateA = new Date(a.deadline)
+      const dateB = new Date(b.deadline)
+        if (dateA < dateB) {
+            return -1;
+        }
+        if (dateA > dateB) {
+            return 1;
+        }
+
+        return 0;
+    });
+  }
+
   return (
     <>
       <Header />
@@ -51,17 +66,17 @@ export default function Main() {
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
-          <CardList cards={activeTomorrowCards} />
+          <CardList cards={getSorted(activeTomorrowCards)} />
         </section>
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS WEEK</h2>
-          <CardList cards={activeThisWeekCards} />
+          <CardList cards={getSorted(activeThisWeekCards)} />
         </section>
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>THIS MONTH</h2>
-          <CardList cards={activeThisMonthCards} />
+          <CardList cards={getSorted(activeThisMonthCards)} />
         </section>
 
         <section className={s.section}>

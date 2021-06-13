@@ -14,15 +14,15 @@ function StaticCard({ isChallenge, difficulty, category, deadline, text }) {
   } else if (new Date().getDate() + 1 === new Date(deadline).getDate()) {
     time = `Tomorrow, ${date}`
   } else if (
-    new Date().getDate() + 7 > new Date(deadline).getDate() &&
-    new Date().getMonth() === new Date(deadline).getMonth()
+    new Date().getMonth() === new Date(deadline).getMonth() &&
+    ((new Date().getDay() >= new Date(deadline).getDay() &&
+        new Date().getDate() + 7 > new Date(deadline).getDate())
+      || (new Date(deadline).getDay() === 0 && new Date().getDate() + 7 > new Date(deadline).getDate())
+    )
   ) {
     const options = { weekday: 'long' }
     time = `${new Date(deadline).toLocaleDateString('en-US', options)}, ${date}`
-  } else if (
-    new Date().getDate() + 14 < new Date(deadline).getDate() ||
-    new Date().toLocaleDateString() < new Date(deadline).toLocaleDateString()
-  ) {
+  } else {
     const options = { month: 'long', day: 'numeric' }
     time = `${new Date(deadline).toLocaleDateString('en-US', options)}, ${date}`
   }
