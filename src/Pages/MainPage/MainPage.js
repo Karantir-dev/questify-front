@@ -6,8 +6,6 @@ import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import TodaySection from '../../Components/TodaySection/TodaySection'
 
-// import StaticCard from '../../Components/StaticCard/StaticCard'
-
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
 

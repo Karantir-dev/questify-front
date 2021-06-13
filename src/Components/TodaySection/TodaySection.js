@@ -4,6 +4,7 @@ import Icon from '../../Components/Icon'
 import { useState } from 'react'
 
 import s from '../../Pages/MainPage/MainPage.module.css'
+// import StaticCard from '../StaticCard/StaticCard'
 
 export default function TodaySection({ cards }) {
   const [createFormShown, setCreateFormShown] = useState(false)
@@ -12,7 +13,13 @@ export default function TodaySection({ cards }) {
     <>
       <section className={s.section}>
         <h2 className={s.sectionTitle}>TODAY</h2>
-
+        {/* <StaticCard
+          isChallenge={true}
+          difficulty="Hard"
+          category="work"
+          deadline={new Date('2021-06-17')}
+          text="qweqweqaaaaaaaaaaaaaaaaaaaaaaawe"
+        /> */}
         <CardList
           isCreateFormShown={createFormShown}
           onCloseForm={setCreateFormShown}

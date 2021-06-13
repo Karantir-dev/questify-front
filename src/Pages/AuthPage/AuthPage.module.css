@@ -69,9 +69,9 @@
   border-radius: 10px;
 }
 
-/*-- @media (max-width: 767px) --*/
+/*-- @media (max-width: 768px) --*/
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .containerLanding {
     background: url('../../images/landing\(mobile\)2x.webp') no-repeat;
     background-size: contain;
@@ -108,7 +108,7 @@
   }
 }
 
-@media screen and (max-width: 767px) and (min-resolution: 192dpi) {
+@media screen and (max-width: 768px) and (min-resolution: 192dpi) {
   .containerLanding {
     background: url('../../images/landing\(mobile\)4x.webp') no-repeat;
     background-size: contain;

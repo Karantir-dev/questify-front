@@ -2,7 +2,19 @@ import { createReducer } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 import cardsActions from './cardsActions'
 
-const allCards = createReducer([], {
+const initialState = [
+  {
+    id: '123123',
+    isChallenge: true,
+    difficulty: 'hard',
+    category: 'work',
+    deadline: '1623585995977',
+    text: 'my quest',
+    isCompleted: false,
+  },
+]
+
+const allCards = createReducer(initialState, {
   [cardsActions.fetchActiveCardsSuccess]: (_, { payload }) => payload,
   [cardsActions.fetchDoneCardsSuccess]: (_, { payload }) => payload,
   [cardsActions.addCardSuccess]: (state, { payload }) => [...state, payload],
