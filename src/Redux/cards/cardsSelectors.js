@@ -20,6 +20,7 @@ const getActiveThisWeekCards = state =>
   state.cards.allCards.filter(({ isCompleted, isChallenge, deadline }) => {
     return (
       !isCompleted && !isChallenge
+      && new Date().toLocaleDateString() < new Date(deadline).toLocaleDateString()
       && (new Date().getMonth() === new Date(deadline).getMonth())
       && ((new Date().getDay() >= new Date(deadline).getDay() &&
         new Date().getDate() + 7 > new Date(deadline).getDate())
@@ -32,8 +33,9 @@ const getActiveThisWeekCards = state =>
 const getActiveThisMonthCards = state =>
   state.cards.allCards.filter(({ isCompleted, isChallenge, deadline }) => {
     return (
-      !isCompleted && !isChallenge &&
-      new Date().getMonth() === new Date(deadline).getMonth() &&
+      !isCompleted && !isChallenge
+      && new Date().toLocaleDateString() < new Date(deadline).toLocaleDateString()
+      && new Date().getMonth() === new Date(deadline).getMonth() &&
       (new Date().getDate() + 7 < new Date(deadline).getDate() ||
         new Date().getDay() < new Date(deadline).getDay()) &&
       new Date().getDate() + 1 !== new Date(deadline).getDate() 
