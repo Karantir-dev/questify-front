@@ -2,6 +2,12 @@
   max-width: 150px;
   border: none;
   font-size: 14px;
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.flatpickr-input-challange {
+  color: var(--white);
 }
 
 .flatpickr-input:focus {
