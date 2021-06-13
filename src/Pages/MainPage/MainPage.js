@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import CardList from '../../Components/CardList/CardList'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
-import IconButton from '../../Components/IconButton/IconButton'
-import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
+import TodaySection from '../../Components/TodaySection/TodaySection'
+// import IconButton from '../../Components/IconButton/IconButton'
+// import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
-import StaticCard from '../../Components/StaticCard/StaticCard'
+// import StaticCard from '../../Components/StaticCard/StaticCard'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
@@ -15,8 +16,6 @@ import cardsSelectors from '../../Redux/cards/cardsSelectors'
 import s from './MainPage.module.css'
 
 export default function Main() {
-  const [showEditForm, setShowEditForm] = useState(false)
-
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
@@ -49,18 +48,20 @@ export default function Main() {
     <>
       <Header />
       <div className={s.container}>
-        <section className={s.section}>
+        {/* <section className={s.section}>
           <h2 className={s.sectionTitle}>TODAY</h2>
-          {showEditForm && <CreateEditCard />}
+
           <CardList cards={activeTodayCards} />
-          <StaticCard
+           <StaticCard
             difficulty="hard"
             isChallenge="sds"
             text="Run the half-marathon Dubno"
             date="Tuesday, 00:00"
             category="leisure"
-          />
-        </section>
+          /> 
+        </section> */}
+
+        <TodaySection cards={activeTodayCards} />
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>
@@ -97,7 +98,7 @@ export default function Main() {
           {doneIsShown && <CardList cards={doneCards} />}
         </section>
 
-        <div className={s.buttonAddContainer}>
+        {/* <div className={s.buttonAddContainer}>
           <IconButton
             className={s.buttonAddCard}
             onClick={() => setShowEditForm(true)}
@@ -105,7 +106,7 @@ export default function Main() {
           >
             <Icon className={s.Icon} name={'plus'} size={15} />
           </IconButton>
-        </div>
+        </div> */}
       </div>
     </>
   )

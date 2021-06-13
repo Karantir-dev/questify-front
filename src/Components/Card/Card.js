@@ -14,6 +14,7 @@ function Card(
   isCompleted,
 ) {
   const [editFormShow, setEditFormShow] = useState(false)
+
   return editFormShow ? (
     <CreateEditCard
       id={id}
