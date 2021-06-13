@@ -1,4 +1,3 @@
-import React from "react";
 import Flatpickr from "react-flatpickr";
 import Icon from '../Icon'
 import { Component } from "react";
@@ -38,4 +37,4 @@ class DateTimePicker extends Component   {
   }
 }
 
-export default DateTimePicker
+export default DateTimePicker 

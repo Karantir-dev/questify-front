@@ -16,7 +16,10 @@ const initialState = [
 
 const allCards = createReducer(initialState, {
   [cardsActions.fetchActiveCardsSuccess]: (_, { payload }) => payload,
-  [cardsActions.fetchDoneCardsSuccess]: (_, { payload }) => payload,
+  [cardsActions.fetchDoneCardsSuccess]: (state, { payload }) => [
+    ...state,
+    ...payload,
+  ],
   [cardsActions.addCardSuccess]: (state, { payload }) => [...state, payload],
   [cardsActions.editCardSuccess]: (state, { payload }) => {
     return state.map(card => {
