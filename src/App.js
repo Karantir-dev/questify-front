@@ -9,6 +9,7 @@ import PublicRoute from './Components/PublicRoute'
 import authOperations from './Redux/auth/auth-operations'
 
 import Loader from './Components/Loader/Loader'
+import Modal from './Components/Modal/Modal'
 
 import 'react-toastify/dist/ReactToastify.css'
 import s from './App.module.css'
@@ -45,7 +46,13 @@ export default function App() {
 
   return (
     <div>
-      <Suspense fallback={<Loader size={100} />}>
+      <Suspense
+        fallback={
+          <Modal>
+            <Loader size={100} />
+          </Modal>
+        }
+      >
         <Switch>
           <PrivateRoute exact path="/" redirectTo="/auth">
             <MainPage />
