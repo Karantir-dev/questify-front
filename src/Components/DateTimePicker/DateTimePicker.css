@@ -1,0 +1,16 @@
+.flatpickr-input {
+  width: 163px;
+  border: none;
+  /* background-image: url('../../images/icons.svg#icon-calendar');
+  fill: var(--primary-color); */
+}
+
+.flatpickr-input:focus {
+  outline: var(--btn-active-color) solid 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .flatpickr-input {
+    width: 248px;
+  }
+}
