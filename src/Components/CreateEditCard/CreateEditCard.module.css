@@ -1,3 +1,11 @@
+.cardBackdrop{
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
 .card {
   position: relative;
   padding: 18px 0 26px;
@@ -210,11 +218,5 @@
   .trophyIcon {
     width: 19px;
     height: 19px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .card {
-    margin: 25px 28px;
   }
 }
