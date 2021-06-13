@@ -1,6 +1,7 @@
 import CardList from '../../Components/CardList/CardList'
 import IconButton from '../../Components/IconButton/IconButton'
 import Icon from '../../Components/Icon'
+import CardInfo from '../../Components/CardInfo/CardInfo'
 import { useState } from 'react'
 
 import s from '../../Pages/MainPage/MainPage.module.css'
@@ -20,6 +21,8 @@ export default function TodaySection({ cards }) {
           deadline={new Date('2021-06-17')}
           text="qweqweqaaaaaaaaaaaaaaaaaaaaaaawe"
         /> */}
+        <CardInfo title="To add a new card, click the button in the lower right corner" />
+
         <CardList
           isCreateFormShown={createFormShown}
           onCloseForm={setCreateFormShown}
