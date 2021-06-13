@@ -6,28 +6,23 @@
   height: 260px;
   align-items: center;
   background: var(--white);
-  box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
-    3px 4px 4px rgba(21, 57, 90, 0.03);
+  box-shadow: var(--shadow);
   border-radius: 10px;
   position: relative;
 }
 
 .baseContainer:hover {
-  background-color: rgb(192, 96, 32);
-  transition: background-color 200ms;
+  box-shadow: var(--shadow-hover);
 }
 
 .ContainerChallenge {
   composes: baseContainer;
   background: var(--challenge-bg-color);
-  box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.08),
-    3px 5px 5px rgba(21, 57, 90, 0.08);
 }
 
-.ContainerChallenge:hover {
-  background-color: rgb(192, 96, 32);
-  transition: background-color 200ms;
-}
+/* .ContainerChallenge:hover {
+  box-shadow: var(--shadow-hover);
+} */
 
 .IconTrophy,
 .IconStar {

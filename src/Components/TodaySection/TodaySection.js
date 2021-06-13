@@ -7,7 +7,27 @@ import { useState } from 'react'
 import s from '../../Pages/MainPage/MainPage.module.css'
 // import StaticCard from '../StaticCard/StaticCard'
 
-export default function TodaySection({ cards }) {
+export default function TodaySection() {
+  const cards = [
+    {
+      id: '123123',
+      isChallenge: true,
+      difficulty: 'hard',
+      category: 'work',
+      deadline: '1623586595977',
+      text: 'my quest',
+      isCompleted: false,
+    },
+    {
+      id: '1363',
+      isChallenge: false,
+      difficulty: 'normal',
+      category: 'stuff',
+      deadline: '1623586995977',
+      text: 'my second quest',
+      isCompleted: false,
+    },
+  ]
   const [createFormShown, setCreateFormShown] = useState(false)
 
   return (
@@ -21,7 +41,7 @@ export default function TodaySection({ cards }) {
           deadline={new Date('2021-06-17')}
           text="qweqweqaaaaaaaaaaaaaaaaaaaaaaawe"
         /> */}
-        <CardInfo title="To add a new card, click the button in the lower right corner" />
+        {/* <CardInfo title="To add a new card, click the button in the lower right corner" /> */}
 
         <CardList
           isCreateFormShown={createFormShown}
