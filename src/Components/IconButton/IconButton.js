@@ -3,6 +3,7 @@ import s from './IconButton.module.css'
 
 const IconButton = ({ children, onClick, className, ...allProps }) => {
   const classList = [className, s.IconButton].join(' ')
+
   return (
     <button onClick={onClick} className={classList} {...allProps}>
       {children}
