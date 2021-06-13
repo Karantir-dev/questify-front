@@ -1,22 +1,17 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import StaticCard from '../StaticCard/StaticCard'
+import Card from '../Card/Card'
+import CreateEditCard from '../CreateEditCard/CreateEditCard'
 
 import './CardList.module.css'
 
-function CardList({ cards }) {
+function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
   return (
     <ul>
-      {/* <li key={id}>
-        <CreateEditCard
-          isChallenge={isChallenge}
-          difficulty={difficulty}
-          category={category}
-          deadline={deadline}
-          text={text}
-          isCompleted={isCompleted}
-        />
-      </li> */}
+      {isCreateFormShown && (
+        <li>
+          <CreateEditCard onCloseForm={onCloseForm} />
+        </li>
+      )}
 
       {cards.map(
         ({
@@ -29,7 +24,7 @@ function CardList({ cards }) {
           isCompleted,
         }) => (
           <li key={id}>
-            <StaticCard
+            <Card
               id={id}
               isChallenge={isChallenge}
               difficulty={difficulty}

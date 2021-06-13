@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react'
 import StaticCard from '../StaticCard/StaticCard'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
@@ -14,27 +13,30 @@ function Card(
   isCompleted,
 ) {
   const [editFormShow, setEditFormShow] = useState(false)
+
   return editFormShow ? (
     <CreateEditCard
-      id={id}
-      isChallenge={isChallenge}
-      difficulty={difficulty}
-      category={category}
-      deadline={deadline}
-      text={text}
-      isCompleted={isCompleted}
+      cardId={id}
+      isChallengeProp={isChallenge}
+      isCompletedProp={isCompleted}
+      textProp={text}
+      difficultyProp={difficulty}
+      categoryProp={category}
+      deadlineProp={deadline}
       onCloseEditMode={setEditFormShow}
     />
   ) : (
-    <StaticCard
-      id={id}
-      isChallenge={isChallenge}
-      difficulty={difficulty}
-      category={category}
-      deadline={deadline}
-      text={text}
-      isCompleted={isCompleted}
-    />
+    <button type="button" onClick={() => setEditFormShow(true)}>
+      <StaticCard
+        id={id}
+        isChallenge={isChallenge}
+        difficulty={difficulty}
+        category={category}
+        deadline={deadline}
+        text={text}
+        isCompleted={isCompleted}
+      />
+    </button>
   )
 }
 

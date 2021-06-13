@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 import Icons from '../../images/icons.svg'
@@ -100,8 +99,8 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
               <use xlinkHref={`${Icons}#icon-arrow`} />
             </svg>
           </CSSTransition>
-        </div>        
-      </div>    
+        </div>
+      </div>
 
       <button onClick={handleClick} className={s.button}>
         <span>Continue</span>

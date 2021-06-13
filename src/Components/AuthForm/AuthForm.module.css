@@ -48,7 +48,7 @@
   transform: translateY(-25px) translateX(0);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .inputForm {
     width: 100%;
   }
@@ -68,7 +68,7 @@
   filter: drop-shadow(0px 0px 8px var(--btn-main-color));
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .buttonReg {
     margin-left: 120px;
     margin-top: 20px;

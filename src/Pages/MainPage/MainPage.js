@@ -6,17 +6,14 @@ import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import IconButton from '../../Components/IconButton/IconButton'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
-import ReactTooltip from 'react-tooltip';
+
 import StaticCard from '../../Components/StaticCard/StaticCard'
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
-import HintCard from '../../Components/HintCard/HintCard'
 
 import s from './MainPage.module.css'
 
 export default function Main() {
-  const [showEditForm, setShowEditForm] = useState(false)
-
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
@@ -49,18 +46,7 @@ export default function Main() {
     <>
       <Header />
       <div className={s.container}>
-        <section className={s.section}>
-          <h2 className={s.sectionTitle}>TODAY</h2>
-          {showEditForm && <CreateEditCard />}
-          <CardList cards={activeTodayCards} />
-          <StaticCard
-            difficulty="hard"
-            isChallenge="sds"
-            text="Run the half-marathon Dubno"
-            date="Tuesday, 00:00"
-            category="leisure"
-          />
-        </section>
+        <TodaySection cards={activeTodayCards} />
 
         <section className={s.section}>
           <h2 className={s.sectionTitle}>TOMORROW</h2>

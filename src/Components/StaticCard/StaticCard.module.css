@@ -106,20 +106,20 @@
   color: var(--text-secondary-color);
 }
 
-.Normal {
+.normal {
   border-radius: 50%;
   height: 10px;
   width: 10px;
   background-color: var(--main-green);
 }
 
-.Easy {
-  composes: Normal;
+.easy {
+  composes: normal;
   background-color: var(--primary-color);
 }
 
-.Hard {
-  composes: Normal;
+.hard {
+  composes: normal;
   background-color: var(--main-red);
 }
 
@@ -237,9 +237,9 @@
     line-height: 14px;
   }
 
-  .Normal,
-  .Easy,
-  .Hard {
+  .normal,
+  .easy,
+  .hard {
     height: 8px;
     width: 8px;
   }

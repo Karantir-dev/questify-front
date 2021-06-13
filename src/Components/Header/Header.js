@@ -1,4 +1,3 @@
-import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import s from './Header.module.css'
 import Icon from '../../Components/Icon'
