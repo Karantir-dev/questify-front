@@ -9,7 +9,7 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
     <ul>
       {isCreateFormShown && (
         <li>
-          <CreateEditCard onCloseForm={onCloseForm} />
+          <CreateEditCard handleHideCard={onCloseForm} />
         </li>
       )}
 

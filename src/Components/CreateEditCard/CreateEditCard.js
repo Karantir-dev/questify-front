@@ -24,8 +24,7 @@ const CreateEditCard = ({
   categoryProp = 'family',
   deadlineProp = new Date(),
   cardId = null,
-  onDeleteNewCard = null,
-  onCloseForm = null,
+  handleHideCard,
 }) => {
   const dispatch = useDispatch()
   const [isDeleting, setIsDeleting] = useState(false)
@@ -106,6 +105,7 @@ const CreateEditCard = ({
 
   return (
     <>
+      <div className={styles.cardBackdrop} onClick={handleHideCard}></div>
       <div className={isChallenge ? styles.cardChallenge : styles.card}>
         {isCompleted && (
           <CompletedCard
@@ -119,7 +119,7 @@ const CreateEditCard = ({
           <Modal
             isChallenge={isChallenge}
             onClose={onCancelBtnClick}
-            onDelete={onDeleteNewCard ? onDeleteNewCard : handleDeleteCard}
+            onDelete={textProp ? handleDeleteCard : handleHideCard}
           />
         )}
         <div className={styles.cardTopButtons}>
@@ -249,7 +249,7 @@ CreateEditCard.propTypes = {
   categoryProp: PropTypes.string,
   deadlineProp: PropTypes.string,
   cardId: PropTypes.string,
-  onDeleteNewCard: PropTypes.func,
+  handleHideCard: PropTypes.func.isRequired,
 }
 
 export default CreateEditCard
