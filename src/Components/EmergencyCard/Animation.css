@@ -1,0 +1,17 @@
+.editCard-enter {
+  opacity: 0;
+}
+
+.editCard-enter-active {
+  opacity: 1;
+  transition: opacity 250ms linear;
+}
+
+.editCard-exit {
+  opacity: 1;
+}
+
+.editCard-exit-active {
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
