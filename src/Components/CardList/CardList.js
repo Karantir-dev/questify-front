@@ -4,7 +4,7 @@ import CreateEditCard from '../CreateEditCard/CreateEditCard'
 
 import './CardList.module.css'
 
-function CardList({ isCreateFormShown, onCloseForm, cards }) {
+function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
   return (
     <ul>
       {isCreateFormShown && (

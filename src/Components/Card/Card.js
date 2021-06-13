@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react'
 import StaticCard from '../StaticCard/StaticCard'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'

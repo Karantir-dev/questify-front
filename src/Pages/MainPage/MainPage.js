@@ -5,8 +5,6 @@ import CardList from '../../Components/CardList/CardList'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import TodaySection from '../../Components/TodaySection/TodaySection'
-// import IconButton from '../../Components/IconButton/IconButton'
-// import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
 
 // import StaticCard from '../../Components/StaticCard/StaticCard'
 
@@ -48,19 +46,6 @@ export default function Main() {
     <>
       <Header />
       <div className={s.container}>
-        {/* <section className={s.section}>
-          <h2 className={s.sectionTitle}>TODAY</h2>
-
-          <CardList cards={activeTodayCards} />
-           <StaticCard
-            difficulty="hard"
-            isChallenge="sds"
-            text="Run the half-marathon Dubno"
-            date="Tuesday, 00:00"
-            category="leisure"
-          /> 
-        </section> */}
-
         <TodaySection cards={activeTodayCards} />
 
         <section className={s.section}>
@@ -97,16 +82,6 @@ export default function Main() {
 
           {doneIsShown && <CardList cards={doneCards} />}
         </section>
-
-        {/* <div className={s.buttonAddContainer}>
-          <IconButton
-            className={s.buttonAddCard}
-            onClick={() => setShowEditForm(true)}
-            aria-label="Add"
-          >
-            <Icon className={s.Icon} name={'plus'} size={15} />
-          </IconButton>
-        </div> */}
       </div>
     </>
   )

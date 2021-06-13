@@ -1,4 +1,3 @@
-import React from 'react'
 import DateTimePickerAPI from 'react-datetime-picker'
 import './DateTimePicker.css'
 
