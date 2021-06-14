@@ -10,7 +10,11 @@ function DateTimePicker({ deadline, handleDateChange }) {
       <Flatpickr
         options={{
           enableTime: true,
-          minTime: new Date().setTime(new Date().getTime()),
+          time_24hr: true,
+          minTime:
+            new Date().getDate() === new Date(deadline).getDate()
+              ? new Date().setTime(new Date().getTime())
+              : null,
           enable: [
             {
               from: new Date().setDate(new Date().getDate() - 1),
