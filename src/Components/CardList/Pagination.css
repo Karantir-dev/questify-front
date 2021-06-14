@@ -1,6 +1,8 @@
 .pagination {
-  margin: 15px auto;
+  font-size: 17px;
+  margin: 10px auto;
   display: flex;
+  align-items: center;
   list-style: none;
   outline: none;
   width: fit-content;
@@ -16,7 +18,7 @@
 }
 .pagination > li > a {
   border: 1px solid var(--primary-color);
-  padding: 5px 10px;
+  padding: 10px 15px;
   outline: none;
   cursor: pointer;
   display: inline-block;
@@ -28,9 +30,14 @@
   color: var(--white);
   box-shadow: var(--shadow-hover);
 }
+
+.pagination > li.disabled > a {
+  color: red;
+  border-color: red;
+}
 .pagination .disabled > a:hover {
   background-color: var(--white);
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -43,6 +50,7 @@
 .pagination > .active > span:focus {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
+  box-shadow: var(--shadow-hover);
   outline: none;
 }
 .pagination > li > a,
@@ -50,9 +58,28 @@
   color: var(--primary-color);
   background-color: var(--white);
 }
-.pagination > li:first-child > a,
+/* .pagination > li:first-child > a,
 .pagination > li:first-child > span,
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
-  border-radius: unset;
+  border-radius: 10px;
+} */
+
+@media screen and (max-width: 767px) {
+  .pagination .previous > a,
+  .pagination .next > a {
+    padding: 20px 15px;
+    border-radius: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pagination > li > a {
+    padding: 7px 14px;
+    border-radius: 10px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .pagination {
+    margin: 20px 0;
+  }
 }
