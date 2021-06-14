@@ -164,7 +164,7 @@ const CreateEditCard = ({
             className={
               isChallenge ? styles.cardInputChallenge : styles.cardInput
             }
-            autoComplete={false}
+            autoComplete="off"
             type="text"
             name="quest"
             value={text}
