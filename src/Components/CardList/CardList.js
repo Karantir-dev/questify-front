@@ -33,9 +33,9 @@ function CardList({
           </li>
         )}
 
-      {isInfoCardShown && (
-        <InfoCard title="To add a new card, click the button in the lower right corner" />
-      )}
+        {isInfoCardShown && (
+          <InfoCard title="To add a new card, click the button in the lower right corner" />
+        )}
 
         {slicedCards.map(
           ({
@@ -61,6 +61,7 @@ function CardList({
           ),
         )}
       </ul>
+
       {cards.length > perPage && (
         <ReactPaginate
           pageCount={pageCount}
