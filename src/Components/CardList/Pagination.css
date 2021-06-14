@@ -1,15 +1,14 @@
 .pagination {
-  margin: 15px 0;
+  margin: 15px auto;
   display: flex;
-  flex-wrap: wrap;
-
   list-style: none;
   outline: none;
-  max-width: 500px;
+  width: fit-content;
 }
 .pagination > li:not(:last-child) {
   margin-right: 3px;
 }
+
 .pagination > .active > a {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
@@ -30,7 +29,8 @@
   box-shadow: var(--shadow-hover);
 }
 .pagination .disabled > a:hover {
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--primary-color);
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -48,6 +48,7 @@
 .pagination > li > a,
 .pagination > li > span {
   color: var(--primary-color);
+  background-color: var(--white);
 }
 .pagination > li:first-child > a,
 .pagination > li:first-child > span,
