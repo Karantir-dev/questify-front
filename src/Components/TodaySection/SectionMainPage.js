@@ -4,9 +4,10 @@ import CardList from '../../Components/CardList/CardList'
 
 import s from '../../Pages/MainPage/MainPage.module.css'
 
-const SectionMainPage = ({title, cardList}) => {
+const SectionMainPage = ({ title, cardList, className }) => {
+    const classList = [s.section, className].join(' ')
     return cardList.length > 0 && (
-        <section className={s.section}>
+        <section className={classList}>
             <h2 className={s.sectionTitle}>{title}</h2>
           <CardList cards={cardList} />
         </section>

@@ -74,6 +74,14 @@ const getAllActiveCards = state =>
         new Date(deadline).toLocaleDateString(),
   )
 
+const getOverdueCards = state =>
+  state.cards.allCards.filter(({ isCompleted, deadline }) => {
+    return (
+      !isCompleted
+      && new Date().getTime() > new Date(deadline).getTime()
+    )
+  })
+
 const getIsLoading = state => state.cards.isLoading
 
 const cardsSelectors = {
@@ -85,6 +93,7 @@ const cardsSelectors = {
   getDoneCards,
   getAllActiveCards,
   getChallengeCards,
+  getOverdueCards,
   getIsLoading,
 }
 export default cardsSelectors
