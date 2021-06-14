@@ -15,10 +15,10 @@ function StaticCard({ isChallenge, difficulty, category, deadline, text }) {
     time = `Tomorrow, ${date}`
   } else if (
     new Date().getMonth() === new Date(deadline).getMonth() &&
-    ((new Date().getDay() >= new Date(deadline).getDay() &&
-        new Date().getDate() + 7 > new Date(deadline).getDate())
-      || (new Date(deadline).getDay() === 0 && new Date().getDate() + 7 > new Date(deadline).getDate())
-    )
+    ((new Date().getDay() <= new Date(deadline).getDay() &&
+      new Date().getDate() + 7 > new Date(deadline).getDate()) ||
+      (new Date(deadline).getDay() === 0 &&
+        new Date().getDate() + 7 > new Date(deadline).getDate()))
   ) {
     const options = { weekday: 'long' }
     time = `${new Date(deadline).toLocaleDateString('en-US', options)}, ${date}`
@@ -39,7 +39,7 @@ function StaticCard({ isChallenge, difficulty, category, deadline, text }) {
 
         <Icon
           className={isChallenge ? styles.IconTrophy : styles.IconStar}
-          name={isChallenge ? 'trophy' : 'star'}
+          name={isChallenge ? 'trophy' : 'Star'}
           color="var(--primary-color)"
         />
       </div>

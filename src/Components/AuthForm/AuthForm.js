@@ -105,11 +105,7 @@ export default function AuthForm({ onRegister }) {
           </label>
         </div>
 
-        <IconButton
-          disabled={!name || !email || password < 1}
-          className={styles.buttonReg}
-          type="submit"
-        >
+        <IconButton className={styles.buttonReg} type="submit">
           go!
         </IconButton>
       </form>

@@ -205,12 +205,13 @@ li {
 .category_text {
   display: inline-flex;
   align-items: center;
+  color: var(--text-secondary-color);
 }
 
 .category_radio:checked + .category_text,
 .category_radio:hover + .category_text,
 .category_radio:focus + .category_text {
-  color: var(--text-secondary-color);
+  color: var(--text-primary-color);
 }
 
 @media screen and (min-width: 768px) {

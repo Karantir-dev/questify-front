@@ -1,4 +1,4 @@
-import styles from './CardInfo.module.css'
+import styles from './InfoCard.module.css'
 
 export default function CardInfo({ title }) {
   return (
