@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import AuthForm from '../../Components/AuthForm'
 import LoginForm from '../../Components/LoginForm'
 import Loader from '../../Components/Loader/Loader'
+import Modal from '../../Components/Modal/Modal'
 import authSelectors from '../../Redux/auth/auth-selectors'
 
 import styles from '../AuthPage/AuthPage.module.css'
@@ -29,7 +30,9 @@ export default function Landing() {
         </p>
 
         {isLoading ? (
-          <Loader />
+          <Modal>
+            <Loader size={100} />
+          </Modal>
         ) : registerSuccess ? (
           <p className={styles.successRegText}>
             You have successfully registered, go to your email to confirm it

@@ -5,6 +5,8 @@ import CardList from '../../Components/CardList/CardList'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import TodaySection from '../../Components/TodaySection/TodaySection'
+import Modal from '../../Components/Modal/Modal'
+import Loader from '../../Components/Loader/'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
@@ -31,6 +33,7 @@ export default function MainPage() {
   const activeNextMonthsCards = useSelector(
     cardsSelectors.getActiveNextMonthsCards,
   )
+  const isLoading = useSelector(cardsSelectors.getIsLoading)
 
   const todayCards = [
     ...getSorted(activeTodayCards),
@@ -62,6 +65,11 @@ export default function MainPage() {
 
   return (
     <>
+      {isLoading && (
+        <Modal>
+          <Loader size={100} />
+        </Modal>
+      )}
       <Header />
       <div className={s.container}>
         <TodaySection cards={todayCards} />
