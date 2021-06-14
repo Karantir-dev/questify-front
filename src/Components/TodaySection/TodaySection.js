@@ -1,11 +1,12 @@
+import { useSelector } from 'react-redux'
 import CardList from '../../Components/CardList/CardList'
 import IconButton from '../../Components/IconButton/IconButton'
 import Icon from '../../Components/Icon'
+import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
 import { useState } from 'react'
 
 import s from '../../Pages/MainPage/MainPage.module.css'
-// import StaticCard from '../StaticCard/StaticCard'
 
 export default function TodaySection({ cards }) {
   const [createFormShown, setCreateFormShown] = useState(false)
@@ -15,22 +16,27 @@ export default function TodaySection({ cards }) {
     const toUp = todayTitle.clientHeight
 
     window.scrollTo({
-        top: toUp,
-        behavior: 'smooth',
-    });
-    
+      top: toUp,
+      behavior: 'smooth',
+    })
+
     setCreateFormShown(true)
   }
+
+  const allActiveCards = useSelector(cardsSelectors.getAllActiveCards)
 
   return (
     <>
       <section className={s.section}>
-        <h2 id="today" className={s.sectionTitle}>TODAY</h2>
+        <h2 id="today" className={s.sectionTitle}>
+          TODAY
+        </h2>
 
         <CardList
           isCreateFormShown={createFormShown}
           onCloseForm={setCreateFormShown}
           cards={cards}
+          isInfoCardShown={allActiveCards.length < 1 && !createFormShown}
         />
       </section>
 

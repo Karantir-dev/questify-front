@@ -2,13 +2,18 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import ReactPaginate from 'react-paginate'
 import Card from '../Card/Card'
-import CardInfo from '../../Components/CardInfo/CardInfo'
+import InfoCard from '../InfoCard/InfoCard'
 import CreateEditCard from '../CreateEditCard/CreateEditCard'
 
 import s from './CardList.module.css'
 import './Pagination.css'
 
-function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
+function CardList({
+  isCreateFormShown = false,
+  onCloseForm = null,
+  cards,
+  isInfoCardShown = false,
+}) {
   const [offset, setOffset] = useState(0)
 
   const perPage = 5
@@ -19,7 +24,6 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
     const selectedPage = e.selected
     setOffset(Math.ceil(selectedPage * perPage))
   }
-
   return (
     <>
       <ul className={s.cardList}>
@@ -29,9 +33,9 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
           </li>
         )}
 
-        {/* {
-        <CardInfo title="To add a new card, click the button in the lower right corner" />
-      } */}
+      {isInfoCardShown && (
+        <InfoCard title="To add a new card, click the button in the lower right corner" />
+      )}
 
         {slicedCards.map(
           ({
