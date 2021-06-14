@@ -3,13 +3,13 @@ import Card from '../Card/Card'
 import CardInfo from '../../Components/CardInfo/CardInfo'
 import CreateEditCard from '../CreateEditCard/CreateEditCard'
 
-import './CardList.module.css'
+import s from './CardList.module.css'
 
 function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
   return (
-    <ul>
+    <ul className={s.cardList}>
       {isCreateFormShown && (
-        <li>
+        <li className={s.cardListItem}>
           <CreateEditCard handleHideCard={onCloseForm} />
         </li>
       )}
@@ -28,7 +28,7 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
           text,
           isCompleted,
         }) => (
-          <li key={id}>
+          <li className={s.cardListItem} key={id}>
             <Card
               id={id}
               isChallenge={isChallenge}
