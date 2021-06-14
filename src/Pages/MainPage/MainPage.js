@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import SectionMainPage from '../../Components/TodaySection/SectionMainPage'
 import CardList from '../../Components/CardList/CardList'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import TodaySection from '../../Components/TodaySection/TodaySection'
+import Modal from '../../Components/Modal/Modal'
+import Loader from '../../Components/Loader/'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
@@ -31,6 +34,8 @@ export default function MainPage() {
   const activeNextMonthsCards = useSelector(
     cardsSelectors.getActiveNextMonthsCards,
   )
+
+  const isLoading = useSelector(cardsSelectors.getIsLoading)
 
   const todayCards = [
     ...getSorted(activeTodayCards),
@@ -62,30 +67,20 @@ export default function MainPage() {
 
   return (
     <>
+      {isLoading && (
+        <Modal>
+          <Loader size={100} />
+        </Modal>
+      )}
       <Header />
       <div className={s.container}>
         <TodaySection cards={todayCards} />
 
-        <section className={s.section}>
-          <h2 className={s.sectionTitle}>TOMORROW</h2>
-          <CardList cards={getSorted(activeTomorrowCards)} />
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.sectionTitle}>THIS WEEK</h2>
-          <CardList cards={getSorted(activeThisWeekCards)} />
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.sectionTitle}>THIS MONTH</h2>
-          <CardList cards={getSorted(activeThisMonthCards)} />
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.sectionTitle}>NEXT MONTHS</h2>
-          <CardList cards={activeNextMonthsCards} />
-        </section>
-
+        <SectionMainPage title="TOMORROW" cardList={getSorted(activeTomorrowCards)} />
+        <SectionMainPage title="THIS WEEK" cardList={getSorted(activeThisWeekCards)} />
+        <SectionMainPage title="THIS MONTH" cardList={getSorted(activeThisMonthCards)} />
+        <SectionMainPage title="NEXT MONTH" cardList={getSorted(activeNextMonthsCards)} />
+        
         <section className={s.sectionDone}>
           <div className={s.lineWrapper}>
             <button className={s.btnDone} onClick={onShowDone}>
