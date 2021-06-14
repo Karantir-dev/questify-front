@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types'
 import Card from '../Card/Card'
-import CardInfo from '../../Components/CardInfo/CardInfo'
+import InfoCard from '../InfoCard/InfoCard'
 import CreateEditCard from '../CreateEditCard/CreateEditCard'
 
 import s from './CardList.module.css'
 
-function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
+function CardList({
+  isCreateFormShown = false,
+  onCloseForm = null,
+  cards,
+  isInfoCardShown = false,
+}) {
   return (
     <ul className={s.cardList}>
       {isCreateFormShown && (
@@ -14,9 +19,9 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
         </li>
       )}
 
-      {/* {
-        <CardInfo title="To add a new card, click the button in the lower right corner" />
-      } */}
+      {isInfoCardShown && (
+        <InfoCard title="To add a new card, click the button in the lower right corner" />
+      )}
 
       {cards.map(
         ({
