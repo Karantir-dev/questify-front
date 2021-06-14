@@ -1,23 +1,19 @@
 const getActiveTodayCards = state =>
   state.cards.allCards.filter(({ isCompleted, isChallenge, deadline }) => {
     return (
-      !isCompleted &&
-      !isChallenge &&
-      new Date().toLocaleDateString() <
-        new Date(deadline).toLocaleDateString() &&
-      new Date().toLocaleDateString() ===
-        new Date(deadline).toLocaleDateString()
+      !isCompleted && !isChallenge
+      && new Date().getTime() < new Date(deadline).getTime()
+      && new Date().toLocaleDateString() === new Date(deadline).toLocaleDateString()
     )
   })
 
 const getActiveTomorrowCards = state =>
   state.cards.allCards.filter(({ isCompleted, isChallenge, deadline }) => {
     return (
-      !isCompleted &&
-      !isChallenge &&
-      new Date().toLocaleDateString() <
-        new Date(deadline).toLocaleDateString() &&
-      new Date().getDate() + 1 === new Date(deadline).getDate()
+      !isCompleted && !isChallenge
+      && new Date().getTime() < new Date(deadline).getTime()
+      && new Date().getDate()+1 ===
+        new Date(deadline).getDate()
     )
   })
 
@@ -26,10 +22,9 @@ const getActiveThisWeekCards = state =>
     return (
       !isCompleted &&
       !isChallenge &&
-      new Date().toLocaleDateString() <
-        new Date(deadline).toLocaleDateString() &&
+      new Date().getTime() < new Date(deadline).getTime() &&
       new Date().getMonth() === new Date(deadline).getMonth() &&
-      ((new Date().getDay() >= new Date(deadline).getDay() &&
+      ((new Date().getDay() <= new Date(deadline).getDay() &&
         new Date().getDate() + 7 > new Date(deadline).getDate()) ||
         (new Date(deadline).getDay() === 0 &&
           new Date().getDate() + 7 > new Date(deadline).getDate())) &&
@@ -44,11 +39,10 @@ const getActiveThisMonthCards = state =>
     return (
       !isCompleted &&
       !isChallenge &&
-      new Date().toLocaleDateString() <
-        new Date(deadline).toLocaleDateString() &&
+      new Date().getTime() < new Date(deadline).getTime() &&
       new Date().getMonth() === new Date(deadline).getMonth() &&
       (new Date().getDate() + 7 < new Date(deadline).getDate() ||
-        new Date().getDay() < new Date(deadline).getDay()) &&
+        new Date().getDate() + 7 === new Date(deadline).getDate()) &&
       new Date().getDate() + 1 !== new Date(deadline).getDate()
     )
   })
