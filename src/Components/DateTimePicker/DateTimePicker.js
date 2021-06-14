@@ -9,10 +9,12 @@ function DateTimePicker({ deadline, handleDateChange }) {
     <div className="date-time-container">
       <Flatpickr
         options={{
+          enableTime: true,
+          minTime: new Date().setTime(new Date().getTime()),
           enable: [
             {
-              from: new Date(),
-              to: '2025-05-01',
+              from: new Date().setDate(new Date().getDate() - 1),
+              to: new Date().setFullYear(new Date().getFullYear() + 10),
             },
           ],
         }}
