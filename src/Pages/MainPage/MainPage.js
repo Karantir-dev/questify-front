@@ -18,11 +18,19 @@ export default function MainPage() {
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
-
   useEffect(() => {
     dispatch(cardsOperations.fetchActiveCards())
   }, [dispatch])
 
+  function onShowDone() {
+    setDoneIsShown(!doneIsShown)
+
+    if (doneCards.length < 1) {
+      dispatch(cardsOperations.fetchDoneCards())
+    }
+  }
+
+  //------------- Selectors ------------
   const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards)
   const activeTomorrowCards = useSelector(cardsSelectors.getActiveTomorrowCards)
   const doneCards = useSelector(cardsSelectors.getDoneCards)
@@ -44,14 +52,6 @@ export default function MainPage() {
     ...getSorted(activeTodayCards),
     ...getSorted(challengeCards),
   ]
-
-  function onShowDone() {
-    setDoneIsShown(!doneIsShown)
-
-    if (!(doneCards.length >= 1)) {
-      dispatch(cardsOperations.fetchDoneCards())
-    }
-  }
 
   function getSorted(list) {
     return list.sort((a, b) => {
@@ -79,6 +79,7 @@ export default function MainPage() {
       <div className={s.container}>
         <SectionMainPage className={s.overdueContainer} title="OVERDUE - SHAME ON YOU!" cardList={getSorted(overdueCards)} />
         <TodaySection cards={todayCards} />
+
         <SectionMainPage title="TOMORROW" cardList={getSorted(activeTomorrowCards)} />
         <SectionMainPage title="THIS WEEK" cardList={getSorted(activeThisWeekCards)} />
         <SectionMainPage title="THIS MONTH" cardList={getSorted(activeThisMonthCards)} />
