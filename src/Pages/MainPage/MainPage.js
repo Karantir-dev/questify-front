@@ -6,13 +6,15 @@ import CardList from '../../Components/CardList/CardList'
 import Header from '../../Components/Header/Header'
 import Icon from '../../Components/Icon'
 import TodaySection from '../../Components/TodaySection/TodaySection'
+import Modal from '../../Components/Modal/Modal'
+import Loader from '../../Components/Loader/'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
 import s from './MainPage.module.css'
 
-export default function Main() {
+export default function MainPage() {
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
@@ -32,7 +34,13 @@ export default function Main() {
   const activeNextMonthsCards = useSelector(
     cardsSelectors.getActiveNextMonthsCards,
   )
-  const todayCards = [...getSorted(activeTodayCards), ...getSorted(challengeCards)]
+
+  const isLoading = useSelector(cardsSelectors.getIsLoading)
+
+  const todayCards = [
+    ...getSorted(activeTodayCards),
+    ...getSorted(challengeCards),
+  ]
 
   function onShowDone() {
     setDoneIsShown(!doneIsShown)
@@ -46,19 +54,24 @@ export default function Main() {
     return list.sort((a, b) => {
       const dateA = new Date(a.deadline)
       const dateB = new Date(b.deadline)
-        if (dateA < dateB) {
-            return -1;
-        }
-        if (dateA > dateB) {
-            return 1;
-        }
+      if (dateA < dateB) {
+        return -1
+      }
+      if (dateA > dateB) {
+        return 1
+      }
 
-        return 0;
-    });
+      return 0
+    })
   }
 
   return (
     <>
+      {isLoading && (
+        <Modal>
+          <Loader size={100} />
+        </Modal>
+      )}
       <Header />
       <div className={s.container}>
         <TodaySection cards={todayCards} />

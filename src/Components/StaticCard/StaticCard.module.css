@@ -91,13 +91,14 @@
 }
 
 .difficulty {
+  margin-left: 7px;
+  text-transform: capitalize;
   font-family: HelveticaNeueCyr;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  margin-left: 7px;
   color: var(--text-secondary-color);
 }
 

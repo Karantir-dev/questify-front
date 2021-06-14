@@ -63,11 +63,7 @@ export default function LoginForm() {
           </label>
         </div>
 
-        <IconButton
-          disabled={!email || password < 1}
-          className={styles.buttonReg}
-          type="submit"
-        >
+        <IconButton className={styles.buttonReg} type="submit">
           go!
         </IconButton>
       </form>

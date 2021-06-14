@@ -8,6 +8,14 @@ function DateTimePicker({ deadline, handleDateChange }) {
   return (
     <div className="date-time-container">
       <Flatpickr
+        options={{
+          enable: [
+            {
+              from: new Date(),
+              to: '2025-05-01',
+            },
+          ],
+        }}
         data-enable-time
         value={deadline}
         onChange={date => {
