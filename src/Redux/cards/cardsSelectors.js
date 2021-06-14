@@ -64,6 +64,14 @@ const getChallengeCards = state =>
     ({ isChallenge, isCompleted }) => isChallenge && !isCompleted,
   )
 
+const getAllActiveCards = state =>
+  state.cards.allCards.filter(
+    ({ isCompleted, deadline }) =>
+      !isCompleted &&
+      new Date().toLocaleDateString() <=
+        new Date(deadline).toLocaleDateString(),
+  )
+
 const getIsLoading = state => state.cards.isLoading
 
 const cardsSelectors = {
@@ -73,6 +81,7 @@ const cardsSelectors = {
   getActiveThisMonthCards,
   getActiveNextMonthsCards,
   getDoneCards,
+  getAllActiveCards,
   getChallengeCards,
   getIsLoading,
 }
