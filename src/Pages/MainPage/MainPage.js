@@ -18,11 +18,19 @@ export default function MainPage() {
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
-
   useEffect(() => {
     dispatch(cardsOperations.fetchActiveCards())
   }, [dispatch])
 
+  function onShowDone() {
+    setDoneIsShown(!doneIsShown)
+
+    if (doneCards.length < 1) {
+      dispatch(cardsOperations.fetchDoneCards())
+    }
+  }
+
+  //------------- Selectors ------------
   const activeTodayCards = useSelector(cardsSelectors.getActiveTodayCards)
   const activeTomorrowCards = useSelector(cardsSelectors.getActiveTomorrowCards)
   const doneCards = useSelector(cardsSelectors.getDoneCards)
@@ -34,21 +42,12 @@ export default function MainPage() {
   const activeNextMonthsCards = useSelector(
     cardsSelectors.getActiveNextMonthsCards,
   )
-
   const isLoading = useSelector(cardsSelectors.getIsLoading)
 
   const todayCards = [
     ...getSorted(activeTodayCards),
     ...getSorted(challengeCards),
   ]
-
-  function onShowDone() {
-    setDoneIsShown(!doneIsShown)
-
-    if (!(doneCards.length >= 1)) {
-      dispatch(cardsOperations.fetchDoneCards())
-    }
-  }
 
   function getSorted(list) {
     return list.sort((a, b) => {
@@ -76,11 +75,23 @@ export default function MainPage() {
       <div className={s.container}>
         <TodaySection cards={todayCards} />
 
-        <SectionMainPage title="TOMORROW" cardList={getSorted(activeTomorrowCards)} />
-        <SectionMainPage title="THIS WEEK" cardList={getSorted(activeThisWeekCards)} />
-        <SectionMainPage title="THIS MONTH" cardList={getSorted(activeThisMonthCards)} />
-        <SectionMainPage title="NEXT MONTH" cardList={getSorted(activeNextMonthsCards)} />
-        
+        <SectionMainPage
+          title="TOMORROW"
+          cardList={getSorted(activeTomorrowCards)}
+        />
+        <SectionMainPage
+          title="THIS WEEK"
+          cardList={getSorted(activeThisWeekCards)}
+        />
+        <SectionMainPage
+          title="THIS MONTH"
+          cardList={getSorted(activeThisMonthCards)}
+        />
+        <SectionMainPage
+          title="NEXT MONTH"
+          cardList={getSorted(activeNextMonthsCards)}
+        />
+
         <section className={s.sectionDone}>
           <div className={s.lineWrapper}>
             <button className={s.btnDone} onClick={onShowDone}>
