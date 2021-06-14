@@ -15,7 +15,7 @@ function StaticCard({ isChallenge, difficulty, category, deadline, text }) {
     time = `Tomorrow, ${date}`
   } else if (
     new Date().getMonth() === new Date(deadline).getMonth() &&
-    ((new Date().getDay() >= new Date(deadline).getDay() &&
+    ((new Date().getDay() <= new Date(deadline).getDay() &&
       new Date().getDate() + 7 > new Date(deadline).getDate()) ||
       (new Date(deadline).getDay() === 0 &&
         new Date().getDate() + 7 > new Date(deadline).getDate()))

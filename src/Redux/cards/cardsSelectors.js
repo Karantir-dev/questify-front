@@ -25,7 +25,7 @@ const getActiveThisWeekCards = state =>
       new Date().toLocaleDateString() <
         new Date(deadline).toLocaleDateString() &&
       new Date().getMonth() === new Date(deadline).getMonth() &&
-      ((new Date().getDay() >= new Date(deadline).getDay() &&
+      ((new Date().getDay() <= new Date(deadline).getDay() &&
         new Date().getDate() + 7 > new Date(deadline).getDate()) ||
         (new Date(deadline).getDay() === 0 &&
           new Date().getDate() + 7 > new Date(deadline).getDate())) &&
@@ -44,7 +44,7 @@ const getActiveThisMonthCards = state =>
         new Date(deadline).toLocaleDateString() &&
       new Date().getMonth() === new Date(deadline).getMonth() &&
       (new Date().getDate() + 7 < new Date(deadline).getDate() ||
-        new Date().getDay() < new Date(deadline).getDay()) &&
+        new Date().getDate() + 7 === new Date(deadline).getDate()) &&
       new Date().getDate() + 1 !== new Date(deadline).getDate()
     )
   })
