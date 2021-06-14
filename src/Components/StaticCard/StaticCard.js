@@ -1,8 +1,21 @@
 import PropTypes from 'prop-types'
-import styles from './StaticCard.module.css'
+import { useDispatch } from 'react-redux'
 import Icon from '../Icon'
+import DeleteModal from '../DeleteModal/DeleteModal'
+import cardsOperations from '../../Redux/cards/cardsOperations'
 
-function StaticCard({ isChallenge, difficulty, category, deadline, text }) {
+import styles from './StaticCard.module.css'
+
+function StaticCard({
+  cardId,
+  isChallenge,
+  difficulty,
+  category,
+  deadline,
+  text,
+  isDeleteModalShown,
+  onCancelDelete,
+}) {
   const optionsTime = { hour12: false, hour: 'numeric', minute: 'numeric' }
   const date = new Date(deadline).toLocaleTimeString('en-US', optionsTime)
   let time
@@ -27,10 +40,22 @@ function StaticCard({ isChallenge, difficulty, category, deadline, text }) {
     time = `${new Date(deadline).toLocaleDateString('en-US', options)}, ${date}`
   }
 
+  const dispatch = useDispatch()
+  function onDeleteCard() {
+    dispatch(cardsOperations.deleteCard(cardId))
+  }
+
   return (
     <div
       className={isChallenge ? styles.ContainerChallenge : styles.baseContainer}
     >
+      {isDeleteModalShown && (
+        <DeleteModal
+          isChallenge={isChallenge}
+          onClose={onCancelDelete}
+          onDelete={onDeleteCard}
+        />
+      )}
       <div className={styles.difficultyContainer}>
         <div className={styles.difficultyLevel}>
           <div className={styles[difficulty?.toLowerCase()]}></div>

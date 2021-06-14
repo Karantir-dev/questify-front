@@ -25,7 +25,7 @@ export default function MainPage() {
   function onShowDone() {
     setDoneIsShown(!doneIsShown)
 
-    if (doneCards.length < 1) {
+    if (doneCards.length < 1 && !doneIsShown) {
       dispatch(cardsOperations.fetchDoneCards())
     }
   }
@@ -42,9 +42,7 @@ export default function MainPage() {
   const activeNextMonthsCards = useSelector(
     cardsSelectors.getActiveNextMonthsCards,
   )
-  const overdueCards = useSelector(
-    cardsSelectors.getOverdueCards,
-  )
+  const overdueCards = useSelector(cardsSelectors.getOverdueCards)
 
   const isLoading = useSelector(cardsSelectors.getIsLoading)
 
@@ -77,14 +75,30 @@ export default function MainPage() {
       )}
       <Header />
       <div className={s.container}>
-        <SectionMainPage className={s.overdueContainer} title="OVERDUE - SHAME ON YOU!" cardList={getSorted(overdueCards)} />
+        <SectionMainPage
+          className={s.overdueContainer}
+          title="OVERDUE - SHAME ON YOU!"
+          cardList={getSorted(overdueCards)}
+        />
         <TodaySection cards={todayCards} />
 
-        <SectionMainPage title="TOMORROW" cardList={getSorted(activeTomorrowCards)} />
-        <SectionMainPage title="THIS WEEK" cardList={getSorted(activeThisWeekCards)} />
-        <SectionMainPage title="THIS MONTH" cardList={getSorted(activeThisMonthCards)} />
-        <SectionMainPage title="NEXT MONTH" cardList={getSorted(activeNextMonthsCards)} />
-        
+        <SectionMainPage
+          title="TOMORROW"
+          cardList={getSorted(activeTomorrowCards)}
+        />
+        <SectionMainPage
+          title="THIS WEEK"
+          cardList={getSorted(activeThisWeekCards)}
+        />
+        <SectionMainPage
+          title="THIS MONTH"
+          cardList={getSorted(activeThisMonthCards)}
+        />
+        <SectionMainPage
+          title="NEXT MONTH"
+          cardList={getSorted(activeNextMonthsCards)}
+        />
+
         <section className={s.sectionDone}>
           <div className={s.lineWrapper}>
             <button className={s.btnDone} onClick={onShowDone}>
