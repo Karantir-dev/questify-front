@@ -2,12 +2,16 @@ import PropTypes from 'prop-types'
 import Card from '../Card/Card'
 import CardInfo from '../../Components/CardInfo/CardInfo'
 import CreateEditCard from '../CreateEditCard/CreateEditCard'
+import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
 import './CardList.module.css'
 
 function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
+  
   return (
-    <ul>
+  <>
+    {showCardInfo ?
+    (<ul>
       {isCreateFormShown && (
         <li>
           <CreateEditCard handleHideCard={onCloseForm} />
@@ -41,7 +45,8 @@ function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
           </li>
         ),
       )}
-    </ul>
+    </ul>) : (<CardInfo title="To add a new card, click the button in the lower right corner" />)}
+  </>
   )
 }
 
