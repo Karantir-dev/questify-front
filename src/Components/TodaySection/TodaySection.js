@@ -34,7 +34,7 @@ export default function TodaySection({ cards }) {
 
         <CardList
           isCreateFormShown={createFormShown}
-          onCloseForm={setCreateFormShown}
+          onCloseForm={() => setCreateFormShown(false)}
           cards={cards}
           isInfoCardShown={allActiveCards.length < 1 && !createFormShown}
         />
