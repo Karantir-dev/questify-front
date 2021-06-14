@@ -1,47 +1,77 @@
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 import Card from '../Card/Card'
 import CardInfo from '../../Components/CardInfo/CardInfo'
 import CreateEditCard from '../CreateEditCard/CreateEditCard'
 
-import './CardList.module.css'
+import './Pagination.css'
+import s from './CardList.module.css'
+import ReactPaginate from 'react-paginate'
 
 function CardList({ isCreateFormShown = false, onCloseForm = null, cards }) {
-  return (
-    <ul>
-      {isCreateFormShown && (
-        <li>
-          <CreateEditCard handleHideCard={onCloseForm} />
-        </li>
-      )}
+  const [offset, setOffset] = useState(0)
 
-      {/* {
+  const perPage = 5
+  const pageCount = Math.ceil(cards.length / perPage)
+  const slicedCards = cards.slice(offset, offset + perPage)
+
+  const handlePageClick = e => {
+    const selectedPage = e.selected
+    setOffset(Math.ceil(selectedPage * perPage))
+  }
+
+  return (
+    <>
+      <ul className={s.cardList}>
+        {isCreateFormShown && (
+          <li className={s.cardList_item}>
+            <CreateEditCard handleHideCard={onCloseForm} />
+          </li>
+        )}
+
+        {/* {
         <CardInfo title="To add a new card, click the button in the lower right corner" />
       } */}
 
-      {cards.map(
-        ({
-          id,
-          isChallenge,
-          difficulty,
-          category,
-          deadline,
-          text,
-          isCompleted,
-        }) => (
-          <li key={id}>
-            <Card
-              id={id}
-              isChallenge={isChallenge}
-              difficulty={difficulty}
-              category={category}
-              deadline={deadline}
-              text={text}
-              isCompleted={isCompleted}
-            />
-          </li>
-        ),
+        {slicedCards.map(
+          ({
+            id,
+            isChallenge,
+            difficulty,
+            category,
+            deadline,
+            text,
+            isCompleted,
+          }) => (
+            <li key={id} className={s.cardList_item}>
+              <Card
+                id={id}
+                isChallenge={isChallenge}
+                difficulty={difficulty}
+                category={category}
+                deadline={deadline}
+                text={text}
+                isCompleted={isCompleted}
+              />
+            </li>
+          ),
+        )}
+      </ul>
+      {cards.length > perPage && (
+        <ReactPaginate
+          pageCount={pageCount}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={2}
+          previousLabel={'prev'}
+          nextLabel={'next'}
+          breakLabel={'...'}
+          breakClassName={'break-me'}
+          onPageChange={handlePageClick}
+          containerClassName={'pagination'}
+          activeClassName={'active'}
+        />
       )}
-    </ul>
+    </>
   )
 }
 

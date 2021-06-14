@@ -1,0 +1,8 @@
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+.cardList_item {
+  margin: 10px;
+}
