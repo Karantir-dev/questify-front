@@ -11,7 +11,7 @@ import cardsSelectors from '../../Redux/cards/cardsSelectors'
 
 import s from './MainPage.module.css'
 
-export default function Main() {
+export default function MainPage() {
   const [doneIsShown, setDoneIsShown] = useState(false)
 
   const dispatch = useDispatch()
@@ -32,8 +32,10 @@ export default function Main() {
     cardsSelectors.getActiveNextMonthsCards,
   )
 
-  const todayCards = [...getSorted(activeTodayCards), ...getSorted(challengeCards)]
-
+  const todayCards = [
+    ...getSorted(activeTodayCards),
+    ...getSorted(challengeCards),
+  ]
 
   function onShowDone() {
     setDoneIsShown(!doneIsShown)
@@ -47,15 +49,15 @@ export default function Main() {
     return list.sort((a, b) => {
       const dateA = new Date(a.deadline)
       const dateB = new Date(b.deadline)
-        if (dateA < dateB) {
-            return -1;
-        }
-        if (dateA > dateB) {
-            return 1;
-        }
+      if (dateA < dateB) {
+        return -1
+      }
+      if (dateA > dateB) {
+        return 1
+      }
 
-        return 0;
-    });
+      return 0
+    })
   }
 
   return (
