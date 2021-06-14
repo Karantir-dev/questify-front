@@ -1,8 +1,8 @@
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import styles from './CreateEditCard.module.css'
-import Modal from '../DeleteModal/Modal'
+import DeleteModal from '../DeleteModal/DeleteModal'
 import CompletedCard from '../CompletedCard/CompletedCard'
 import DateTimePicker from '../DateTimePicker/DateTimePicker'
 import OptionsPicker from '../OptionsPicker/OptionsPicker'
@@ -44,10 +44,7 @@ const CreateEditCard = ({
     setIsDeleting(false)
   }
 
-  const handleDeleteCard = useCallback(
-    () => dispatch(cardsOperations.deleteCard(cardId)),
-    [dispatch, cardId],
-  )
+  const handleDeleteCard = () => dispatch(cardsOperations.deleteCard(cardId))
 
   const onInputChange = e => {
     setText(e.target.value)
@@ -122,7 +119,7 @@ const CreateEditCard = ({
           />
         )}
         {isDeleting && (
-          <Modal
+          <DeleteModal
             isChallenge={isChallenge}
             onClose={onCancelBtnClick}
             onDelete={textProp ? handleDeleteCard : handleHideCard}

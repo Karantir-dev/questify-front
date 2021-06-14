@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
-import s from './Modal.module.css'
-import './ModalAnimation.css'
+import s from './DeleteModal.module.css'
+import './DeleteModalAnimation.css'
 
-export default function Modal({ isChallenge, onClose, onDelete }) {
+export default function DeleteModal({ isChallenge, onClose, onDelete }) {
   const cardType = isChallenge ? 'Challenge' : 'Quest'
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Modal({ isChallenge, onClose, onDelete }) {
   )
 }
 
-Modal.propTypes = {
+DeleteModal.propTypes = {
   isChallenge: PropTypes.bool,
   onDelete: PropTypes.func,
   onClose: PropTypes.func,

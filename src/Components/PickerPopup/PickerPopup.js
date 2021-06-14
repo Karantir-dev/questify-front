@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import s from './PickerPopup.module.css'
 
-import '../DeleteModal/ModalAnimation.css'
+import '../DeleteModal/DeleteModalAnimation.css'
 
 PickerPopup.propTypes = {
   onClose: PropTypes.func.isRequired,

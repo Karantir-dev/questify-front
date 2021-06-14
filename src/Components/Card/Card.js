@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
+
 import StaticCard from '../StaticCard/StaticCard'
 import CreateEditCard from '../../Components/CreateEditCard/CreateEditCard'
-import PropTypes from 'prop-types'
 
 function Card({
   id,
@@ -13,6 +14,15 @@ function Card({
   isCompleted,
 }) {
   const [editFormShow, setEditFormShow] = useState(false)
+  const [isDeleteModalShown, setIsDeleteModalShown] = useState(false)
+
+  function onStaticCardClick() {
+    if (isCompleted && !isDeleteModalShown) {
+      setIsDeleteModalShown(true)
+    } else if (!isCompleted) {
+      setEditFormShow(true)
+    }
+  }
 
   return editFormShow ? (
     <CreateEditCard
@@ -26,17 +36,19 @@ function Card({
       handleHideCard={() => setEditFormShow(false)}
     />
   ) : (
-    <button type="button" onClick={() => setEditFormShow(true)}>
+    <div onClick={onStaticCardClick}>
       <StaticCard
-        id={id}
+        cardId={id}
         isChallenge={isChallenge}
         difficulty={difficulty}
         category={category}
         deadline={deadline}
         text={text}
         isCompleted={isCompleted}
+        isDeleteModalShown={isDeleteModalShown}
+        onCancelDelete={() => setIsDeleteModalShown(false)}
       />
-    </button>
+    </div>
   )
 }
 
