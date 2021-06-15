@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import CardList from '../../Components/CardList/CardList'
 import IconButton from '../../Components/IconButton/IconButton'
@@ -10,13 +11,11 @@ import s from '../../Pages/MainPage/MainPage.module.css'
 
 export default function TodaySection({ cards }) {
   const [createFormShown, setCreateFormShown] = useState(false)
+  const editCardEl = useRef(null)
 
   const handleBtnClick = () => {
-    const todayTitle = document.querySelector('#today')
-    const toUp = todayTitle.clientHeight
-
     window.scrollTo({
-      top: toUp,
+      top: editCardEl.current.offsetTop,
       behavior: 'smooth',
     })
 
@@ -28,7 +27,7 @@ export default function TodaySection({ cards }) {
   return (
     <>
       <section className={s.section}>
-        <h2 id="today" className={s.sectionTitle}>
+        <h2 ref={editCardEl} className={s.sectionTitle}>
           TODAY
         </h2>
 

@@ -15,7 +15,8 @@ const getActiveTomorrowCards = state =>
       !isCompleted &&
       !isChallenge &&
       new Date().getTime() < new Date(deadline).getTime() &&
-      new Date().getDate() + 1 === new Date(deadline).getDate()
+      new Date().getDate() + 1 === new Date(deadline).getDate() &&
+      new Date().getMonth() === new Date(deadline).getMonth()
     )
   })
 

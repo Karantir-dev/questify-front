@@ -24,7 +24,9 @@ function StaticCard({
     new Date().toLocaleDateString() === new Date(deadline).toLocaleDateString()
   ) {
     time = `Today, ${date}`
-  } else if (new Date().getDate() + 1 === new Date(deadline).getDate()) {
+  } else if (new Date().getDate() + 1 === new Date(deadline).getDate() &&
+    new Date().getMonth() === new Date(deadline).getMonth()
+  ) {
     time = `Tomorrow, ${date}`
   } else if (
     new Date().getMonth() === new Date(deadline).getMonth() &&
