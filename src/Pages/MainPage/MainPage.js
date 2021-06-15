@@ -67,7 +67,7 @@ export default function MainPage() {
   }
 
   return (
-    <>
+    <div className={s.appWrapper}>
       {isLoading && (
         <Modal>
           <Loader size={100} />
@@ -114,6 +114,6 @@ export default function MainPage() {
           {doneIsShown && <CardList cards={doneCards} />}
         </section>
       </div>
-    </>
+    </div>
   )
 }
