@@ -17,7 +17,26 @@ function CardList({
 }) {
   const [offset, setOffset] = useState(0)
 
-  const perPage = 5
+  let perPage = 1
+  let pageRange = 0
+  let marginPages = 0
+  let breakLabel = null
+  if (window.innerWidth < 767) {
+    perPage = 1
+    pageRange = 0
+    marginPages = 1
+  } else if (window.innerWidth >= 768 && window.innerWidth < 1279) {
+    perPage = 3
+    pageRange = 2
+    marginPages = 1
+    breakLabel = '...'
+  } else if (window.innerWidth >= 1280) {
+    perPage = 5
+    pageRange = 2
+    marginPages = 2
+    breakLabel = '...'
+  }
+
   const pageCount = Math.ceil(cards.length / perPage)
   const slicedCards = cards.slice(offset, offset + perPage)
 
@@ -66,11 +85,12 @@ function CardList({
       {cards.length > perPage && (
         <ReactPaginate
           pageCount={pageCount}
-          pageRangeDisplayed={0}
-          marginPagesDisplayed={1}
+          pageRangeDisplayed={pageRange}
+          marginPagesDisplayed={marginPages}
           previousLabel={'prev'}
           nextLabel={'next'}
-          breakLabel={null}
+          breakLabel={breakLabel}
+          breakClassName={'break-me'}
           onPageChange={handlePageClick}
           containerClassName={'pagination'}
           activeClassName={'active'}
