@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import authOperations from '../../Redux/auth/auth-operations'
 import authActions from '../../Redux/auth/auth-actions'
 import 'react-toastify/dist/ReactToastify.css'
-import styles from './AuthForm.module.css'
+import styles from '../AuthForm/AuthForm.module.css'
 import IconButton from '../IconButton/IconButton'
 
 export default function AuthForm({ onRegister }) {

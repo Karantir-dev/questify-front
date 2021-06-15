@@ -4,7 +4,7 @@ import authOperations from '../../Redux/auth/auth-operations'
 import authActions from '../../Redux/auth/auth-actions'
 import 'react-toastify/dist/ReactToastify.css'
 import IconButton from '../IconButton/IconButton'
-import styles from '../AuthForm/AuthForm.module.css'
+import styles from '../../Components/AuthForm/AuthForm.module.css'
 
 export default function LoginForm() {
   const [email, setEmail] = useState('')

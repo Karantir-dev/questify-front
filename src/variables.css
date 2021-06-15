@@ -10,6 +10,7 @@
   --btn-active-color: #47aad5;
   --btn-logout: #3e4e6c;
   --btn-logout-click: #48627f;
+  --colorRegText: rgba(0, 215, 255, 0.2);
 
   /* Цвета категорий задач */
   --leisure-color: #f8d2ff;
