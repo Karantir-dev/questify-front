@@ -1,6 +1,6 @@
 .baseContainer {
   display: flex;
-  padding: 21px;
+  padding: 20px 21px 33px 21px;
   flex-direction: column;
   width: 290px;
   height: 260px;
@@ -29,8 +29,9 @@
   height: 19px;
   width: 19px;
   position: absolute;
-  top: 18px;
-  right: 22px;
+  top: 16px;
+  right: 21px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25));
 }
 
 .cardType {
@@ -145,7 +146,7 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   align-items: center;
-  border-radius: 0px 15px 15px 0px;
+  border-radius: 0px 25px 25px 0px;
   position: absolute;
   bottom: 33px;
   left: 0;
@@ -200,13 +201,15 @@
   }
 
   .IconTrophy {
-    height: 14px;
-    width: 14px;
+    height: 15px;
+    width: 15px;
+    top: 17px;
   }
 
   .IconStar {
     height: 15px;
     width: 15px;
+    top: 17px;
   }
 
   .cardType {
@@ -224,8 +227,8 @@
     font-size: 11px;
     line-height: 11px;
     height: 25px;
-    width: 88px;
-    bottom: 21px;
+    width: 95px;
+    bottom: 25px;
   }
 
   .difficulty {

@@ -10,7 +10,7 @@
 .card {
   z-index: 102;
   position: relative;
-  padding: 18px 0 26px;
+  padding: 14px 0 26px;
   width: 205px;
   height: 199px;
   background-color: var(--white);
@@ -175,7 +175,7 @@
   .card {
     width: 290px;
     height: 260px;
-    padding: 18px 0 42px;
+    padding: 10px 0 33px;
   }
 
   .cardTitle {
@@ -184,15 +184,11 @@
   }
 
   .cardBottomButtons {
-    margin-top: 46px;
-  }
-
-  .cardInput {
-    margin-top: 19px;
+    margin-top: 48px;
   }
 
   .datePicker {
-    margin-top: 16px;
+    margin-top: 15px;
   }
 
   .createBtn {
@@ -216,7 +212,7 @@
 
   .starIcon {
     width: 19px;
-    height: 18px;
+    height: 19px;
   }
 
   .trophyIcon {
