@@ -1,10 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import ReactPaginate from 'react-paginate'
 import Card from '../Card/Card'
 import InfoCard from '../InfoCard/InfoCard'
 import CreateEditCard from '../CreateEditCard/CreateEditCard'
-
 
 import s from './CardList.module.css'
 import './Pagination.css'
@@ -16,6 +15,8 @@ function CardList({
   isInfoCardShown = false,
 }) {
   const [offset, setOffset] = useState(0)
+  const [slicedCards, setSlicedCards] = useState(cards)
+  const [pageCount, setPageCount] = useState(0)
 
   let perPage = 1
   let pageRange = 0
@@ -37,13 +38,17 @@ function CardList({
     breakLabel = '...'
   }
 
-  const pageCount = Math.ceil(cards.length / perPage)
-  const slicedCards = cards.slice(offset, offset + perPage)
+  useEffect(() => {
+    slicedCards.length === 0 && setOffset(0)
+    setPageCount(Math.ceil(cards.length / perPage))
+    setSlicedCards(cards.slice(offset, offset + perPage))
+  }, [cards, offset, perPage, slicedCards.length])
 
   const handlePageClick = e => {
     const selectedPage = e.selected
     setOffset(Math.ceil(selectedPage * perPage))
   }
+
   return (
     <>
       <ul className={s.cardList}>
