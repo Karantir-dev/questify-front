@@ -73,7 +73,9 @@ export default function MainPage() {
           <Loader size={100} />
         </Modal>
       )}
-      <Header />
+      <div className={s.headerWrapper}>
+        <Header />
+      </div>
       <div className={s.container}>
         <SectionMainPage
           className={s.overdueContainer}
