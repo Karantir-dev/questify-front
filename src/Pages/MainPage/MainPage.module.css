@@ -1,6 +1,9 @@
 .appWrapper {
-  max-width: 1280px;
-  margin: 0 auto;
+  background-color: var(--body-bg-color);
+}
+
+.headerWrapper {
+  background-color: var(--header-color);
 }
 
 .container {
@@ -8,6 +11,8 @@
   min-height: calc(100vh - 60px);
   height: 100%;
   background-color: var(--body-bg-color);
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .buttonAddContainer {
@@ -35,7 +40,7 @@
 
   .buttonAddContainer {
     bottom: 40px;
-    right: calc((100% - 1280px) / 1.8);
+    right: calc((100% - 1280px) / 2);
   }
 }
 
