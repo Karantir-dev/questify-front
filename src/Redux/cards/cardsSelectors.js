@@ -64,7 +64,10 @@ const getDoneCards = state =>
 
 const getChallengeCards = state =>
   state.cards.allCards.filter(
-    ({ isChallenge, isCompleted }) => isChallenge && !isCompleted,
+    ({ isChallenge, isCompleted, deadline }) =>
+      isChallenge &&
+      !isCompleted &&
+      new Date().toLocaleDateString() < new Date(deadline).toLocaleDateString(),
   )
 
 const getAllActiveCards = state =>
@@ -77,10 +80,7 @@ const getAllActiveCards = state =>
 
 const getOverdueCards = state =>
   state.cards.allCards.filter(({ isCompleted, deadline }) => {
-    return (
-      !isCompleted
-      && new Date().getTime() > new Date(deadline).getTime()
-    )
+    return !isCompleted && new Date().getTime() > new Date(deadline).getTime()
   })
 
 const getIsLoading = state => state.cards.isLoading
