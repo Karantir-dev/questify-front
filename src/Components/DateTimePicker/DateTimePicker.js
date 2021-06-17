@@ -21,20 +21,25 @@ function DateTimePicker({ deadline, handleDateChange }) {
               to: new Date().setFullYear(new Date().getFullYear() + 10),
             },
           ],
+          wrap: true,
         }}
+        data-input
         data-enable-time
         value={deadline}
         onChange={date => {
           handleDateChange(new Date(date))
         }}
-      />
-
-      <Icon
-        className="flatpickrInputIconCalendar"
-        name="calendar"
-        color="#00D7FF"
-        size={14}
-      />
+      >
+        <input type="text" placeholder="Select Date.." data-input />
+        <button data-toggle>
+          <Icon
+          className="flatpickrInputIconCalendar"
+          name="calendar"
+          color="#00D7FF"
+          size={14}
+          />
+        </button>
+      </Flatpickr>
     </div>
   )
 }
