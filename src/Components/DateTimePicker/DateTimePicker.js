@@ -33,10 +33,10 @@ function DateTimePicker({ deadline, handleDateChange }) {
         <input type="text" placeholder="Select Date.." data-input />
         <button data-toggle>
           <Icon
-          className="flatpickrInputIconCalendar"
-          name="calendar"
-          color="#00D7FF"
-          size={14}
+            className="flatpickrInputIconCalendar"
+            name="calendar"
+            color="#00D7FF"
+            size={14}
           />
         </button>
       </Flatpickr>
