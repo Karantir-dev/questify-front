@@ -17,6 +17,8 @@ const TITLES = {
   CREATE_QUEST: 'CREATE NEW QUEST',
 }
 
+const ADDITIONAL_TIME = 60000
+
 const CreateEditCard = ({
   isChallengeProp = false,
   isCompletedProp = false,
@@ -98,10 +100,8 @@ const CreateEditCard = ({
 
   const handleEditCard = () => {
     let date = deadline
-    if (
-      new Date().toLocaleTimeString() >= new Date(deadline).toLocaleTimeString()
-    ) {
-      date = new Date()
+    if (new Date() >= new Date(deadline)) {
+      date = new Date(new Date().getTime() + ADDITIONAL_TIME)
     }
 
     if (text.trim() === '') {
