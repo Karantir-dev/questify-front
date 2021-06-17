@@ -32,8 +32,8 @@
 }
 
 .pagination > li.disabled > a {
-  color: red;
-  border-color: red;
+  color: rgb(155, 155, 155);
+  border-color: rgb(155, 155, 155);
 }
 .pagination .disabled > a:hover {
   background-color: var(--white);
