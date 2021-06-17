@@ -84,7 +84,7 @@ const CreateEditCard = ({
     handleHideCard()
   }
 
-  const onClickEditCard = () =>
+  const onClickEditCard = date =>
     dispatch(
       cardsOperations.editCard(cardId, {
         text,
@@ -92,17 +92,24 @@ const CreateEditCard = ({
         isCompleted,
         category,
         difficulty,
-        deadline,
+        deadline: date,
       }),
     )
 
   const handleEditCard = () => {
+    let date = deadline
+    if (
+      new Date().toLocaleTimeString() >= new Date(deadline).toLocaleTimeString()
+    ) {
+      date = new Date()
+    }
+
     if (text.trim() === '') {
       dispatch(cardActions.addCardError('Please, enter some text.'))
       return
     }
 
-    onClickEditCard()
+    onClickEditCard(date)
     handleHideCard()
   }
 
