@@ -172,6 +172,7 @@ const CreateEditCard = ({
               isChallenge ? styles.cardInputChallenge : styles.cardInput
             }
             autoComplete="off"
+            autoFocus
             type="text"
             name="quest"
             value={text}
