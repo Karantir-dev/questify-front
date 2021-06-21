@@ -11,7 +11,6 @@
     "flatpickr": "^4.6.9",
     "modern-normalize": "^1.1.0",
     "react": "^17.0.2",
-    "react-datetime-picker": "^3.3.0",
     "react-dom": "^17.0.2",
     "react-flatpickr": "^3.10.7",
     "react-loader-spinner": "^4.0.0",
