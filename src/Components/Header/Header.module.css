@@ -1,0 +1,85 @@
+/* @import '../../variables.css'; */
+
+.Header {
+  background-color: var(--header-color);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(36, 42, 55, 0.1);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.Logo {
+  color: var(--primary-color);
+  font-family: 'HelveticaNeueCyr';
+  font-weight: 700;
+  font-size: 21px;
+}
+
+.MenuImgNameLogout {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.MenuImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 150px;
+  margin-right: 10px;
+  background-color: var(--btn-logout);
+  line-height: 30px;
+  text-align: center;
+}
+
+.avatarLeter {
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.MenuName {
+  display: none;
+}
+
+.Icon {
+  fill: var(--btn-logout);
+}
+
+.Icon:active {
+  fill: var(--btn-logout-click);
+}
+
+.Icon:hover,
+.Icon:focus {
+  fill: var(--user-name-color);
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    padding: 20px 50px;
+  }
+
+  .MenuImgNameLogout {
+    display: flex;
+    align-items: center;
+  }
+
+  .MenuName {
+    display: inline;
+    font-size: 17px;
+    font-family: 'HelveticaNeueCyr';
+    color: var(--user-name-color);
+  }
+
+  .IconButton {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .Header {
+    padding: 20px 70px;
+  }
+}

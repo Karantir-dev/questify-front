@@ -1,0 +1,40 @@
+:root {
+  --challenge-bg-color: #15395a;
+  --primary-color: #00d7ff;
+  --text-primary-color: #282828;
+  --text-secondary-color: #b9c3c8;
+  --user-name-color: #7b8aa4;
+  --body-bg-color: #f2f3f7;
+  --header-color: #242a37;
+  --btn-main-color: #ff851c;
+  --btn-active-color: #47aad5;
+  --btn-logout: #3e4e6c;
+  --btn-logout-click: #48627f;
+  --colorRegText: rgba(0, 215, 255, 0.2);
+
+  /* Цвета категорий задач */
+  --leisure-color: #f8d2ff;
+  --family-color: #ffe6d3;
+  --health-color: #cdf7ff;
+  --learning-color: #fff6c0;
+  --work-color: #d3f6ce;
+  --stuff-color: #b9c3c8;
+
+  --white: #fff;
+  --black: #000;
+  --shadow-color: rgba(21, 57, 90, 0.03);
+  --shadow-hover-color: rgba(21, 57, 90, 0.08);
+  --shadow: -3px -4px 4px rgba(21, 57, 90, 0.1),
+    3px 4px 4px rgba(21, 57, 90, 0.03);
+  --shadow-hover: -3px 0px 5px rgba(21, 57, 90, 0.4),
+    3px 5px 5px rgba(21, 57, 90, 0.08);
+  --backdrop-color: rgba(21, 57, 90, 0.3);
+  --main-green: #24d40c;
+  --green-hover: #439945;
+  --green-active: #3c863d;
+  --main-red: #db0938;
+  --red-hover: #c2273f;
+  --red-active: #a72536;
+  --link-active: #3f93b7;
+  --accent-red: #db0837;
+}

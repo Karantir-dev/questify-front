@@ -1,0 +1,79 @@
+/*-- form --*/
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/*-- inputContainer --*/
+
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer + .inputContainer {
+  margin-top: 20px;
+}
+
+/*-- inputForm --*/
+
+.inputForm {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  caret-color: var(--primary-color);
+  width: 196px;
+  background-color: transparent;
+}
+
+/*-- labelForm --*/
+
+.labelForm {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--primary-color);
+  transform: translateY(-50%) translateX(0);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inputForm:focus + .labelForm,
+.inputForm:not(:placeholder-shown) + .labelForm {
+  font-size: 12px;
+  line-height: 0.5;
+  color: var(--primary-color);
+  transform: translateY(-25px) translateX(0);
+}
+
+@media screen and (max-width: 768px) {
+  .inputForm {
+    width: 100%;
+  }
+}
+
+/*-- buttonReg --*/
+
+.buttonReg {
+  margin-left: 120px;
+  margin-bottom: 200px;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .buttonReg {
+    margin-left: 145px;
+    bottom: -90px;
+    right: 180px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .buttonReg {
+    right: 375px;
+  }
+}

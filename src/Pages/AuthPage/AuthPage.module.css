@@ -1,0 +1,215 @@
+/*-- Logo --*/
+
+.logo {
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--primary-color);
+}
+
+/*-- description --*/
+
+.description {
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: var(--challenge-bg-color);
+}
+
+/*-- descriptionRegister --*/
+
+.descriptionRegister {
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary-color);
+}
+
+/*-- switchButton --*/
+
+.switchButton {
+  min-width: 60px;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 10px;
+  border-radius: 10px;
+  outline: none;
+  color: var(--btn-main-color);
+  border: 2px solid var(--btn-main-color);
+}
+
+.switchButton:hover,
+.switchButton:focus {
+  color: var(--white);
+  background-color: var(--btn-main-color);
+  filter: drop-shadow(0px 0px 5px var(--btn-main-color));
+}
+
+/*-- containerLanding --*/
+
+.containerLanding {
+  height: 100vh;
+  width: 100%;
+}
+
+/*-- containerForm --*/
+
+.containerForm {
+  position: relative;
+  top: 15%;
+}
+
+/*-- successRegText --*/
+
+.successRegText {
+  margin: 40px 0;
+  padding: 20px 10px;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: var(--colorRegText);
+  border-radius: 10px;
+}
+
+/*-- @media (max-width: 768px) --*/
+
+@media screen and (max-width: 767px) {
+  .containerLanding {
+    background: url('../../images/landing\(mobile\)2x.webp') no-repeat;
+    background-size: contain;
+    background-position: bottom 0 left 0;
+    overflow: hidden;
+  }
+
+  .containerForm {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 60px;
+  }
+
+  .descriptionRegister {
+    font-size: 14px;
+    line-height: 3.2;
+    margin-top: 30px;
+    margin-bottom: 23px;
+  }
+
+  .switchButton {
+    padding: 3px;
+    font-size: 14px;
+    margin-left: 3px;
+  }
+
+  .successRegText {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-resolution: 192dpi) {
+  .containerLanding {
+    background: url('../../images/landing\(mobile\)4x.webp') no-repeat;
+    background-size: contain;
+    background-position: bottom 0 left 0;
+    overflow: hidden;
+  }
+}
+
+/*-- @media (min-width: 768px) --*/
+
+@media screen and (min-width: 768px) {
+  .containerLanding {
+    background: url('../../images/landing\(tablet\)2x.webp') no-repeat;
+    background-size: contain;
+    background-position: bottom 0 right 0;
+    overflow: hidden;
+  }
+
+  .containerForm {
+    left: 50px;
+    max-width: 375px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-top: 50px;
+  }
+
+  .descriptionRegister {
+    font-size: 18px;
+    line-height: 2.5;
+    margin: 25px 0 30px 0;
+  }
+
+  .switchButton {
+    font-size: 18px;
+    padding: 3px;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .containerLanding {
+    background: url('../../images/landing\(tablet\)4x.webp') no-repeat;
+    background-size: contain;
+    background-position: bottom 0 right 0;
+    overflow: hidden;
+  }
+}
+
+/*-- @media (min-width: 1280px) --*/
+
+@media screen and (min-width: 1280px) {
+  .containerLanding {
+    background: url('../../images/landing\(desk\)2x.webp') no-repeat;
+    background-size: contain;
+    background-position: bottom 0 right 0;
+    overflow: hidden;
+  }
+
+  .containerForm {
+    left: 229px;
+    max-width: 564px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-top: 70px;
+  }
+
+  .descriptionRegister {
+    font-size: 24px;
+    line-height: 1.9;
+    margin: 35px 0 23px 0;
+  }
+
+  .switchButton {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (min-resolution: 192dpi) {
+  .containerLanding {
+    background: url('../../images/landing\(desk\)4x.webp') no-repeat;
+    background-size: contain;
+    background-position: bottom 0 right 0;
+    overflow: hidden;
+  }
+}

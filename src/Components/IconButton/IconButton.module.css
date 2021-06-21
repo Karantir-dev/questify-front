@@ -1,0 +1,33 @@
+.IconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  padding: 14px 7px;
+
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  background-color: var(--btn-main-color);
+  filter: drop-shadow(0px 0px 8px var(--btn-main-color));
+}
+
+.IconButton:hover,
+.IconButton:focus {
+  background-color: var(--primary-color);
+  filter: drop-shadow(0px 0px 8px var(--primary-color));
+}
+
+.IconButton:active {
+  background-color: var(--btn-active-color);
+  filter: drop-shadow(0px 0px 8px var(--btn-active-color));
+}

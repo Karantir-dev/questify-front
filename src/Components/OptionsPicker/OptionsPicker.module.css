@@ -1,0 +1,99 @@
+/*Difficulty styles*/
+.difficulty_button {
+  display: inline-flex;
+  align-items: center;
+  width: 120px;
+  height: 35px;
+  padding: 10px 2px 10px 21px;
+  border-radius: 0px 25px 25px 0px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.difficulty_button:hover,
+.difficulty_button:focus,
+.category_button:hover,
+.category_button:focus {
+  box-shadow: 1px -3px 4px 1px rgb(0 215 255 / 22%),
+    1px 3px 4px 1px rgb(0 215 255 / 22%);
+}
+
+.difficulty_buttonLabel_challenge {
+  color: var(--text-secondary-color);
+}
+
+.difficulty_buttonLabel {
+  margin-right: 7px;
+  color: var(--text-secondary-color);
+}
+
+.d_level_easy {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-right: 7px;
+}
+.d_level_normal {
+  composes: d_level_easy;
+  background-color: var(--main-green);
+}
+.d_level_hard {
+  composes: d_level_easy;
+  background-color: #db0837;
+}
+/*Category styles*/
+
+.category_button {
+  composes: difficulty_button;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+}
+.category_buttonLabel {
+  margin-right: 3px;
+}
+
+.stuff {
+  background-color: var(--text-secondary-color);
+}
+.family {
+  background-color: var(--family-color);
+}
+.health {
+  background-color: var(--health-color);
+}
+.learning {
+  background-color: var(--learning-color);
+}
+.leisure {
+  background-color: var(--leisure-color);
+}
+.work {
+  background-color: var(--work-color);
+}
+
+/*Common styles*/
+
+@media screen and (min-width: 768px) {
+  .difficulty_button {
+    font-size: 14px;
+    line-height: 14px;
+    width: 120px;
+    height: 25px;
+    padding: 6px 2px 6px 21px;
+    border-radius: 0px 15px 15px 0px;
+  }
+  .category_button {
+    width: 95px;
+    font-size: 11px;
+    line-height: 11px;
+  }
+  .d_level_easy {
+    width: 8px;
+    height: 8px;
+  }
+}

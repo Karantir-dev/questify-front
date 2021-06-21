@@ -1,0 +1,45 @@
+.flatpickr-input {
+  max-width: 130px;
+  border: none;
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.flatpickr-input-challange {
+  color: var(--white);
+}
+
+.flatpickr-input:focus {
+  outline: var(--btn-active-color) solid 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .date-time-container {
+    width: 248px;
+  }
+}
+
+.date-time-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 163px;
+}
+
+.flatpickrInputIconCalendar {
+  width: 16px;
+  height: 16px;
+   
+  filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25));
+}
+
+.flatpickrInputIconCalendar:hover {
+  fill: currentColor;
+  color: var(--btn-active-color);
+}
+
+.flatpickrInputIconCalendar:active {
+  fill: currentColor;
+  color: var(--link-active);
+}
